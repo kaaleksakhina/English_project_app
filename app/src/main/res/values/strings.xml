@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">English</string>
+    <string name="start_bn">Start training</string>
+    <string name="ex_1">Translate from English</string>
+    <string name="ex_2">Translate from Russian</string>
+    <string name="ex_3">Shit</string>
+    <string name="bn_help">Help</string>
+</resources>
