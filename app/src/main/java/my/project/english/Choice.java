@@ -19,7 +19,7 @@ public class Choice extends AppCompatActivity {
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        // my change
     }
     public void onBackPressed() {
         try {
