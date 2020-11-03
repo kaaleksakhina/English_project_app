@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black95">#95000000</color>
+    <color name="black60">#60000000</color>
 
     <color name="background">#98E4E0EF</color>
     <color name="purple_btn">#E45B2A70</color>

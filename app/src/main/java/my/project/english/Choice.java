@@ -1,12 +1,14 @@
 package my.project.english;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,8 +57,22 @@ public class Choice extends AppCompatActivity {
         });
 
         // кнопка помощи
+        ImageView imageQuestionMark = (ImageView)findViewById(R.id.imageQuestionMark);
+        imageQuestionMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Choice.this, Help.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+
+                }
+            }
+        });
         
     }
+    // возврат назад
     public void onBackPressed(){
         try {
             Intent intent  = new Intent(Choice.this, MainActivity.class);
