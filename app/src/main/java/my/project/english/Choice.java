@@ -60,23 +60,21 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        //кнопка помощи - открыть диалоговое окно в начале
+        //Button Help - open dialog window
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
-        // кнопка, закрывающая диалоговое окно
+        // Button closing dialog window
         TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
         btnclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //обрабатываем нажатие кнопки
                 try {
-                    Intent intent = new Intent(Choice.this, Choice.class);
-                    startActivity(intent);
-                    finish();
+                    dialog.dismiss();
                 }
                 catch (Exception E){
 
@@ -85,9 +83,23 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        
+        // Arrow Back
+        ImageView arrowBack = (ImageView) findViewById(R.id.imageArrowBack);
+        arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent  = new Intent(Choice.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e) {
+
+                }
+            }
+        });
     }
-    // возврат назад
+
+    // returning back
     public void onBackPressed(){
         try {
             Intent intent  = new Intent(Choice.this, MainActivity.class);
