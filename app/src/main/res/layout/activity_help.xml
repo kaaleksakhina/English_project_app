@@ -16,8 +16,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp">
         <TextView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:id="@+id/btnclose"
             android:text="X"
             android:textStyle="bold"
@@ -25,6 +25,7 @@
             android:background="@drawable/button_stroke_black95_press_white"
             android:layout_gravity="end"
             android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
             android:id="@+id/textdescription"
             android:text="@string/help_description"
             android:layout_weight="90"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/black95"
             android:layout_marginTop="10dp"
