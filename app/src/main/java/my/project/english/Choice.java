@@ -63,23 +63,34 @@ public class Choice extends AppCompatActivity {
         //Button Help - open dialog window
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+        dialog.setContentView(R.layout.activity_help);// путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
-        dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+        dialog.setCancelable(false); // окно нельзя закрыть кнопкой наза
 
-        // Button closing dialog window
-        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
-        btnclose.setOnClickListener(new View.OnClickListener() {
+        ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
+        buttonHelp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //обрабатываем нажатие кнопки
+            public void onClick(View v) {
                 try {
-                    dialog.dismiss();
-                }
-                catch (Exception E){
+                    dialog.show();
+                    // Button closing dialog window
+                    TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+                    btnclose.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            //обрабатываем нажатие кнопки
+                            try {
+                                dialog.dismiss();
+                            }
+                            catch (Exception E){
+
+                            }
+                            dialog.dismiss(); // закрыть диалоговое окно
+                        }
+                    });
+                }catch (Exception e) {
 
                 }
-                dialog.dismiss(); // закрыть диалоговое окно
             }
         });
 
