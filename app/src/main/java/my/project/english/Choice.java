@@ -1,6 +1,9 @@
 package my.project.english;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Choice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,20 +60,31 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        // кнопка помощи
-        ImageView imageQuestionMark = (ImageView)findViewById(R.id.imageQuestionMark);
-        imageQuestionMark.setOnClickListener(new View.OnClickListener() {
+        //кнопка помощи - открыть диалоговое окно в начале
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
+        dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+
+        // кнопка, закрывающая диалоговое окно
+        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+        btnclose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                //обрабатываем нажатие кнопки
                 try {
-                    Intent intent = new Intent(Choice.this, Help.class);
+                    Intent intent = new Intent(Choice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
+                }
+                catch (Exception E){
 
                 }
+                dialog.dismiss(); // закрыть диалоговое окно
             }
         });
+
         
     }
     // возврат назад

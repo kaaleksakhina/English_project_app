@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="exerсiseone">Choose the right traslation</string>
+    <string name="exerсiseone">Choose the right translation</string>
+    <string name="help_description">This project is created by <br/>Maslenikova Inna <br/> and <br/>Aleksahina Ksenia</string>
 </resources>
