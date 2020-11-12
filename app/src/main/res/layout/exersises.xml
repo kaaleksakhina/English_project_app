@@ -79,6 +79,7 @@
             android:layout_gravity="start"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="150dp"
+            android:background="@drawable/button_stroke_black95_press_white"
             android:clickable="true"
             android:onClick="clickNew"
             app:srcCompat="@drawable/arrow_back" />
@@ -89,6 +90,7 @@
             android:layout_height="50dp"
             android:layout_gravity="end"
             android:layout_marginEnd="70dp"
+            android:background="@drawable/button_stroke_black95_press_white"
             android:clickable="true"
             android:onClick="clickNew"
             app:srcCompat="@drawable/question_mark" />

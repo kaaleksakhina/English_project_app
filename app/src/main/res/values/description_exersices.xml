@@ -2,8 +2,28 @@
 <resources>
     <string name="exerсiseone">Choose the right translation</string>
     <string name="help_description">This project is created by <br/> Maslenikova Inna <br/> and <br/> Aleksahina Ksenia</string>
-    <string name="choice1">Professions</string>
-    <string name="choice2">Nouns</string>
-    <string name="choice3">Verbs</string>
-    <string name="choice4">Useful language</string>
+    <string name="unit1">UNIT 1</string>
+    <string name="unit2">UNIT 2</string>
+    <string name="unit3">UNIT 3</string>
+    <string name="unit4">UNIT 4</string>
+    <string name="unit5">UNIT 5</string>
+    <string name="unit6">UNIT 6</string>
+    <string name="unit7">UNIT 7</string>
+    <string name="unit8">UNIT 8</string>
+    <string name="unit9">UNIT 9</string>
+    <string name="unit10">UNIT 10</string>
+    <string name="unit11">UNIT 11</string>
+    <string name="unit12">UNIT 12</string>
+    <string name="unit13">UNIT 13</string>
+    <string name="unit14">UNIT 14</string>
+    <string name="unit15">UNIT 15</string>
+    <string name="unit16">UNIT 16</string>
+    <string name="unit17">UNIT 17</string>
+    <string name="unit18">UNIT 18</string>
+    <string name="unit19">UNIT 19</string>
+    <string name="unit20">UNIT 20</string>
+    <string name="unit21">UNIT 21</string>
+    <string name="unit22">UNIT 22</string>
+    <string name="unit23">UNIT 23</string>
+    <string name="unit24">UNIT 24</string>
 </resources>
