@@ -30,7 +30,7 @@ public class Choice extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // кнопка для перехода в 1 упражнение
+        // button to learning
         TextView textView1 = (TextView)findViewById(R.id.textView1);
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,7 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        // кнопка для перехода вo 2 упражнение
+        /* button to practice
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +58,7 @@ public class Choice extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
         //Button Help - open dialog window
         dialog = new Dialog(this);
@@ -108,6 +108,7 @@ public class Choice extends AppCompatActivity {
                 }
             }
         });
+        
     }
 
     // returning back

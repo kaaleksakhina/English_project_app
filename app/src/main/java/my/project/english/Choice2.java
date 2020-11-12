@@ -24,7 +24,22 @@ public class Choice2 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //Button Help - open dialog window
+        /* Unit 1
+        TextView textView1 = (TextView).findViewById(R.id.textView1);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Choice2.this, Exercise1.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+
+                }
+            }
+        });*/
+
+        // Button Help - open dialog window
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.activity_help);// путь к макету диалогового окна
@@ -61,6 +76,21 @@ public class Choice2 extends AppCompatActivity {
         // Arrow Back
         ImageView arrowBack = (ImageView) findViewById(R.id.imageArrowBack);
         arrowBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent  = new Intent(Choice2.this, Choice.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception e) {
+
+                }
+            }
+        });
+
+        // main button BEC
+        ImageView btnBEC = (ImageView)findViewById(R.id.imageBEC);
+        btnBEC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {

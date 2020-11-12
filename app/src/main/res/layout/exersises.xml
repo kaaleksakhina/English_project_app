@@ -21,7 +21,7 @@
             <LinearLayout
                 android:id="@+id/container3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/frame_for_choice"
                 android:layout_marginTop="80dp"
                 android:layout_marginBottom="80dp"
@@ -33,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="@string/ex_1"
-                    android:background="@drawable/button_exersize"
+                    android:background="@drawable/button_exercise"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -42,13 +42,12 @@
                     android:gravity="center"
                     android:layout_marginBottom="50dp"/>
 
-
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:text="@string/ex_2"
-                    android:background="@drawable/button_exersize"
+                    android:background="@drawable/button_exercise"
                     android:textColor="@color/white"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
@@ -82,17 +81,19 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/button_stroke_black95_solid_white_press_purple"
             android:clickable="true"
-            android:onClick="clickNew"
-            app:srcCompat="@drawable/arrow_back" />
+            app:srcCompat="@drawable/arrow_back"
+            android:focusable="true" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageBEC"
             android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_marginEnd="50dp"
             android:layout_gravity="center"
             android:src="@drawable/label_btn"
-            android:background="@drawable/button_stroke_black95_solid_white_press_purple"/>
+            android:clickable="true"
+            android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/imageQuestionMark"
@@ -102,8 +103,8 @@
             android:layout_marginEnd="70dp"
             android:background="@drawable/button_stroke_black95_solid_white_press_purple"
             android:clickable="true"
-            android:onClick="clickNew"
-            app:srcCompat="@drawable/question_mark" />
+            app:srcCompat="@drawable/question_mark"
+            android:focusable="true" />
 
     </LinearLayout>
 </RelativeLayout>
