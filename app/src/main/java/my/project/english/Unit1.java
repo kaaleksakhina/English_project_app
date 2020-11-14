@@ -2,19 +2,22 @@ package my.project.english;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Unit1 extends AppCompatActivity {
+public class Unit1 extends Activity {
 
     Dialog dialog;
     Dialog dialog2;
@@ -130,6 +133,29 @@ public class Unit1 extends AppCompatActivity {
                 }
             }
         });
+
+        String[] words = { "certificate", "commitment" , "corporate", "course", "degree", "development",
+                                "experience", "gain experience", "incentive", "job"};
+        String[] translations = { "сертификат, свидетельство", "обязательство", "корпоративный", "курс обучения",
+                "ученая степень, диплом", "развитие", "опыт", "набираться опыта","стимул", "particular type of work activity" };
+
+            LinearLayout linLayout = (LinearLayout) findViewById(R.id.container3);
+            LayoutInflater llInflater = getLayoutInflater();
+
+            for (int i = 0; i < words.length; i++) {
+
+                View item = llInflater.inflate(R.layout.listitem, linLayout, false);
+                TextView word = (TextView) item.findViewById(R.id.words);
+                word.setText(words[i]);
+                word.setTextColor(Color.rgb(100,100,100));
+
+                TextView translation = (TextView) item.findViewById(R.id.translations);
+                translation.setText(translations[i]);
+                translation.setTextColor(Color.rgb(100,100,100));
+
+                item.getLayoutParams().width = WindowManager.LayoutParams.WRAP_CONTENT;
+                linLayout.addView(item);
+            }
     }
 
     public void onBackPressed(){
