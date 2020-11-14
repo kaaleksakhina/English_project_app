@@ -27,15 +27,15 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".Exercise1"
+        <activity android:name=".Choice2"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".Choice2"
+        <activity
+            android:name=".Unit1"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

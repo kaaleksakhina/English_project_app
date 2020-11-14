@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/container1"
@@ -13,32 +13,46 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
-
         <LinearLayout
             android:id="@+id/container2"
             android:layout_width="380dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/container"
-            android:layout_marginBottom="70dp"
-            android:layout_marginTop="70dp"
-            android:padding="10dp"
-            android:gravity="bottom">
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/text_units"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unit"
+                android:textSize="25sp"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:textColor="@color/black95"/>
 
             <LinearLayout
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="20dp"
                 android:layout_marginTop="70dp"
-                android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/point1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/style_points">
-                    </TextView>
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:layout_gravity="bottom">
+
+                <TextView
+                    android:id="@+id/point1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/style_points">
+                </TextView>
+
                 <TextView
                     android:id="@+id/point2"
                     android:layout_width="wrap_content"
@@ -46,6 +60,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point3"
                     android:layout_width="wrap_content"
@@ -53,6 +68,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point4"
                     android:layout_width="wrap_content"
@@ -60,6 +76,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point5"
                     android:layout_width="wrap_content"
@@ -67,6 +84,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point6"
                     android:layout_width="wrap_content"
@@ -74,6 +92,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point7"
                     android:layout_width="wrap_content"
@@ -81,6 +100,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point8"
                     android:layout_width="wrap_content"
@@ -88,6 +108,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point9"
                     android:layout_width="wrap_content"
@@ -95,6 +116,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/style_points">
                 </TextView>
+
                 <TextView
                     android:id="@+id/point10"
                     android:layout_width="wrap_content"
@@ -103,6 +125,64 @@
                     android:background="@drawable/style_points">
                 </TextView>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/slyle_toolbar"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/imageArrowBack"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+                android:clickable="true"
+                android:onClick="clickNew"
+                app:srcCompat="@drawable/arrow_back" />
+
+            <ImageView
+                android:id="@+id/imageBEC"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+                android:clickable="true"
+                android:src="@drawable/label_btn" />
+
+            <ImageView
+                android:id="@+id/imageQuestionMark"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="70dp"
+                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+                android:clickable="true"
+                android:onClick="clickNew"
+                app:srcCompat="@drawable/question_mark" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>

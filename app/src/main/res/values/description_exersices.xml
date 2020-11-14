@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="exerсiseone">Choose the right translation</string>
     <string name="help_description">This project is created by <br/> Maslenikova Inna <br/> and <br/> Aleksahina Ksenia</string>
+    <string name="unit">UNIT : </string>
     <string name="unit1">UNIT 1</string>
     <string name="unit2">UNIT 2</string>
     <string name="unit3">UNIT 3</string>
@@ -26,4 +26,29 @@
     <string name="unit22">UNIT 22</string>
     <string name="unit23">UNIT 23</string>
     <string name="unit24">UNIT 24</string>
+
+    <string name="unit1n">UNIT 1: Staff development and training</string>
+    <string name="unit2n">UNIT 2: Job descriptions and job satisfaction</string>
+    <string name="unit3n">UNIT 3: Getting the right job</string>
+    <string name="unit4n">UNIT 4: Making contact</string>
+    <string name="unit5n">UNIT 5: Breaking into the market</string>
+    <string name="unit6n">UNIT 6: Launching a product</string>
+    <string name="unit7n">UNIT 7: A stand at a trade fair</string>
+    <string name="unit8n">UNIT 8: Being persuasive</string>
+    <string name="unit9n">UNIT 9: Starting a business</string>
+    <string name="unit10n">UNIT 10: Financing a start-up</string>
+    <string name="unit11n">UNIT 11: Expanding into Europe</string>
+    <string name="unit12n">UNIT 12: Presenting your business idea</string>
+    <string name="unit13n">UNIT 13: Arranging business travel</string>
+    <string name="unit14n">UNIT 14: Business conference</string>
+    <string name="unit15n">UNIT 15: Business meetings</string>
+    <string name="unit16n">UNIT 16: Spending the sales budget</string>
+    <string name="unit17n">UNIT 17: Social media and business</string>
+    <string name="unit18n">UNIT 18: Business and the environment</string>
+    <string name="unit19n">UNIT 19: A staff survey</string>
+    <string name="unit20n">UNIT 20: Offshoring and outsourcing</string>
+    <string name="unit21n">UNIT 21: Customer satisfaction and loyalty</string>
+    <string name="unit22n">UNIT 22: Communication</string>
+    <string name="unit23n">UNIT 23: Corresponding with customers</string>
+    <string name="unit24n">UNIT 24: Business across cultures</string>
 </resources>
