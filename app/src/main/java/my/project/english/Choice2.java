@@ -45,7 +45,7 @@ public class Choice2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice2.this, Exercise2.class);
+                    Intent intent = new Intent(Choice2.this, Unit2.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
