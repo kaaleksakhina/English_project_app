@@ -1,7 +1,5 @@
 package my.project.english;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -19,7 +17,6 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import joinery.DataFrame;
