@@ -18,7 +18,7 @@
                 android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="80dp"
                 android:background="@drawable/container"
                 android:orientation="vertical"
                 android:padding="10dp">
@@ -167,7 +167,6 @@
             android:layout_marginEnd="50dp"
             android:background="@drawable/button_stroke_black95_solid_white_press_purple"
             android:clickable="true"
-            android:onClick="clickNew"
             app:srcCompat="@drawable/arrow_back"
             android:focusable="true" />
 
@@ -189,8 +188,8 @@
             android:layout_marginEnd="70dp"
             android:background="@drawable/button_stroke_black95_solid_white_press_purple"
             android:clickable="true"
-            android:onClick="clickNew"
-            app:srcCompat="@drawable/question_mark" />
+            app:srcCompat="@drawable/question_mark"
+            android:focusable="true" />
     </LinearLayout>
 
 </RelativeLayout>

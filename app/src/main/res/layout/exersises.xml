@@ -12,20 +12,15 @@
         android:gravity="center"
         android:orientation="vertical"
         android:background="@drawable/fon_for_other">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="250dp"
-            android:layout_marginBottom="10dp">
 
             <LinearLayout
                 android:id="@+id/container3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/frame_for_choice"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginBottom="80dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:orientation="vertical" >
 
                 <TextView
@@ -57,7 +52,6 @@
                     android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 
     <LinearLayout
