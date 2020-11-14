@@ -17,19 +17,19 @@ import android.widget.TextView;
 public class Unit1 extends AppCompatActivity {
 
     Dialog dialog;
-
+    Dialog dialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
 
-        TextView text_units = findViewById(R.id.text_units);
-        text_units.setText(R.string.unit1n); //name of the unit
-
         // Развернуть игру на весь экран
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        TextView text_units = findViewById(R.id.text_units);
+        text_units.setText(R.string.unit1n); //name of the unit
 
         //открыть диалоговое окно в начале
         dialog = new Dialog(this);
@@ -57,30 +57,29 @@ public class Unit1 extends AppCompatActivity {
         });
 
         // Button Continue
-        Button btncontinue = (Button)dialog.findViewById(R.id.buttoncontinue);
-        btncontinue.setOnClickListener(new View.OnClickListener() {
+        Button btn_continue = (Button)dialog.findViewById(R.id.button_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss(); // close dialog window
             }
         });
 
-
         dialog.show();
 
         //Button Help - open dialog window
-        dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.activity_help);// путь к макету диалогового окна
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
-        dialog.setCancelable(false); // окно нельзя закрыть кнопкой наза
+        dialog2 = new Dialog(this);
+        dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog2.setContentView(R.layout.activity_help);// путь к макету диалогового окна
+        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
+        dialog2.setCancelable(false); // окно нельзя закрыть кнопкой наза
 
         ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
         buttonHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.show();
+                    dialog2.show();
                     // Button closing dialog window
                     TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
                     btnclose.setOnClickListener(new View.OnClickListener() {
@@ -88,12 +87,12 @@ public class Unit1 extends AppCompatActivity {
                         public void onClick(View view) {
                             //обрабатываем нажатие кнопки
                             try {
-                                dialog.dismiss();
+                                dialog2.dismiss();
                             }
                             catch (Exception E){
 
                             }
-                            dialog.dismiss(); // закрыть диалоговое окно
+                            dialog2.dismiss(); // закрыть диалоговое окно
                         }
                     });
                 }catch (Exception e) {

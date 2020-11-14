@@ -331,7 +331,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_margin="8dp"
-        android:background="@drawable/slyle_toolbar"
+        android:background="@drawable/style_toolbar"
         android:orientation="horizontal"
         android:padding="7dp">
 

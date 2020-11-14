@@ -16,9 +16,8 @@
         <LinearLayout
             android:id="@+id/container2"
             android:layout_width="380dp"
-            android:layout_height="0dp"
-            android:layout_weight="20"
-            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/container"
             android:orientation="vertical"
@@ -136,56 +135,56 @@
                 android:gravity="center"/>
 
         </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/container4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/slyle_toolbar"
-            android:gravity="bottom"
-            android:orientation="horizontal"
-            android:padding="7dp">
+    <LinearLayout
+        android:id="@+id/container4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/style_toolbar"
+        android:layout_gravity = "bottom"
+        android:orientation="horizontal"
+        android:padding="7dp">
 
-            <ImageView
-                android:id="@+id/imageArrowBack"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
-                android:clickable="true"
-                android:onClick="clickNew"
-                app:srcCompat="@drawable/arrow_back" />
+        <ImageView
+            android:id="@+id/imageArrowBack"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+            android:clickable="true"
+            android:onClick="clickNew"
+            app:srcCompat="@drawable/arrow_back"
+            android:focusable="true" />
 
-            <ImageView
-                android:id="@+id/imageBEC"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="50dp"
-                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
-                android:clickable="true"
-                android:src="@drawable/label_btn" />
+        <ImageView android:id="@+id/imageBEC"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+            android:clickable="true"
+            android:src="@drawable/label_btn"
+            android:focusable="true" />
 
-            <ImageView
-                android:id="@+id/imageQuestionMark"
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="70dp"
-                android:background="@drawable/button_stroke_black95_solid_white_press_purple"
-                android:clickable="true"
-                android:onClick="clickNew"
-                app:srcCompat="@drawable/question_mark" />
-        </LinearLayout>
-
+        <ImageView
+            android:id="@+id/imageQuestionMark"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_purple"
+            android:clickable="true"
+            android:onClick="clickNew"
+            app:srcCompat="@drawable/question_mark" />
     </LinearLayout>
 
 </RelativeLayout>
