@@ -1,0 +1,167 @@
+﻿id_unit,id_word,Word,Translation,Examples of sentences
+1,1,certificate,"сертификат, свидетельство",An exam certificate
+1,2,commitment,обязательство,Commitment to education
+1,3,corporate,корпоративный,Corporate culture
+1,4,course,курс обучения,A ten-week course in computing
+1,5,degree,"ученая степень, диплом",She has a degree in physics
+1,6,development,развитие,Developments in technology
+1,7,experience,опыт,To learn from the experience you get
+1,8,gain experience,набираться опыта,
+1,9,incentive,стимул,Material incentives
+1,10,job,particular type of work activity,
+1,11,knowledge,знание,Knowledge of naval history
+1,12,overtime,сверхурочная работа,Unpaid overtime
+1,13,permanent,постоянный,
+1,14,promotion,повышение,
+1,15,qualification,квалификация,
+1,16,recruits,пополнение,
+1,17,responsibility,ответственность,
+1,18,salary,зарплата,
+1,19,skill,умение,Good communication skills
+1,20,staff ,персонал,
+1,21,work,something tou do to earn money,
+2,22,accountant,бухгалтер,
+2,23,budgeting,составление бюджета,
+2,24,campaign,кампания,We work on a promotional campaign
+2,25,chain (of shops),сеть (магазинов),
+2,26,customer,покупатель,
+2,27,deadline,крайний срок,
+2,28,employee,работник,
+2,29,figures,диаграмма,
+2,30,goal,цель,
+2,31,personal development,саморазвитие,
+2,32,receptionist,секретарь,
+2,33,report,отчёт,
+2,34,supervising staff,руководящий персонал,
+2,35,team-building activities,деятельность дл поддержания командного духа,
+3,36,approval,одобрение,I don't need his approval 
+3,37,assign,поручать,To assign the task
+3,38,emphasize,"придавать значение, подчеркивать",To emphasize the importance
+3,39,follow up,последующее мероприятие,A follow-up meeting
+3,40,initiate,начинать,The program was initiated by the state government
+4,41,advertisement,реклама,
+4,42,candidate,кандидат,
+4,43,critical,"решающий, переломный",A critical decision
+4,44,equipment,оборудование,
+4,45,face to face,лицом к лицу,Face to face meeting
+5,46,awareness,осведомленность,Brand awareness
+5,47,launch,выпускать (о новом продукте),To launch new service 
+5,48,leaflet,листовка,A useful leaflet on how to fill in tax forms
+5,49,sample,образец,A free sample of chocolate
+6,50,department,отдел,
+6,51,market,рынок,
+6,52,promotional activities,рекламные мероприятия,
+6,53,social media,социальные сети,
+6,54,viral marketing,вирусный маркетинг,
+7,55,fee,плата,University fee
+7,56,for hire,напрокат,There were motorcycles for hire
+7,57,guarantee,гарантия,A guarantee would be nice
+7,58,liaise,поддерживать,Liaise with suppliers
+7,59,make an impact,оказывать влияние,This made a profound impact on me
+8,60,agreement,соглашение,
+8,61,communication skills,навыки общения,
+8,62,condition,условия,
+8,63,confidence,уверенность,
+8,64,credible,убедительный,
+8,65,exstra cost,дополнительные затраты,
+8,66,invoice,докладная,
+8,67,lend,одолжить,
+8,68,negotiation,переговоры,
+8,69,persuasive,убедительный,
+8,70,satisfaction,удовлетворение,Customer satisfaction increased by 11% last year
+8,71,strategy,стратегия,
+9,72,asset,"имущество, актив",The company has $40 billion in assets
+9,73,concept,"понятие, идея",The concept of free speech
+9,74,cost,цена,Cost of living
+9,75,debt,долг,pay off the debt
+9,76,liability,ответственность,Liability for the damage caused
+9,77,lucrative,прибыльный,A lucrative job
+9,78,profit,прибыль,A profit of $3 million
+9,79,retail,розничная торговля,The retail expirience
+9,80,tax,налог ,Tax on cigarettes
+9,81,trademark,торговая марка,Brand's trademark
+9,82,turnover,оборот капитала,Turnover amounted to 83 million last year.
+10,83,finance,финансы,
+10,84,fund ,капитал,
+10,85,funding,финансирование,
+10,86,government grant,государственный грант,
+10,87,loan,кредит,
+10,88,mortgage,ипотека,
+10,89,partnership,сотрудничество,
+10,90,personal savings,личные накопления,
+10,91,premises,недвижимость,
+10,92,private equity,частный капитал,
+10,93,raise money,зарабатывать деньги,
+10,94,start-up,стартап,
+10,95,stock market,фондовый рынок,
+11,96,commission,заказ,This was my first commission
+11,97,entity,организация,Each of the responders were paid by separate entities
+11,98,get down to,приступить к ,It's time to get down to bisiness
+11,99,get onto,связаться с,"Sam, can you can onto our friends, please?"
+11,100,head up,возглавить ,My company has asked me to head up our office in Moscow
+11,101,lease,контракт об аренде,sign a three year lease
+12,102,dress smartly,одеваться прилично,
+12,103,facilities,оборудование,
+12,104,handout,раздаточный материал,
+12,105,industry,индустрия,
+12,106,market research,исследование рынка,
+12,107,presentation,презентация,
+12,108,rehearsal,репетиция,
+12,109,suitable,подходящий,
+14,110,auditorium,"аудитория, зрительный зал",
+14,111,conference,конференция,
+14,112,delegate,"делегат, участник конференции",
+14,113,exibitor,экпонент,
+14,114,mutual,"совместный, общий",
+14,115,projector,проектор,
+14,116,to attend,участвовать,
+14,117,to broaden,расширять,
+14,118,to highlight,"подчеркивать, выделять",
+15,119,agenda,повестка дня,It's not on today's agenda
+15,120,complement,дополнение,Complement to the meal
+15,121,productive,продуктивно,The sessions are productive
+15,122,to chair,председатель,The chair is responsible for the success of a meeting
+15,123,trim,"урезат, уменьшать",To trim the costs
+16,124,company jet,самолет компании,
+16,125,non-retail business,оптовый бизнес,
+16,126,potential,потенциальный,
+16,127,promotion manager,менеджер по продвижению,
+16,128,to recommend,рекомендовать,
+16,129,representative,представитель,
+16,130,sales techniques,методы (приемы) продаж,
+16,131,suggest,предложить,
+17,132,engage with,связаться с,You can't engage with her
+17,133,insight,"проницительность, понимание",To provide an insight into the world
+17,134,next to nothing,почти ничего,Talent means next to nothing
+18,135,appropriately,соответсвенно,
+18,136,brainstorm,мозговой штурм,
+18,137,efficient,эффективный,
+18,138,establish,установить,
+18,139,foreseeable,"предвиденный, прогнозируемый",foreseeable future
+18,140,foretelling,предсказание,
+18,141,idle,нерабочий,
+19,142,absenteeism,прогулы,We cannot tolerate this kind of absenteeism amongst our junior staff
+19,143,cut down on ,сократить,He should cut down on work-related stress
+19,144,rush hour,час пик,I hate the subway at rush hour
+19,145,sick leave,больничный,Two guys are on sick leave
+19,146,staff turnover,текучка кадров,We get a lot of staff turnover
+20,147,contractor,подрядчик,
+20,148,flexibility,гибкость,
+20,149,offshoring,moving part of company to another country,
+20,150,outsourcing,employing side people to do part of the work ,
+20,151,savings,сбережения,
+20,152,to arise,возникать,
+20,153,to tailor,"подогнать, приспособить",
+21,154,car dealership,автосалон,He runs a successful car dealership
+21,155,deal with,иметь дело с ,To deal with the workers
+21,156,integrity,честность,It's important to have some kind of personal integrity
+21,157,outcome,"результат, исход",
+21,158,responsiveness,реакция ,Your levels of responsiveness have decreased recently
+21,159,teamwork,командная работа,Teamwork: That's what counts in this organisation
+22,160,empowerment,"полномочие, расширение возможностей",
+22,161,loyalty,лояльность,
+22,162,to repurchase,выкупить,
+22,163,revenue,доход,
+22,164,rival ,конкурент,
+22,165,supplier,постащик,
+23,166,line manager,начальник," I'm going to ask Ms.Fell to come here, because she's my line manager"

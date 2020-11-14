@@ -17,6 +17,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import joinery.DataFrame;
+
 public class Unit1 extends Activity {
 
     Dialog dialog;
@@ -134,23 +141,33 @@ public class Unit1 extends Activity {
             }
         });
 
-        String[] words = { "certificate", "commitment" , "corporate", "course", "degree", "development",
-                                "experience", "gain experience", "incentive", "job"};
-        String[] translations = { "сертификат, свидетельство", "обязательство", "корпоративный", "курс обучения",
-                "ученая степень, диплом", "развитие", "опыт", "набираться опыта","стимул", "particular type of work activity" };
 
-            LinearLayout linLayout = (LinearLayout) findViewById(R.id.container3);
+        DataFrame df;
+        List<String> words = new ArrayList<>();
+        List<String> translations = new ArrayList<>();
+
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == 1);
+            words = (List<String>)df_unit_1.col("Word");
+            translations = (List<String>)df_unit_1.col("Translation");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        LinearLayout linLayout = (LinearLayout) findViewById(R.id.container3);
             LayoutInflater llInflater = getLayoutInflater();
 
-            for (int i = 0; i < words.length; i++) {
+            for (int i = 0; i < words.size(); i++) {
 
                 View item = llInflater.inflate(R.layout.listitem, linLayout, false);
                 TextView word = (TextView) item.findViewById(R.id.words);
-                word.setText(words[i]);
+                word.setText(words.get(i));
                 word.setTextColor(Color.rgb(100,100,100));
 
                 TextView translation = (TextView) item.findViewById(R.id.translations);
-                translation.setText(translations[i]);
+                translation.setText(translations.get(i));
                 translation.setTextColor(Color.rgb(100,100,100));
 
                 item.getLayoutParams().width = WindowManager.LayoutParams.WRAP_CONTENT;
