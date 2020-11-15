@@ -31,12 +31,12 @@ public class Unit1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
 
+        TextView text_units = findViewById(R.id.text_units);
+        text_units.setText(R.string.unit1n); //name of the unit
+
         // Развернуть игру на весь экран
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        TextView text_units = findViewById(R.id.text_units);
-        text_units.setText(R.string.unit1n); //name of the unit
 
         //открыть диалоговое окно в начале
         dialog = new Dialog(this);
@@ -138,21 +138,25 @@ public class Unit1 extends Activity {
             }
         });
 
-
-        DataFrame df;
+        // DataFrame
+        DataFrame df, df1;
         List<String> words = new ArrayList<>();
         List<String> translations = new ArrayList<>();
+        List<String> examples = new ArrayList<>();
 
+
+        // word - translation
         try {
             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
             DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == 1);
             words = (List<String>)df_unit_1.col("Word");
             translations = (List<String>)df_unit_1.col("Translation");
+            examples = (List<String>)df_unit_1.col("Examples of sentences");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
+        // displaying words
         LinearLayout linLayout = (LinearLayout) findViewById(R.id.container3);
             LayoutInflater llInflater = getLayoutInflater();
 
@@ -167,7 +171,11 @@ public class Unit1 extends Activity {
                 translation.setText(translations.get(i));
                 translation.setTextColor(Color.rgb(100,100,100));
 
-                item.getLayoutParams().width = WindowManager.LayoutParams.WRAP_CONTENT;
+                TextView example = (TextView) item.findViewById(R.id.examples);
+                example.setText(examples.get(i));
+                example.setTextColor(Color.rgb(100,100,100));
+
+                item.getLayoutParams().width = WindowManager.LayoutParams.MATCH_PARENT;
                 linLayout.addView(item);
             }
     }

@@ -7,15 +7,14 @@
     tools:context=".MainActivity"
     android:background="@drawable/fon">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/welcome_message"
-        android:textStyle="bold"
-        android:textSize="39sp"
-        android:fadingEdge="vertical" />
+        android:layout_height="350dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        app:srcCompat="@drawable/label_btn"
+        android:layout_alignParentTop="true"/>
 
     <LinearLayout
         android:id="@+id/start_layout"
@@ -39,6 +38,8 @@
             android:textColorHighlight="@color/white"
             android:backgroundTint="@color/purple_200"/>
     </LinearLayout>
+
+
 
 
 </RelativeLayout>
