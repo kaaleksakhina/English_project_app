@@ -15,13 +15,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
-import joinery.DataFrame;
 
-public class Unit1 extends Activity {
+public class Unit1 extends AppCompatActivity {
+
+    private ViewPager2 viewPager2Word;
 
     Dialog dialog;
     Dialog dialog2;
@@ -138,46 +138,11 @@ public class Unit1 extends Activity {
             }
         });
 
-        // DataFrame
-        DataFrame df, df1;
-        List<String> words = new ArrayList<>();
-        List<String> translations = new ArrayList<>();
-        List<String> examples = new ArrayList<>();
+        // Displaying word - translation
+        this.viewPager2Word = findViewById(R.id.viewPager2_word);
 
-
-        // word - translation
-        try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
-            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == 1);
-            words = (List<String>)df_unit_1.col("Word");
-            translations = (List<String>)df_unit_1.col("Translation");
-            examples = (List<String>)df_unit_1.col("Examples of sentences");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // displaying words
-        LinearLayout linLayout = (LinearLayout) findViewById(R.id.container3);
-            LayoutInflater llInflater = getLayoutInflater();
-
-            for (int i = 0; i < words.size(); i++) {
-
-                View item = llInflater.inflate(R.layout.listitem, linLayout, false);
-                TextView word = (TextView) item.findViewById(R.id.words);
-                word.setText(words.get(i));
-                word.setTextColor(Color.rgb(100,100,100));
-
-                TextView translation = (TextView) item.findViewById(R.id.translations);
-                translation.setText(translations.get(i));
-                translation.setTextColor(Color.rgb(100,100,100));
-
-                TextView example = (TextView) item.findViewById(R.id.examples);
-                example.setText(examples.get(i));
-                example.setTextColor(Color.rgb(100,100,100));
-
-                item.getLayoutParams().width = WindowManager.LayoutParams.MATCH_PARENT;
-                linLayout.addView(item);
-            }
+        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this);
+        this.viewPager2Word.setAdapter(adapter);
     }
 
     public void onBackPressed(){

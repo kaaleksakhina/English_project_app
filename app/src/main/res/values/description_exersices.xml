@@ -53,4 +53,7 @@
     <string name="unit24n">UNIT 24: Business across cultures</string>
 
     <string name="first_mes">Welcome to practice!</string>
+
+    <string name="tr">Translation:</string>
+    <string name="ex">Examples:</string>
 </resources>
