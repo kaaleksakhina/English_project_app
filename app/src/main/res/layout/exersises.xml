@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/fon_for_other">
+        android:background="@drawable/fon">
 
             <LinearLayout
                 android:id="@+id/container3"

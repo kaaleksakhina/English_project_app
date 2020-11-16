@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Choice2 extends AppCompatActivity {
@@ -25,8 +26,8 @@ public class Choice2 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Unit 1
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        textView1.setOnClickListener(new View.OnClickListener() {
+        LinearLayout unit1 = (LinearLayout) findViewById(R.id.unit1);
+        unit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
