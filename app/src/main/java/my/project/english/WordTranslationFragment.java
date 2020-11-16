@@ -41,9 +41,9 @@ public class WordTranslationFragment extends Fragment {
 
         counter++;
         if(counter % 2 == 0) {
-            view.setBackgroundColor(Color.parseColor("#ebdef0"));
+            view.setBackgroundColor(Color.parseColor("#95FF9C43"));
         } else  {
-            view.setBackgroundColor(Color.parseColor("#e8f8f5"));
+            view.setBackgroundColor(Color.parseColor("#7E99D1D1"));
         }
 
         this.TextViewWord = view.findViewById(R.id.word);
@@ -89,6 +89,13 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewWord.setText(word.getWord());
         this.TextViewTranslation.setText(word.getTranslation());
         this.TextViewExample.setText(word.getExamples());
+
+        this.TextViewWord.setTextSize(20);
+        this.TextViewTranslation.setTextSize(18);
+        this.TextViewExample.setTextSize(15);
+
+        this.TextViewWord.setAllCaps(true);
+
     }
 
     private Bundle wordToBundle(Word word)  {

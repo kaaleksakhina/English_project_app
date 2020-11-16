@@ -927,7 +927,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="70"
-
+                            app:srcCompat="@drawable/unit21"
                             android:layout_marginBottom="1sp"/>
 
                         <TextView
@@ -966,7 +966,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="70"
-
+                            app:srcCompat="@drawable/unit22"
                             android:layout_marginBottom="1dp"/>
 
                         <TextView
@@ -977,6 +977,93 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit22"
+                            android:textColor="@color/orange_2"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/line12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+                    <LinearLayout
+                        android:id="@+id/unit23"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="9dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/unit_pressed"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/unit23n"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/imageView23"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="70"
+                            app:srcCompat="@drawable/unit23"
+                            android:layout_marginBottom="1sp"/>
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/style_unit"
+                            android:gravity="center"
+                            android:text="@string/unit21"
+                            android:textColor="@color/orange_2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/unit24"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/unit_pressed"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/unit24n"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/imageView24"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="70"
+                            app:srcCompat="@drawable/unit24"
+                            android:layout_marginBottom="1dp"/>
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/style_unit"
+                            android:gravity="center"
+                            android:text="@string/unit24"
                             android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />

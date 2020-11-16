@@ -13,9 +13,6 @@
     <color name="black60">#60000000</color>
     <color name="orange_1">#FF9C43</color>
     <color name="orange_2">#95FF9C43</color>
+    <color name="blue_1">#7E99D1D1</color>
 
-    <color name="background">#98E4E0EF</color>
-    <color name="purple_btn">#E45B2A70</color>
-    <color name="purple_btn_press">#955B2A70</color>
-    <color name="purple_cont">#5763226E</color>
 </resources>

@@ -31,8 +31,8 @@ public class Unit1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
 
-        TextView text_units = findViewById(R.id.text_units);
-        text_units.setText(R.string.unit1n); //name of the unit
+        TextView text_units_name = findViewById(R.id.text_units_name);
+        text_units_name.setText(R.string.unit1n); //name of the unit
 
         // Развернуть игру на весь экран
         Window w = getWindow();
