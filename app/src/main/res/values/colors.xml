@@ -11,6 +11,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black95">#95000000</color>
     <color name="black60">#60000000</color>
+    <color name="orange_1">#FF9C43</color>
+    <color name="orange_2">#95FF9C43</color>
 
     <color name="background">#98E4E0EF</color>
     <color name="purple_btn">#E45B2A70</color>
