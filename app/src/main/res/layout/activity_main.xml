@@ -14,9 +14,7 @@
         android:layout_marginTop="20dp"
         android:paddingHorizontal="60dp"
         app:srcCompat="@drawable/label_btn"
-        android:layout_centerHorizontal="true"
-
-         />
+        android:layout_centerInParent="true" />
 
     <LinearLayout
         android:id="@+id/start_layout"
@@ -38,7 +36,7 @@
             android:paddingRight="10dp"
             android:textSize="24sp"
             android:textColorHighlight="@color/white"
-            android:backgroundTint="@color/purple_200"/>
+            android:backgroundTint="@color/orange_1"/>
     </LinearLayout>
 
 
