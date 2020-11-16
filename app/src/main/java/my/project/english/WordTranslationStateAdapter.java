@@ -26,30 +26,24 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
     }
 
     private List<Word> intDatas()  {
-        Word emp1 = new Word("James Smith", "jamessmith@example.com", "Web Designer");
-        Word emp2 = new Word("Elizabeth Johnson", "elizabethjohnson@example.com", "Project Manager");
-        Word emp3 = new Word("Catherine Johnson", "catherinejohnson@example.com", "President of Sales");
-
         DataFrame df;
-        List<String> words = new ArrayList<>();
-        List<String> translations = new ArrayList<>();
-        List<String> examples = new ArrayList<>();
+        List<String> l_words = new ArrayList<>();
+        List<String> l_translations = new ArrayList<>();
+        List<String> l_examples = new ArrayList<>();
 
         // word - translation
         try {
             df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
             DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == 1);
-            words = (List<String>)df_unit_1.col("Word");
-            translations = (List<String>)df_unit_1.col("Translation");
-            examples = (List<String>)df_unit_1.col("Examples of sentences");
+            l_words = (List<String>)df_unit_1.col("Word");
+            l_translations = (List<String>)df_unit_1.col("Translation");
+            l_examples = (List<String>)df_unit_1.col("Examples of sentences");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         List<Word> list = new ArrayList<Word>();
-        list.add(emp1);
-        list.add(emp2);
-        list.add(emp3);
+
         return list;
     }
 
