@@ -18,14 +18,14 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
     private final AssetManager assets;
     private List<Word> words;
 
-    public WordTranslationStateAdapter(@NonNull FragmentActivity fragmentActivity, AssetManager assets) {
+    public WordTranslationStateAdapter(@NonNull FragmentActivity fragmentActivity, AssetManager assets, int unit) {
         super(fragmentActivity);
 
         this.assets = assets;
-        this.words = this.intDatas();
+        this.words = this.intDatas(unit);
     }
 
-    private List<Word> intDatas()  {
+    private List<Word> intDatas(int unit)  {
         DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
@@ -34,7 +34,7 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
         // word - translation
         try {
             df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
-            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == 1);
+            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
             l_words = (List<String>)df_unit_1.col("Word");
             l_translations = (List<String>)df_unit_1.col("Translation");
             l_examples = (List<String>)df_unit_1.col("Examples of sentences");
@@ -43,7 +43,10 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
         }
 
         List<Word> list = new ArrayList<Word>();
-
+        for (int i = 0; i < l_words.size(); i++) {
+            Word w = new Word(l_words.get(i), l_translations.get(i), l_examples.get(i));
+            list.add(w);
+        }
         return list;
     }
 

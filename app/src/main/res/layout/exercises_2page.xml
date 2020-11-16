@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/fon">
+        android:background="@drawable/fon_for_other">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit1"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -108,7 +108,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit2"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -156,7 +156,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit3"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -195,7 +195,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit4"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -244,7 +244,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit5"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -283,7 +283,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit6"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -330,7 +330,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit7"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -369,7 +369,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit8"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -380,7 +380,8 @@
                     android:id="@+id/line5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
                     <LinearLayout
                         android:id="@+id/unit9"
                         android:layout_width="180dp"
@@ -415,7 +416,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit9"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -454,7 +455,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit10"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -502,7 +503,7 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit11"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
                             android:textSize="20sp"
@@ -541,12 +542,11 @@
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit12"
-                            android:textColor="@color/black95"
+                            android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 
@@ -556,6 +556,84 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="20dp">
+                    <LinearLayout
+                        android:id="@+id/unit13"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="9dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/unit_pressed"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/unit13n"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/imageView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="70"
+                            app:srcCompat="@drawable/unit13"
+                            android:layout_marginBottom="1sp"/>
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/style_unit"
+                            android:gravity="center"
+                            android:text="@string/unit13"
+                            android:textColor="@color/orange_2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/unit14"
+                        android:layout_width="180dp"
+                        android:layout_height="170dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/unit_pressed"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/unit14n"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+
+                        <ImageView
+                            android:id="@+id/imageView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="70"
+                            app:srcCompat="@drawable/unit14"
+                            android:layout_marginBottom="1dp"/>
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="20"
+                            android:background="@drawable/style_unit"
+                            android:gravity="center"
+                            android:text="@string/unit14"
+                            android:textColor="@color/orange_2"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
 
 
                 </LinearLayout>

@@ -141,7 +141,7 @@ public class Unit1 extends AppCompatActivity {
         // Displaying word - translation
         this.viewPager2Word = findViewById(R.id.viewPager2_word);
 
-        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets());
+        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), 1);
         this.viewPager2Word.setAdapter(adapter);
     }
 
