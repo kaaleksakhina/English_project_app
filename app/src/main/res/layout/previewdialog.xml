@@ -31,7 +31,7 @@
             android:id="@+id/textdescription"
             android:text="@string/first_mes"
             android:layout_weight="10"
-            android:textSize="15sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             android:textColor="@color/black95"
             android:layout_marginTop="10dp"
@@ -46,11 +46,11 @@
             android:text="@string/bn_continue"
             android:textColor="@color/black95"
             android:textSize="12sp"
-            android:backgroundTint="@color/purple_press"
+            android:backgroundTint="@color/orange_1"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAllCaps="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             />
 

@@ -41,7 +41,7 @@ public class WordTranslationFragment extends Fragment {
 
         counter++;
         if(counter % 2 == 0) {
-            view.setBackgroundColor(Color.parseColor("#95FF9C43"));
+            view.setBackgroundColor(Color.parseColor("#C1F3D2A2"));
         } else  {
             view.setBackgroundColor(Color.parseColor("#7E99D1D1"));
         }
