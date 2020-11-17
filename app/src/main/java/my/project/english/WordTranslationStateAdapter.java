@@ -58,7 +58,6 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
         return new WordTranslationFragment(word);
     }
 
-
     @Override
     public int getItemCount() {
         return this.words.size();

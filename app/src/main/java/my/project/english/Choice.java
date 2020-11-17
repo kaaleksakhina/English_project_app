@@ -111,13 +111,18 @@ public class Choice extends AppCompatActivity {
         
     }
 
-    // returning back
-    public void onBackPressed(){
-        try {
-            Intent intent  = new Intent(Choice.this, MainActivity.class);
-            startActivity(intent); finish();
-        }catch (Exception e) {
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        }
+        else {
+            backToast = Toast.makeText(getBaseContext(), "Press one more time to quit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
 
-            }
+        backPressedTime = System.currentTimeMillis();
     }
 }

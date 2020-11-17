@@ -1,38 +1,46 @@
 package my.project.english;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Unit1 extends AppCompatActivity {
+import joinery.DataFrame;
 
+
+public class Units extends AppCompatActivity {
+    private long backPressedTime;
+    private Toast backToast;
     private ViewPager2 viewPager2Word;
+    private String Units[];
 
     Dialog dialog;
     Dialog dialog2;
+    int unit;
+
+    public Units(int unit) {
+        this.unit = unit;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
-
-        TextView text_units_name = findViewById(R.id.text_units_name);
-        text_units_name.setText(R.string.unit1n); //name of the unit
 
         // Развернуть игру на весь экран
         Window w = getWindow();
@@ -52,7 +60,7 @@ public class Unit1 extends AppCompatActivity {
             public void onClick(View view) {
                 //обрабатываем нажатие кнопки
                 try {
-                    Intent intent = new Intent(Unit1.this, Choice.class);
+                    Intent intent = new Intent(Units.this, Choice.class);
                     startActivity(intent);
                     finish();
                 }
@@ -114,7 +122,7 @@ public class Unit1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Unit1.this, Choice2.class);
+                    Intent intent  = new Intent(Units.this, Choice2.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -129,7 +137,7 @@ public class Unit1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Unit1.this, Choice.class);
+                    Intent intent  = new Intent(Units.this, Choice.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -138,19 +146,39 @@ public class Unit1 extends AppCompatActivity {
             }
         });
 
+        DataFrame df;
+        List<String> l_units = new ArrayList<>();
+
+        // list of units' names
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_2.csv"));
+            l_units = (List<String>)df.col("Name");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TextView text_units_name = findViewById(R.id.text_units_name);
+        text_units_name.setText(l_units.get(unit)); //name of the unit
+
         // Displaying word - translation
         this.viewPager2Word = findViewById(R.id.viewPager2_word);
 
-        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), 1);
+        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unit);
         this.viewPager2Word.setAdapter(adapter);
     }
 
-    public void onBackPressed(){
-        try {
-            Intent intent  = new Intent(Unit1.this, Choice.class);
-            startActivity(intent); finish();
-        }catch (Exception e) {
-
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
         }
+        else {
+            backToast = Toast.makeText(getBaseContext(), "Press one more time to quit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

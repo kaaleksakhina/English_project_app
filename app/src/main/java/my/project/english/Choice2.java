@@ -13,8 +13,17 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import joinery.DataFrame;
 
 public class Choice2 extends AppCompatActivity {
+    private long backPressedTime;
+    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +34,29 @@ public class Choice2 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //Unit 1
+        /*DataFrame df;
+        List<String> n_units = new ArrayList<>();
+
+        // list of units' names
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_2.csv"));
+            n_units = (List<String>)df.col("Id_unit");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+        //Unit
         LinearLayout unit1 = (LinearLayout) findViewById(R.id.unit1);
+        LinearLayout unit2 = (LinearLayout) findViewById(R.id.unit2);
+
+        Units unitt1 = new Units(1);
+        Units unitt2 = new Units(2);
+
         unit1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice2.this, Unit1.class);
+                    Intent intent = new Intent(Choice2.this, Units.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -40,20 +65,6 @@ public class Choice2 extends AppCompatActivity {
             }
         });
 
-        /*Unit 2
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
-        textView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(Choice2.this, Unit2.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e) {
-
-                }
-            }
-        });*/
 
         // Button Help - open dialog window
         dialog = new Dialog(this);
@@ -118,5 +129,20 @@ public class Choice2 extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        }
+        else {
+            backToast = Toast.makeText(getBaseContext(), "Press one more time to quit", Toast.LENGTH_SHORT);
+            backToast.show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

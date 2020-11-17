@@ -38,7 +38,7 @@
 
                     <LinearLayout
                         android:id="@+id/unit1"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="170dp"
                         android:orientation="vertical"
                         android:layout_marginEnd="9dp"
@@ -52,13 +52,14 @@
                             android:text="@string/unit1n"
                             android:gravity="center"
                             android:textSize="13sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold"
+                            android:layout_marginBottom="15dp"/>
 
                         <ImageView
                             android:id="@+id/imageView1"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="70"
+                            android:layout_weight="60"
                             app:srcCompat="@drawable/unit1"
                             android:layout_marginBottom="1sp"/>
 
@@ -66,7 +67,7 @@
                             android:id="@+id/textView1"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_weight="20"
+                            android:layout_weight="17"
                             android:background="@drawable/style_unit"
                             android:gravity="center"
                             android:text="@string/unit1"
@@ -79,7 +80,7 @@
 
                     <LinearLayout
                         android:id="@+id/unit2"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="170dp"
                         android:orientation="vertical"
                         android:background="@drawable/unit_pressed">

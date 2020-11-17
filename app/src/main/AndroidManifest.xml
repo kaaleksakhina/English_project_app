@@ -35,7 +35,7 @@
         </activity>
 
         <activity
-            android:name=".Unit1"
+            android:name=".Units"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

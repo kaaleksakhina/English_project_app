@@ -55,7 +55,7 @@ public class WordTranslationFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        Log.i(LOG_TAG, "onSaveInstanceState: save employee data to Bundle");
+        Log.i(LOG_TAG, "onSaveInstanceState: save word data to Bundle");
         // Convert word object to Bundle.
         Bundle dataBundle = this.wordToBundle(this.word);
         outState.putAll(dataBundle);
