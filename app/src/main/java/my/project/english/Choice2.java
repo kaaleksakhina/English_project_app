@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -46,24 +47,29 @@ public class Choice2 extends AppCompatActivity {
         }*/
 
         //Unit
-        LinearLayout unit1 = (LinearLayout) findViewById(R.id.unit1);
-        LinearLayout unit2 = (LinearLayout) findViewById(R.id.unit2);
 
-        Units unitt1 = new Units(1);
-        Units unitt2 = new Units(2);
+        LinearLayout container3 = findViewById(R.id.container3);
+        int unitNumber = 0;
+        for(int i = 0; i < container3.getChildCount(); i++){
+            View horizontalLine = container3.getChildAt(i);
+            for(int j = 0; j < ((ViewGroup)horizontalLine).getChildCount(); j++){
+                View child = ((ViewGroup) horizontalLine).getChildAt(j);
+                if(child.getTag() != null && child.getTag().equals("unit")){
+                    unitNumber++;
+                    int finalUnitNumber = unitNumber;
+                    child.setOnClickListener(v -> {
+                        try {
+                            Intent intent = new Intent(Choice2.this, Units.class);
+                            intent.putExtra("unitNumber", finalUnitNumber);
+                            startActivity(intent);
+                            finish();
+                        } catch (Exception e) {
 
-        unit1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(Choice2.this, Units.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e) {
-
+                        }
+                    });
                 }
             }
-        });
+        }
 
 
         // Button Help - open dialog window

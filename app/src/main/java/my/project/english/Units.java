@@ -31,11 +31,6 @@ public class Units extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialog2;
-    int unit;
-
-    public Units(int unit) {
-        this.unit = unit;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -158,12 +153,13 @@ public class Units extends AppCompatActivity {
         }
 
         TextView text_units_name = findViewById(R.id.text_units_name);
-        text_units_name.setText(l_units.get(unit)); //name of the unit
+        int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
+        text_units_name.setText(l_units.get(unitNumber)); //name of the unit
 
         // Displaying word - translation
         this.viewPager2Word = findViewById(R.id.viewPager2_word);
 
-        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unit);
+        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unitNumber);
         this.viewPager2Word.setAdapter(adapter);
     }
 
