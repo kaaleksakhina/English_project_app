@@ -20,6 +20,7 @@
         android:id="@+id/start_layout"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
@@ -34,7 +35,7 @@
             android:textColor="@color/white"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textColorHighlight="@color/white"
             android:backgroundTint="@color/orange_1"/>
     </LinearLayout>
