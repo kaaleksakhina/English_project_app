@@ -35,19 +35,7 @@ public class Choice2 extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        /*DataFrame df;
-        List<String> n_units = new ArrayList<>();
-
-        // list of units' names
-        try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_2.csv"));
-            n_units = (List<String>)df.col("Id_unit");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
         //Unit
-
         LinearLayout container3 = findViewById(R.id.container3);
         int unitNumber = 0;
         for(int i = 0; i < container3.getChildCount(); i++){
@@ -148,7 +136,6 @@ public class Choice2 extends AppCompatActivity {
             backToast = Toast.makeText(getBaseContext(), "Press one more time to quit", Toast.LENGTH_SHORT);
             backToast.show();
         }
-
         backPressedTime = System.currentTimeMillis();
     }
 }
