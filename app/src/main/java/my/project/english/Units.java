@@ -27,7 +27,6 @@ public class Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     private ViewPager2 viewPager2Word;
-    private String Units[];
 
     Dialog dialog;
     Dialog dialog2;
@@ -36,35 +35,37 @@ public class Units extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
+        int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
 
         // Развернуть игру на весь экран
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //открыть диалоговое окно в начале
-        dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
-        dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+        if (unitNumber == 1) {
+            //открыть диалоговое окно в начале
+            dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
+            dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
-        // кнопка, закрывающая диалоговое окно
-        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
-        btnclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //обрабатываем нажатие кнопки
-                try {
-                    Intent intent = new Intent(Units.this, Choice.class);
-                    startActivity(intent);
-                    finish();
-                }
-                catch (Exception E){
+            // кнопка, закрывающая диалоговое окно
+            TextView btnclose = (TextView) dialog.findViewById(R.id.btnclose);
+            btnclose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //обрабатываем нажатие кнопки
+                    try {
+                        Intent intent = new Intent(Units.this, Choice.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (Exception E) {
 
+                    }
+                    dialog.dismiss(); // закрыть диалоговое окно
                 }
-                dialog.dismiss(); // закрыть диалоговое окно
-            }
-        });
+            });
+        }
 
         // Button Continue
         Button btn_continue = (Button)dialog.findViewById(R.id.button_continue);
@@ -153,7 +154,6 @@ public class Units extends AppCompatActivity {
         }
 
         TextView text_units_name = findViewById(R.id.text_units_name);
-        int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
         text_units_name.setText(l_units.get(unitNumber)); //name of the unit
 
         // Displaying word - translation
