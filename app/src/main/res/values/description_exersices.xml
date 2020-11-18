@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="help_description">This project is created by <br/> Maslenikova Inna <br/> and <br/> Aleksahina Ksenia</string>
-    <string name="unit">UNIT : </string>
+    <string name="help_description">Welcome to the BEC!&#10;
+        This app is a great tool for learning new words related to the topic of business. In addition, it will undoubtedly be useful to you during your preparation for the BEC exam. We hope you will enjoy improving your vocabulary using this app. Created by Ksenia and Inna. Good luck!</string>
+    <string name="first_mes">Welcome to the dictionary!&#10; Here you can start learning new words. One page is for one word with its translation and example of usage. Swipe left to go to a new word.</string>
+
+    <string name="unit">UNIT :</string>
     <string name="unit1">UNIT 1</string>
     <string name="unit2">UNIT 2</string>
     <string name="unit3">UNIT 3</string>
@@ -51,8 +54,6 @@
     <string name="unit22n">Communication</string>
     <string name="unit23n">Corresponding with customers</string>
     <string name="unit24n">Business across cultures</string>
-
-    <string name="first_mes">Welcome to practice!</string>
 
     <string name="tr">Translation:</string>
     <string name="ex">Examples:</string>

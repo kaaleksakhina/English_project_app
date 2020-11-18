@@ -34,7 +34,7 @@ public class Units extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.universal);
+        setContentView(R.layout.universal_dictionary);
         int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
 
         // Развернуть игру на весь экран
@@ -65,25 +65,25 @@ public class Units extends AppCompatActivity {
                     dialog.dismiss(); // закрыть диалоговое окно
                 }
             });
+
+            // Button Continue in Dialog window
+            Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
+            btn_continue.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss(); // close dialog window
+                }
+            });
+
+            dialog.show();
         }
 
-        // Button Continue
-        Button btn_continue = (Button)dialog.findViewById(R.id.button_continue);
-        btn_continue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss(); // close dialog window
-            }
-        });
-
-        dialog.show();
-
-        //Button Help - open dialog window
+        /// Button Help - open dialog window
         dialog2 = new Dialog(this);
         dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog2.setContentView(R.layout.activity_help);// путь к макету диалогового окна
         dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
-        dialog2.setCancelable(false); // окно нельзя закрыть кнопкой наза
+        dialog2.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
         ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
         buttonHelp.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +92,7 @@ public class Units extends AppCompatActivity {
                 try {
                     dialog2.show();
                     // Button closing dialog window
-                    TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
+                    TextView btnclose = (TextView)dialog2.findViewById(R.id.btnclose);
                     btnclose.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -141,20 +141,6 @@ public class Units extends AppCompatActivity {
                 }
             }
         });
-
-        DataFrame df;
-        List<String> l_units = new ArrayList<>();
-
-        // list of units' names
-        try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_2.csv"));
-            l_units = (List<String>)df.col("Name");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        TextView text_units_name = findViewById(R.id.text_units_name);
-        text_units_name.setText(l_units.get(unitNumber)); //name of the unit
 
         // Displaying word - translation
         this.viewPager2Word = findViewById(R.id.viewPager2_word);

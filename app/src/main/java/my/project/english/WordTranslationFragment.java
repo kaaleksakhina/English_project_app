@@ -39,12 +39,8 @@ public class WordTranslationFragment extends Fragment {
         View view = (ViewGroup) inflater.inflate(
                 R.layout.fragment_word__translation, container, false);
 
-        counter++;
-        if(counter % 2 == 0) {
-            view.setBackgroundColor(Color.parseColor("#C1F3D2A2"));
-        } else  {
-            view.setBackgroundColor(Color.parseColor("#7E99D1D1"));
-        }
+        view.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
+
 
         this.TextViewWord = view.findViewById(R.id.word);
         this.TextViewTranslation = view.findViewById(R.id.translation);

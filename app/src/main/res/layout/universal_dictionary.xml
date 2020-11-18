@@ -11,54 +11,30 @@
         android:id="@+id/container1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:gravity="center">
             <LinearLayout
                 android:id="@+id/container2"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/container"
                 android:orientation="vertical"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/text_units"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/unit"
-                    android:textSize="25sp"
-                    android:padding="5dp"
-                    android:textStyle="bold"
-                    android:layout_gravity="top"
-                    android:gravity="center"
-                    android:textColor="@color/black95"/>
-
-                <TextView
-                    android:id="@+id/text_units_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/unit1n"
-                    android:textSize="20sp"
-                    android:padding="5dp"
-                    android:textStyle="italic"
-                    android:gravity="center"
-                    android:textColor="@color/black95"
-                    app:layout_constraintTop_toBottomOf="@+id/text_units_name"/>
+                android:padding="8dp">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager2_word"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
-
             </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/container4"
+        android:id="@+id/container3"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
