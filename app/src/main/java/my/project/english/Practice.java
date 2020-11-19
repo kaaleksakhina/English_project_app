@@ -17,6 +17,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import joinery.DataFrame;
+
 public class Practice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
@@ -27,6 +34,9 @@ public class Practice extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
+
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int unit = save.getInt("Unit", 1);
 
         // Развернуть игру на весь экран
         Window w = getWindow();
@@ -96,11 +106,23 @@ public class Practice extends AppCompatActivity {
             }
         });
 
-        /* Displaying word - translation
-        this.viewPager2Word = findViewById(R.id.viewPager2_word);
+        DataFrame df;
+        List<String> l_words = new ArrayList<>();
+        List<String> l_translations = new ArrayList<>();
 
-        WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unitNumber);
-        this.viewPager2Word.setAdapter(adapter);*/
+        //
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
+            l_words = (List<String>)df_unit_1.col("Word");
+            l_translations = (List<String>)df_unit_1.col("Translation");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //TextView word = (TextView) findViewById(R.id.textView1);
+         //   word.setText(l_words.get(random.nextInt(l_words.size())));
+
     }
 
     @Override
