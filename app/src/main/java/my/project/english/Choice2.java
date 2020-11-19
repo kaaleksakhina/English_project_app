@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,9 @@ public class Choice2 extends AppCompatActivity {
                 }
             }
         }
+
+        ImageView im1 = (ImageView) findViewById(R.id.imageView1);
+        im1.setImageResource(R.drawable.cross);
 
         // Button Help - open dialog window
         dialog = new Dialog(this);
