@@ -134,7 +134,7 @@ public class Choice2 extends AppCompatActivity {
             }
         });
 
-        final int x[] = {
+        final int text[] = {
                 R.id.textView1,
                 R.id.textView2,
                 R.id.textView3,
@@ -161,9 +161,41 @@ public class Choice2 extends AppCompatActivity {
                 R.id.textView24
         };
 
+        final int images[] = {
+                R.id.imageView1,
+                R.id.imageView2,
+                R.id.imageView3,
+                R.id.imageView4,
+                R.id.imageView5,
+                R.id.imageView6,
+                R.id.imageView7,
+                R.id.imageView8,
+                R.id.imageView9,
+                R.id.imageView10,
+                R.id.imageView11,
+                R.id.imageView12,
+                R.id.imageView13,
+                R.id.imageView14,
+                R.id.imageView15,
+                R.id.imageView16,
+                R.id.imageView17,
+                R.id.imageView18,
+                R.id.imageView19,
+                R.id.imageView20,
+                R.id.imageView21,
+                R.id.imageView22,
+                R.id.imageView23,
+                R.id.imageView24
+        };
+
         for (int i = 0; i < unit; i++){
-            TextView tv = (TextView) findViewById(x[i]);
+            TextView tv = (TextView) findViewById(text[i]);
             tv.setText("Unit"+ (i+1));
+        }
+
+        for (int i = unit + 1; i < images.length; i++) {
+            ImageView im = (ImageView) findViewById(images[i]);
+            im.setImageResource(R.drawable.cross);
         }
     }
 
