@@ -54,7 +54,7 @@ public class Choice2 extends AppCompatActivity {
                             if (finalUnitNumber <= unit) {
                                 Intent intent = new Intent(Choice2.this, Units.class);
                                 intent.putExtra("unitNumber", finalUnitNumber);
-                                intent.putExtra("unit", unit);
+                                //intent.putExtra("Unit", unit);
                                 startActivity(intent);
                                 finish();
                             }
@@ -129,6 +129,38 @@ public class Choice2 extends AppCompatActivity {
                 }
             }
         });
+
+        final int x[] = {
+                R.id.textView1,
+                R.id.textView2,
+                R.id.textView3,
+                R.id.textView4,
+                R.id.textView5,
+                R.id.textView6,
+                R.id.textView7,
+                R.id.textView8,
+                R.id.textView9,
+                R.id.textView10,
+                R.id.textView11,
+                R.id.textView12,
+                R.id.textView13,
+                R.id.textView14,
+                R.id.textView15,
+                R.id.textView16,
+                R.id.textView17,
+                R.id.textView18,
+                R.id.textView19,
+                R.id.textView20,
+                R.id.textView21,
+                R.id.textView22,
+                R.id.textView23,
+                R.id.textView24
+        };
+
+        for (int i = 0; i < unit; i++){
+            TextView tv = (TextView) findViewById(x[i]);
+            tv.setText("Unit"+ (i+1));
+        }
     }
 
     @Override

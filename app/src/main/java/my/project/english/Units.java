@@ -36,12 +36,12 @@ public class Units extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_dictionary);
         int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
-        int unit = (int) getIntent().getSerializableExtra("unit");
 
         // Развернуть игру на весь экран
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        if (unitNumber == 1) {
             //открыть диалоговое окно в начале
             dialog = new Dialog(this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -77,27 +77,25 @@ public class Units extends AppCompatActivity {
 
             dialog.show();
 
+        }
 
         // Button End
         Button button_end = (Button) findViewById(R.id.button_end);
         button_end.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (unit == 1){
-                    SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
-                    final int unit = save.getInt("Unit", 2);
+                SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+                final int unit = save.getInt("Unit", 1);
+
+                if (unit == 1 && unitNumber == 1){
+                    SharedPreferences.Editor editor = save.edit();
+                    editor.putInt("Unit",2);
+                    editor.apply();
                 }
-                else if (unit > 1){
-                    SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
-                    final int unit = save.getInt("Unit", 1);
-
-                    if (unit > 1) {}
-                    else{
-                        SharedPreferences.Editor editor = save.edit();
-                        editor.putInt("Unit",unit+1);
-                        editor.apply();
-                    }
-
+                else if (unit != 1 && unitNumber == unit && unit < 24){
+                    SharedPreferences.Editor editor = save.edit();
+                    editor.putInt("Unit",unit + 1);
+                    editor.apply();
                 }
             }
         });
