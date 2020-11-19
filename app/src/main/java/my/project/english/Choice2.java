@@ -67,9 +67,6 @@ public class Choice2 extends AppCompatActivity {
             }
         }
 
-        ImageView im1 = (ImageView) findViewById(R.id.imageView1);
-        im1.setImageResource(R.drawable.cross);
-
         // Button Help - open dialog window
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -188,14 +185,12 @@ public class Choice2 extends AppCompatActivity {
                 R.id.imageView24
         };
 
-        for (int i = 0; i < unit; i++){
-            TextView tv = (TextView) findViewById(text[i]);
-            tv.setText("Unit"+ (i+1));
-        }
-
-        for (int i = unit + 1; i < images.length; i++) {
+        for (int i = unit; i < images.length; i++) {
             ImageView im = (ImageView) findViewById(images[i]);
-            im.setImageResource(R.drawable.cross);
+            im.setColorFilter(R.color.black95);
+            TextView tv = (TextView) findViewById(text[i]);
+            tv.setBackgroundResource(R.color.black95);
+            tv.setTextColor(Integer.parseInt("C1F3D2A2"));
         }
     }
 
