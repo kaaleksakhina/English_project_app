@@ -33,6 +33,21 @@
             </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop"
+        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/container1"
+        android:background="@drawable/button_stroke_black95_press_white"
+        android:layout_marginBottom="85dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="13sp"
+        android:textColorHighlight="@color/white"
+        android:backgroundTint="@color/blue_2"/>
+
     <LinearLayout
         android:id="@+id/container3"
         android:layout_width="match_parent"

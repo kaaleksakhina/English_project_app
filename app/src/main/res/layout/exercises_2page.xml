@@ -111,7 +111,7 @@
                             android:layout_weight="20"
                             android:background="@drawable/style_unit"
                             android:gravity="center"
-                            android:text="@string/unit2"
+                            android:text="X"
                             android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -160,7 +160,7 @@
                             android:layout_weight="20"
                             android:background="@drawable/style_unit"
                             android:gravity="center"
-                            android:text="@string/unit3"
+                            android:text="X"
                             android:textColor="@color/orange_2"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -200,7 +200,7 @@
                             android:layout_weight="20"
                             android:background="@drawable/style_unit"
                             android:gravity="center"
-                            android:text="@string/unit4"
+                            android:text="X"
                             android:textColor="@color/orange_2"
                             android:textSize="20sp"
                             android:textStyle="bold" />

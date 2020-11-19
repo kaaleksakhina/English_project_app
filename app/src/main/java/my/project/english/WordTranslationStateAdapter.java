@@ -17,12 +17,17 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
 
     private final AssetManager assets;
     private List<Word> words;
+    public int counter;
 
     public WordTranslationStateAdapter(@NonNull FragmentActivity fragmentActivity, AssetManager assets, int unit) {
         super(fragmentActivity);
 
         this.assets = assets;
         this.words = this.intDatas(unit);
+    }
+
+    public int getCounter(){
+        return counter;
     }
 
     private List<Word> intDatas(int unit)  {

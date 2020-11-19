@@ -22,11 +22,7 @@ public class WordTranslationFragment extends Fragment {
     private TextView TextViewTranslation;
     private TextView TextViewExample;
 
-    private static int counter = 0;
-
-    public WordTranslationFragment() {
-
-    }
+    public WordTranslationFragment() { }
 
     public WordTranslationFragment(Word word) {
         this.word = word;
@@ -40,7 +36,6 @@ public class WordTranslationFragment extends Fragment {
                 R.layout.fragment_word__translation, container, false);
 
         view.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
-
 
         this.TextViewWord = view.findViewById(R.id.word);
         this.TextViewTranslation = view.findViewById(R.id.translation);

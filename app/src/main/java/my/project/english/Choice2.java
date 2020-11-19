@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -32,6 +33,9 @@ public class Choice2 extends AppCompatActivity {
         setContentView(R.layout.exercises_2page);
         Dialog dialog;
 
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int unit = save.getInt("Unit", 1);
+
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -47,10 +51,13 @@ public class Choice2 extends AppCompatActivity {
                     int finalUnitNumber = unitNumber;
                     child.setOnClickListener(v -> {
                         try {
-                            Intent intent = new Intent(Choice2.this, Units.class);
-                            intent.putExtra("unitNumber", finalUnitNumber);
-                            startActivity(intent);
-                            finish();
+                            if (finalUnitNumber <= unit) {
+                                Intent intent = new Intent(Choice2.this, Units.class);
+                                intent.putExtra("unitNumber", finalUnitNumber);
+                                intent.putExtra("unit", unit);
+                                startActivity(intent);
+                                finish();
+                            }
                         } catch (Exception e) {
 
                         }
@@ -58,7 +65,6 @@ public class Choice2 extends AppCompatActivity {
                 }
             }
         }
-
 
         // Button Help - open dialog window
         dialog = new Dialog(this);

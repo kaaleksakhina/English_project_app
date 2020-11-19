@@ -3,6 +3,7 @@
     <string name="help_description">Welcome to the BEC!&#10;
         This app is a great tool for learning new words related to the topic of business. In addition, it will undoubtedly be useful to you during your preparation for the BEC exam. We hope you will enjoy improving your vocabulary using this app. Created by Ksenia and Inna. Good luck!</string>
     <string name="first_mes">Welcome to the dictionary!&#10; Here you can start learning new words. One page is for one word with its translation and example of usage. Swipe left to go to a new word.</string>
+    <string name="stop">I have learned everything!</string>
 
     <string name="unit">UNIT :</string>
     <string name="unit1">UNIT 1</string>
