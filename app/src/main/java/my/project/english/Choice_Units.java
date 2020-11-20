@@ -183,7 +183,7 @@ public class Choice_Units extends AppCompatActivity {
             im.setColorFilter(R.color.black95);
             TextView tv = (TextView) findViewById(text[i]);
             tv.setBackgroundResource(R.color.black95);
-            tv.setTextColor(Integer.parseInt("C1F3D2A2"));
+            tv.setTextColor(Integer.valueOf("b35f00", 16));
         }
     }
 
