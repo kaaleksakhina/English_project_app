@@ -31,8 +31,8 @@ public class Practice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
 
-        //SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
-        //final int unit = save.getInt("Unit", 1);
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final int unit = save.getInt("Unit", 1);
 
         // Развернуть игру на весь экран
         Window w = getWindow();
@@ -78,7 +78,7 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Practice.this, Choice_Units.class);
+                    Intent intent  = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -102,7 +102,7 @@ public class Practice extends AppCompatActivity {
             }
         });
 
-        /*DataFrame df;
+        DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
 
@@ -114,7 +114,7 @@ public class Practice extends AppCompatActivity {
             l_translations = (List<String>)df_unit_1.col("Translation");
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
         //TextView word = (TextView) findViewById(R.id.textView1);
          //   word.setText(l_words.get(random.nextInt(l_words.size())));
