@@ -4,13 +4,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +33,7 @@ public class Choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice.this, Choice2.class);
+                    Intent intent = new Intent(Choice.this, Choice_Units.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -45,7 +42,7 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        //button to practice
+        /*button to practice
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +55,7 @@ public class Choice extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
 
         //Button Help - open dialog window
         dialog = new Dialog(this);

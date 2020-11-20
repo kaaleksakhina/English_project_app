@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import joinery.DataFrame;
-
-public class Choice2 extends AppCompatActivity {
+public class Choice_Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
 
@@ -53,7 +46,7 @@ public class Choice2 extends AppCompatActivity {
                     child.setOnClickListener(v -> {
                         try {
                             if (finalUnitNumber <= unit) {
-                                Intent intent = new Intent(Choice2.this, Units.class);
+                                Intent intent = new Intent(Choice_Units.this, Units.class);
                                 intent.putExtra("unitNumber", finalUnitNumber);
                                 //intent.putExtra("Unit", unit);
                                 startActivity(intent);
@@ -107,7 +100,7 @@ public class Choice2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice2.this, Choice.class);
+                    Intent intent  = new Intent(Choice_Units.this, Choice.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -122,7 +115,7 @@ public class Choice2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice2.this, Choice.class);
+                    Intent intent  = new Intent(Choice_Units.this, Choice.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {

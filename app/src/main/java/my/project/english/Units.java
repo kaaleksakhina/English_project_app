@@ -17,12 +17,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import joinery.DataFrame;
-
 
 public class Units extends AppCompatActivity {
     private long backPressedTime;
@@ -140,7 +134,7 @@ public class Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Units.this, Choice2.class);
+                    Intent intent  = new Intent(Units.this, Choice_Units.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
