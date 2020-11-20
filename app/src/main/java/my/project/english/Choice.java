@@ -42,7 +42,7 @@ public class Choice extends AppCompatActivity {
             }
         });
 
-        /*button to practice
+        //button to practice
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         textView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +55,7 @@ public class Choice extends AppCompatActivity {
 
                 }
             }
-        });*/
+        });
 
         //Button Help - open dialog window
         dialog = new Dialog(this);
