@@ -91,6 +91,9 @@ public class Units extends AppCompatActivity {
                     editor.putInt("Unit",unit + 1);
                     editor.apply();
                 }
+                Intent intent = new Intent(Units.this, Choice_Units.class);
+                startActivity(intent);
+                finish();
             }
         });
 

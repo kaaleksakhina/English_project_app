@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import joinery.DataFrame;
 
@@ -30,6 +32,7 @@ public class Practice extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
+        Random random = new Random();
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
@@ -116,9 +119,38 @@ public class Practice extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        //TextView word = (TextView) findViewById(R.id.textView1);
-         //   word.setText(l_words.get(random.nextInt(l_words.size())));
+        TextView word = (TextView) findViewById(R.id.textView1);
+        TextView option1 = (TextView) findViewById(R.id.option1);
+        TextView option2 = (TextView) findViewById(R.id.option2);
+        TextView option3 = (TextView) findViewById(R.id.option3);
+        TextView option4 = (TextView) findViewById(R.id.option4);
 
+        List <String> Choices = new ArrayList<>();
+        List<Integer> rand = new ArrayList<>();
+
+        for (int i = 0; i < 4; i++) {
+            rand.add(random.nextInt(l_words.size()));
+        }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 4; j++) {
+                if (rand.get(i).equals(rand.get(j))){
+                    rand.add(j, random.nextInt(l_words.size()));
+                    break;
+                }
+            }
+        }
+        word.setText(l_words.get(rand.get(0)));
+
+        for (int i = 0; i < 4; i++) {
+            Choices.add(l_translations.get(rand.get(i)));
+        }
+        Collections.shuffle(Choices);
+
+        option1.setText(Choices.get(0));
+        option2.setText(Choices.get(1));
+        option3.setText(Choices.get(2));
+        option4.setText(Choices.get(3));
     }
 
     @Override
