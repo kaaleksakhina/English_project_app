@@ -145,13 +145,16 @@ public class Practice extends AppCompatActivity {
         for (int i = 0; i < 4; i++) {
             if (i == 0){ rand.add(random.nextInt(l_words.size())); }
             int r = random.nextInt(l_words.size());
-            while ((rand.get(i - 1) == r) && (i != 0)) {
-                r = random.nextInt(l_words.size());
+            if (i != 0) {
+                while (rand.get(i - 1) == r) {
+                    r = random.nextInt(l_words.size());
+                }
             }
             rand.add(r);
         }
 
         word.setText(l_words.get(rand.get(0)));
+        String right_answer = l_translations.get(rand.get(0));
 
         // fit the list of Words (Options) and shuffle them
         for (int i = 0; i < 4; i++) {
@@ -168,13 +171,14 @@ public class Practice extends AppCompatActivity {
 
         // tap on the option1
         option1.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
                     option2.setEnabled(false);
                     option3.setEnabled(false);
                     option4.setEnabled(false);
-                    if (option1.getText() == word.getText()) {
+                    if (option1.getText().toString() == (right_answer)) {
                         option1.setBackgroundResource(R.drawable.right_choice_green);
                     }
                     else {
@@ -182,9 +186,9 @@ public class Practice extends AppCompatActivity {
                     }
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (option1.getText() == word.getText()) {
+                    if (option1.getText().toString().equals(right_answer)) {
                         if (count < 10) count++;
-                        for (int i  = 0; i < 10; i++) {
+                        for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -195,7 +199,7 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         if(count > 0) {
-                            count -= 1;
+                            count = count - 1;
                         }
                         for (int i  = 0; i < 9; i++) {
                             TextView tv = findViewById(progress[i]);
@@ -210,10 +214,13 @@ public class Practice extends AppCompatActivity {
                         // exit
                     }
                     else {
+                        option1.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+
                         DataFrame df;
                         List<String> l_words = new ArrayList<>();
                         List<String> l_translations = new ArrayList<>();
 
+                        //
                         try {
                             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
                             DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
@@ -222,17 +229,36 @@ public class Practice extends AppCompatActivity {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+
+                        final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
+                                R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
+                        LinearLayout container3 = findViewById(R.id.container3);
+
+                        final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
+
+                        TextView word = (TextView) findViewById(R.id.textView1);
+                        TextView option1 = (TextView) findViewById(R.id.option1);
+                        TextView option2 = (TextView) findViewById(R.id.option2);
+                        TextView option3 = (TextView) findViewById(R.id.option3);
+                        TextView option4 = (TextView) findViewById(R.id.option4);
+
+                        List <String> Choices = new ArrayList<>();
+                        List<Integer> rand = new ArrayList<>();
+
                         // 4 random id of words
                         for (int i = 0; i < 4; i++) {
                             if (i == 0){ rand.add(random.nextInt(l_words.size())); }
                             int r = random.nextInt(l_words.size());
-                            while ((rand.get(i - 1) == r) && (i != 0)) {
-                                r = random.nextInt(l_words.size());
+                            if (i != 0) {
+                                while (rand.get(i - 1) == r) {
+                                    r = random.nextInt(l_words.size());
+                                }
                             }
                             rand.add(r);
                         }
 
                         word.setText(l_words.get(rand.get(0)));
+                        String right_answer = l_translations.get(rand.get(0));
 
                         // fit the list of Words (Options) and shuffle them
                         for (int i = 0; i < 4; i++) {
@@ -242,20 +268,16 @@ public class Practice extends AppCompatActivity {
 
                         // set options on the places
                         option1.setText(Choices.get(0));
-                        option1.startAnimation(a);
+                        option1.setAnimation(a);
 
                         option2.setText(Choices.get(1));
-                        option2.startAnimation(a);
+                        option2.setAnimation(a);
 
                         option3.setText(Choices.get(2));
-                        option3.startAnimation(a);
+                        option3.setAnimation(a);
 
                         option4.setText(Choices.get(3));
-                        option4.startAnimation(a);
-
-                        option2.setEnabled(true);
-                        option3.setEnabled(true);
-                        option4.setEnabled(true);
+                        option4.setAnimation(a);
                     }
                 }
                 return true;
