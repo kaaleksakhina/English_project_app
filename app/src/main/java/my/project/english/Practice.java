@@ -143,16 +143,15 @@ public class Practice extends AppCompatActivity {
 
         // 4 random id of words
         for (int i = 0; i < 4; i++) {
-            if (i == 0){ rand.add(random.nextInt(l_words.size())); }
-            int r = random.nextInt(l_words.size());
-            if (i != 0) {
-                while (rand.get(i - 1) == r) {
-                    r = random.nextInt(l_words.size());
+            rand.add(random.nextInt(l_words.size()));
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 4; j++) {
+                while (rand.get(i).equals(rand.get(j))) {
+                    rand.add(i, random.nextInt(l_words.size()));
                 }
             }
-            rand.add(r);
         }
-
         word.setText(l_words.get(rand.get(0)));
         String right_answer = l_translations.get(rand.get(0));
 
@@ -178,7 +177,7 @@ public class Practice extends AppCompatActivity {
                     option2.setEnabled(false);
                     option3.setEnabled(false);
                     option4.setEnabled(false);
-                    if (option1.getText().toString() == (right_answer)) {
+                    if (option1.getText().toString().equals(right_answer)) {
                         option1.setBackgroundResource(R.drawable.right_choice_green);
                     }
                     else {
@@ -187,7 +186,9 @@ public class Practice extends AppCompatActivity {
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (option1.getText().toString().equals(right_answer)) {
-                        if (count < 10) count++;
+                        if (count < 10) {
+                            count++;
+                        }
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -247,14 +248,14 @@ public class Practice extends AppCompatActivity {
 
                         // 4 random id of words
                         for (int i = 0; i < 4; i++) {
-                            if (i == 0){ rand.add(random.nextInt(l_words.size())); }
-                            int r = random.nextInt(l_words.size());
-                            if (i != 0) {
-                                while (rand.get(i - 1) == r) {
-                                    r = random.nextInt(l_words.size());
+                            rand.add(random.nextInt(l_words.size()));
+                        }
+                        for (int i = 0; i < 3; i++) {
+                            for (int j = i + 1; j < 4; j++) {
+                                while (rand.get(i).equals(rand.get(j))) {
+                                    rand.add(i, random.nextInt(l_words.size()));
                                 }
                             }
-                            rand.add(r);
                         }
 
                         word.setText(l_words.get(rand.get(0)));
