@@ -48,7 +48,6 @@ public class Choice_Units extends AppCompatActivity {
                             if (finalUnitNumber <= unit) {
                                 Intent intent = new Intent(Choice_Units.this, Units.class);
                                 intent.putExtra("unitNumber", finalUnitNumber);
-                                //intent.putExtra("Unit", unit);
                                 startActivity(intent);
                                 finish();
                             }

@@ -18,10 +18,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
 public class Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     private ViewPager2 viewPager2Word;
+    private static final String CSV_FILE = "D:\\test.csv";
 
     Dialog dialog, dialog2;
 
@@ -166,6 +173,7 @@ public class Units extends AppCompatActivity {
 
         WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unitNumber);
         this.viewPager2Word.setAdapter(adapter);
+
     }
 
     @Override
