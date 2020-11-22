@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import joinery.DataFrame;
 
@@ -44,11 +46,18 @@ public class Practice extends AppCompatActivity {
         final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
                 R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
 
+        final int Options[] = {
+                R.id.option1,
+                R.id.option2,
+                R.id.option3,
+                R.id.option4
+        };
+
         final TextView word_final = (TextView) findViewById(R.id.textView1);
-        final TextView option1 = (TextView) findViewById(R.id.option1);
-        final TextView option2 = (TextView) findViewById(R.id.option2);
-        final TextView option3 = (TextView) findViewById(R.id.option3);
-        final TextView option4 = (TextView) findViewById(R.id.option4);
+        final TextView option1 = (TextView) findViewById(Options[0]);
+        final TextView option2 = (TextView) findViewById(Options[1]);
+        final TextView option3 = (TextView) findViewById(Options[2]);
+        final TextView option4 = (TextView) findViewById(Options[3]);
 
         final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
 
@@ -124,15 +133,16 @@ public class Practice extends AppCompatActivity {
         });
 
         ArrayList<String> Choices = getChoices(unit);
-        String word = Choices.get(0);
-        right_answer = Choices.get(1);
+        String word = Choices.get(4);
+        right_answer = Choices.get(5);
 
         // set the word and options on the places
         word_final.setText(word);
-        option1.setText(Choices.get(2));
-        option2.setText(Choices.get(3));
-        option3.setText(Choices.get(4));
-        option4.setText(Choices.get(5));
+        option1.setText(Choices.get(0));
+        option2.setText(Choices.get(1));
+        option3.setText(Choices.get(2));
+        option4.setText(Choices.get(3));
+        Choices.remove(5);
 
 
         // tap on the option1
@@ -149,9 +159,14 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option1.setBackgroundResource(R.drawable.wrong_choice_red);
+
+                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
                     }
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    wait_for();
                     if (option1.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
@@ -162,7 +177,7 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     else {
@@ -175,35 +190,29 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     if (count == 10) {
                         // exit
                     }
                     else {
-                        option1.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-
-                        option2.setEnabled(true);
-                        option3.setEnabled(true);
-                        option4.setEnabled(true);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+                            op.setEnabled(true);
+                        }
 
                         ArrayList<String> Choices = getChoices(unit);
 
-                        right_answer = Choices.get(1);
+                        right_answer = Choices.get(5);
+                        word_final.setText(Choices.get(4));
 
-                        word_final.setText(Choices.get(0));
-                        option1.setText(Choices.get(2));
-                        option1.setAnimation(a);
-
-                        option2.setText(Choices.get(3));
-                        option2.setAnimation(a);
-
-                        option3.setText(Choices.get(4));
-                        option3.setAnimation(a);
-
-                        option4.setText(Choices.get(5));
-                        option4.setAnimation(a);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setText(Choices.get(i));
+                            op.setAnimation(a);
+                        }
                     }
                 }
                 return true;
@@ -224,9 +233,14 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option2.setBackgroundResource(R.drawable.wrong_choice_red);
+
+                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
                     }
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    wait_for();
                     if (option2.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
@@ -237,7 +251,7 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     else {
@@ -250,35 +264,29 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     if (count == 10) {
                         // exit
                     }
                     else {
-                        option2.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-
-                        option1.setEnabled(true);
-                        option3.setEnabled(true);
-                        option4.setEnabled(true);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+                            op.setEnabled(true);
+                        }
 
                         ArrayList<String> Choices = getChoices(unit);
 
-                        right_answer = Choices.get(1);
+                        right_answer = Choices.get(5);
+                        word_final.setText(Choices.get(4));
 
-                        word_final.setText(Choices.get(0));
-                        option1.setText(Choices.get(2));
-                        option1.setAnimation(a);
-
-                        option2.setText(Choices.get(3));
-                        option2.setAnimation(a);
-
-                        option3.setText(Choices.get(4));
-                        option3.setAnimation(a);
-
-                        option4.setText(Choices.get(5));
-                        option4.setAnimation(a);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setText(Choices.get(i));
+                            op.setAnimation(a);
+                        }
                     }
                 }
                 return true;
@@ -299,9 +307,14 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option3.setBackgroundResource(R.drawable.wrong_choice_red);
+
+                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
                     }
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    wait_for();
                     if (option3.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
@@ -312,7 +325,7 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     else {
@@ -325,35 +338,29 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     if (count == 10) {
                         // exit
                     }
                     else {
-                        option3.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-
-                        option1.setEnabled(true);
-                        option2.setEnabled(true);
-                        option4.setEnabled(true);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+                            op.setEnabled(true);
+                        }
 
                         ArrayList<String> Choices = getChoices(unit);
 
-                        right_answer = Choices.get(1);
+                        right_answer = Choices.get(5);
+                        word_final.setText(Choices.get(4));
 
-                        word_final.setText(Choices.get(0));
-                        option1.setText(Choices.get(2));
-                        option1.setAnimation(a);
-
-                        option2.setText(Choices.get(3));
-                        option2.setAnimation(a);
-
-                        option3.setText(Choices.get(4));
-                        option3.setAnimation(a);
-
-                        option4.setText(Choices.get(5));
-                        option4.setAnimation(a);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setText(Choices.get(i));
+                            op.setAnimation(a);
+                        }
                     }
                 }
                 return true;
@@ -374,9 +381,13 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option4.setBackgroundResource(R.drawable.wrong_choice_red);
+                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
+                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
                     }
                 }
                 else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    wait_for();
                     if (option4.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
@@ -387,7 +398,7 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     else {
@@ -400,35 +411,29 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                            tv.setBackgroundResource(R.drawable.style_points_teal);
                         }
                     }
                     if (count == 10) {
                         // exit
                     }
                     else {
-                        option4.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-
-                        option1.setEnabled(true);
-                        option2.setEnabled(true);
-                        option3.setEnabled(true);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+                            op.setEnabled(true);
+                        }
 
                         ArrayList<String> Choices = getChoices(unit);
 
-                        right_answer = Choices.get(1);
+                        right_answer = Choices.get(5);
+                        word_final.setText(Choices.get(4));
 
-                        word_final.setText(Choices.get(0));
-                        option1.setText(Choices.get(2));
-                        option1.setAnimation(a);
-
-                        option2.setText(Choices.get(3));
-                        option2.setAnimation(a);
-
-                        option3.setText(Choices.get(4));
-                        option3.setAnimation(a);
-
-                        option4.setText(Choices.get(5));
-                        option4.setAnimation(a);
+                        for (int i = 0; i < Options.length; i++) {
+                            TextView op = (TextView) findViewById(Options[i]);
+                            op.setText(Choices.get(i));
+                            op.setAnimation(a);
+                        }
                     }
                 }
                 return true;
@@ -478,8 +483,8 @@ public class Practice extends AppCompatActivity {
         }
         Collections.shuffle(Choices);
 
-        Choices.add(0, word);
-        Choices.add(1, right_translation);
+        Choices.add( word);
+        Choices.add(right_translation);
         return Choices;
 
     }
@@ -502,5 +507,13 @@ public class Practice extends AppCompatActivity {
         }
         return rand;
     }
+    public void wait_for() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
 
