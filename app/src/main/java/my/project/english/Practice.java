@@ -9,7 +9,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -40,6 +39,17 @@ public class Practice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
         Random random = new Random();
+
+        final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
+                R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
+
+        final TextView word_final = (TextView) findViewById(R.id.textView1);
+        final TextView option1 = (TextView) findViewById(R.id.option1);
+        final TextView option2 = (TextView) findViewById(R.id.option2);
+        final TextView option3 = (TextView) findViewById(R.id.option3);
+        final TextView option4 = (TextView) findViewById(R.id.option4);
+
+        final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
@@ -112,56 +122,12 @@ public class Practice extends AppCompatActivity {
             }
         });
 
-        DataFrame df;
-        List<String> l_words = new ArrayList<>();
-        List<String> l_translations = new ArrayList<>();
-
-        //
-        try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
-            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
-            l_words = (List<String>)df_unit_1.col("Word");
-            l_translations = (List<String>)df_unit_1.col("Translation");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
-                R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
-        LinearLayout container3 = findViewById(R.id.container3);
-
-        final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
-
-        TextView word = (TextView) findViewById(R.id.textView1);
-        TextView option1 = (TextView) findViewById(R.id.option1);
-        TextView option2 = (TextView) findViewById(R.id.option2);
-        TextView option3 = (TextView) findViewById(R.id.option3);
-        TextView option4 = (TextView) findViewById(R.id.option4);
-
-        List <String> Choices = new ArrayList<>();
-        List<Integer> rand = new ArrayList<>();
-
-        // 4 random id of words
-        for (int i = 0; i < 4; i++) {
-            rand.add(random.nextInt(l_words.size()));
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = i + 1; j < 4; j++) {
-                while (rand.get(i).equals(rand.get(j))) {
-                    rand.add(i, random.nextInt(l_words.size()));
-                }
-            }
-        }
-        word.setText(l_words.get(rand.get(0)));
-        String right_answer = l_translations.get(rand.get(0));
-
-        // fit the list of Words (Options) and shuffle them
-        for (int i = 0; i < 4; i++) {
-            Choices.add(l_translations.get(rand.get(i)));
-        }
-        Collections.shuffle(Choices);
+        List<String> Choices = getChoices(unit);
+        String right_answer = Choices.get(5);
+        String word = Choices.get(4);
 
         // set options on the places
+        word_final.setText(Choices.get(4));
         option1.setText(Choices.get(0));
         option2.setText(Choices.get(1));
         option3.setText(Choices.get(2));
@@ -216,56 +182,9 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option1.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-
-                        DataFrame df;
-                        List<String> l_words = new ArrayList<>();
-                        List<String> l_translations = new ArrayList<>();
-
-                        //
-                        try {
-                            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
-                            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
-                            l_words = (List<String>)df_unit_1.col("Word");
-                            l_translations = (List<String>)df_unit_1.col("Translation");
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
-                                R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
-                        LinearLayout container3 = findViewById(R.id.container3);
-
-                        final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
-
-                        TextView word = (TextView) findViewById(R.id.textView1);
-                        TextView option1 = (TextView) findViewById(R.id.option1);
-                        TextView option2 = (TextView) findViewById(R.id.option2);
-                        TextView option3 = (TextView) findViewById(R.id.option3);
-                        TextView option4 = (TextView) findViewById(R.id.option4);
-
-                        List <String> Choices = new ArrayList<>();
-                        List<Integer> rand = new ArrayList<>();
-
-                        // 4 random id of words
-                        for (int i = 0; i < 4; i++) {
-                            rand.add(random.nextInt(l_words.size()));
-                        }
-                        for (int i = 0; i < 3; i++) {
-                            for (int j = i + 1; j < 4; j++) {
-                                while (rand.get(i).equals(rand.get(j))) {
-                                    rand.add(i, random.nextInt(l_words.size()));
-                                }
-                            }
-                        }
-
-                        word.setText(l_words.get(rand.get(0)));
-                        String right_answer = l_translations.get(rand.get(0));
-
-                        // fit the list of Words (Options) and shuffle them
-                        for (int i = 0; i < 4; i++) {
-                            Choices.add(l_translations.get(rand.get(i)));
-                        }
-                        Collections.shuffle(Choices);
+                        List<String> Choices = getChoices(unit);
+                        String right_answer = Choices.get(5);
+                        String word = Choices.get(4);
 
                         // set options on the places
                         option1.setText(Choices.get(0));
@@ -284,6 +203,7 @@ public class Practice extends AppCompatActivity {
                 return true;
             }
         });
+
     }
 
     @Override
@@ -299,6 +219,58 @@ public class Practice extends AppCompatActivity {
         }
 
         backPressedTime = System.currentTimeMillis();
+    }
+
+    // list of 4 translations and a word
+    public List<String> getChoices (int unit) {
+        List<String> Choices = new ArrayList<>(); // список переводов
+        DataFrame df;
+        List<String> l_words = new ArrayList<>();
+        List<String> l_translations = new ArrayList<>();
+
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
+            l_words = (List<String>)df_unit_1.col("Word");
+            l_translations = (List<String>)df_unit_1.col("Translation");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        List<Integer> rand = getRand(l_words);
+
+        String word = l_words.get(rand.get(0));
+        String right_translation = l_translations.get(rand.get(0));
+
+        for (int i = 0; i < Choices.size(); i++) {
+            Choices.add(l_translations.get(rand.get(i)));
+        }
+        Collections.shuffle(Choices);
+
+        Choices.add(word);
+        Choices.add(right_translation);
+        return Choices;
+
+    }
+
+    // list of 4 random numbers for words
+    public List<Integer> getRand (List<String> l_words) {
+        Random random = new Random();
+        List<Integer> rand = new ArrayList<>();
+
+        // 4 random id of words
+        for (int i = 0; i < 4; i++) {
+            rand.add(random.nextInt(l_words.size()));
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 4; j++) {
+                while (rand.get(i).equals(rand.get(j))) {
+                    rand.add(i, random.nextInt(l_words.size()));
+                }
+            }
+        }
+
+        return rand;
     }
 }
 
