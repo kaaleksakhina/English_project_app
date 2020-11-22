@@ -31,6 +31,7 @@ public class Practice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     public int count = 0;
+    public String right_answer;
 
     Dialog dialog2;
 
@@ -122,16 +123,16 @@ public class Practice extends AppCompatActivity {
             }
         });
 
-        List<String> Choices = getChoices(unit);
-        String right_answer = Choices.get(5);
-        String word = Choices.get(4);
+        ArrayList<String> Choices = getChoices(unit);
+        String word = Choices.get(0);
+        right_answer = Choices.get(1);
 
-        // set options on the places
-        word_final.setText(Choices.get(4));
-        option1.setText(Choices.get(0));
-        option2.setText(Choices.get(1));
-        option3.setText(Choices.get(2));
-        option4.setText(Choices.get(3));
+        // set the word and options on the places
+        word_final.setText(word);
+        option1.setText(Choices.get(2));
+        option2.setText(Choices.get(3));
+        option3.setText(Choices.get(4));
+        option4.setText(Choices.get(5));
 
 
         // tap on the option1
@@ -165,10 +166,10 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     else {
-                        if(count > 0) {
+                        if (count > 0) {
                             count = count - 1;
                         }
-                        for (int i  = 0; i < 9; i++) {
+                        for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
@@ -182,21 +183,251 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option1.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-                        List<String> Choices = getChoices(unit);
-                        String right_answer = Choices.get(5);
-                        String word = Choices.get(4);
 
-                        // set options on the places
-                        option1.setText(Choices.get(0));
+                        option2.setEnabled(true);
+                        option3.setEnabled(true);
+                        option4.setEnabled(true);
+
+                        ArrayList<String> Choices = getChoices(unit);
+
+                        right_answer = Choices.get(1);
+
+                        word_final.setText(Choices.get(0));
+                        option1.setText(Choices.get(2));
                         option1.setAnimation(a);
 
-                        option2.setText(Choices.get(1));
+                        option2.setText(Choices.get(3));
                         option2.setAnimation(a);
 
-                        option3.setText(Choices.get(2));
+                        option3.setText(Choices.get(4));
                         option3.setAnimation(a);
 
-                        option4.setText(Choices.get(3));
+                        option4.setText(Choices.get(5));
+                        option4.setAnimation(a);
+                    }
+                }
+                return true;
+            }
+        });
+
+        // tap on the option2
+        option2.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN){
+                    option1.setEnabled(false);
+                    option3.setEnabled(false);
+                    option4.setEnabled(false);
+                    if (option2.getText().toString().equals(right_answer)) {
+                        option2.setBackgroundResource(R.drawable.right_choice_green);
+                    }
+                    else {
+                        option2.setBackgroundResource(R.drawable.wrong_choice_red);
+                    }
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (option2.getText().toString().equals(right_answer)) {
+                        if (count < 10) {
+                            count++;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    else {
+                        if (count > 0) {
+                            count = count - 1;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    if (count == 10) {
+                        // exit
+                    }
+                    else {
+                        option2.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+
+                        option1.setEnabled(true);
+                        option3.setEnabled(true);
+                        option4.setEnabled(true);
+
+                        ArrayList<String> Choices = getChoices(unit);
+
+                        right_answer = Choices.get(1);
+
+                        word_final.setText(Choices.get(0));
+                        option1.setText(Choices.get(2));
+                        option1.setAnimation(a);
+
+                        option2.setText(Choices.get(3));
+                        option2.setAnimation(a);
+
+                        option3.setText(Choices.get(4));
+                        option3.setAnimation(a);
+
+                        option4.setText(Choices.get(5));
+                        option4.setAnimation(a);
+                    }
+                }
+                return true;
+            }
+        });
+
+        // tap on the option3
+        option3.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN){
+                    option1.setEnabled(false);
+                    option2.setEnabled(false);
+                    option4.setEnabled(false);
+                    if (option3.getText().toString().equals(right_answer)) {
+                        option3.setBackgroundResource(R.drawable.right_choice_green);
+                    }
+                    else {
+                        option3.setBackgroundResource(R.drawable.wrong_choice_red);
+                    }
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (option3.getText().toString().equals(right_answer)) {
+                        if (count < 10) {
+                            count++;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    else {
+                        if (count > 0) {
+                            count = count - 1;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    if (count == 10) {
+                        // exit
+                    }
+                    else {
+                        option3.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+
+                        option1.setEnabled(true);
+                        option2.setEnabled(true);
+                        option4.setEnabled(true);
+
+                        ArrayList<String> Choices = getChoices(unit);
+
+                        right_answer = Choices.get(1);
+
+                        word_final.setText(Choices.get(0));
+                        option1.setText(Choices.get(2));
+                        option1.setAnimation(a);
+
+                        option2.setText(Choices.get(3));
+                        option2.setAnimation(a);
+
+                        option3.setText(Choices.get(4));
+                        option3.setAnimation(a);
+
+                        option4.setText(Choices.get(5));
+                        option4.setAnimation(a);
+                    }
+                }
+                return true;
+            }
+        });
+
+        // tap on the option4
+        option4.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN){
+                    option1.setEnabled(false);
+                    option2.setEnabled(false);
+                    option3.setEnabled(false);
+                    if (option4.getText().toString().equals(right_answer)) {
+                        option4.setBackgroundResource(R.drawable.right_choice_green);
+                    }
+                    else {
+                        option4.setBackgroundResource(R.drawable.wrong_choice_red);
+                    }
+                }
+                else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (option4.getText().toString().equals(right_answer)) {
+                        if (count < 10) {
+                            count++;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    else {
+                        if (count > 0) {
+                            count = count - 1;
+                        }
+                        for (int i = 0; i < 10; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points);
+                        }
+                        for (int i = 0; i < count; i++) {
+                            TextView tv = findViewById(progress[i]);
+                            tv.setBackgroundResource(R.drawable.style_points_orange);
+                        }
+                    }
+                    if (count == 10) {
+                        // exit
+                    }
+                    else {
+                        option4.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+
+                        option1.setEnabled(true);
+                        option2.setEnabled(true);
+                        option3.setEnabled(true);
+
+                        ArrayList<String> Choices = getChoices(unit);
+
+                        right_answer = Choices.get(1);
+
+                        word_final.setText(Choices.get(0));
+                        option1.setText(Choices.get(2));
+                        option1.setAnimation(a);
+
+                        option2.setText(Choices.get(3));
+                        option2.setAnimation(a);
+
+                        option3.setText(Choices.get(4));
+                        option3.setAnimation(a);
+
+                        option4.setText(Choices.get(5));
                         option4.setAnimation(a);
                     }
                 }
@@ -222,8 +453,8 @@ public class Practice extends AppCompatActivity {
     }
 
     // list of 4 translations and a word
-    public List<String> getChoices (int unit) {
-        List<String> Choices = new ArrayList<>(); // список переводов
+    public ArrayList<String> getChoices (int unit) {
+        ArrayList<String> Choices = new ArrayList<>(); // список переводов
         DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
@@ -237,39 +468,38 @@ public class Practice extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        List<Integer> rand = getRand(l_words);
+        Integer[] rand = getRand(l_words);
 
-        String word = l_words.get(rand.get(0));
-        String right_translation = l_translations.get(rand.get(0));
+        String word = l_words.get(rand[0]);
+        String right_translation = l_translations.get(rand[0]);
 
-        for (int i = 0; i < Choices.size(); i++) {
-            Choices.add(l_translations.get(rand.get(i)));
+        for (int i = 0; i < rand.length; i++) {
+            Choices.add(l_translations.get(rand[i]));
         }
         Collections.shuffle(Choices);
 
-        Choices.add(word);
-        Choices.add(right_translation);
+        Choices.add(0, word);
+        Choices.add(1, right_translation);
         return Choices;
 
     }
 
     // list of 4 random numbers for words
-    public List<Integer> getRand (List<String> l_words) {
+    public Integer[] getRand (List<String> l_words) {
         Random random = new Random();
-        List<Integer> rand = new ArrayList<>();
+        Integer[] rand = new Integer[] {0,0,0,0};
 
         // 4 random id of words
         for (int i = 0; i < 4; i++) {
-            rand.add(random.nextInt(l_words.size()));
+            rand[i] = random.nextInt(l_words.size());
         }
         for (int i = 0; i < 3; i++) {
             for (int j = i + 1; j < 4; j++) {
-                while (rand.get(i).equals(rand.get(j))) {
-                    rand.add(i, random.nextInt(l_words.size()));
+                while (rand[i].equals(rand[j])) {
+                    rand[i] = random.nextInt(l_words.size());
                 }
             }
         }
-
         return rand;
     }
 }
