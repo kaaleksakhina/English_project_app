@@ -42,7 +42,7 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
             DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
             l_words = (List<String>)df_unit_1.col("Word");
             l_translations = (List<String>)df_unit_1.col("Translation");
-            l_examples = (List<String>)df_unit_1.col("Examples of sentences");
+            l_examples = (List<String>)df_unit_1.col("Examples of sentences(1)");
         } catch (IOException e) {
             e.printStackTrace();
         }

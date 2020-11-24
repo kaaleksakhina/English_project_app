@@ -1,167 +1,171 @@
-﻿id_unit,id_word,Word,Translation,Examples of sentences
-1,1,certificate,"сертификат, свидетельство",An exam certificate
-1,2,commitment,обязательство,Commitment to education
-1,3,corporate,корпоративный,Corporate culture
-1,4,course,курс обучения,A ten-week course in computing
-1,5,degree,"ученая степень, диплом",She has a degree in physics
-1,6,development,развитие,Developments in technology
-1,7,experience,опыт,To learn from the experience you get
-1,8,gain experience,набираться опыта,
-1,9,incentive,стимул,Material incentives
-1,10,job,particular type of work activity,
-1,11,knowledge,знание,Knowledge of naval history
-1,12,overtime,сверхурочная работа,Unpaid overtime
-1,13,permanent,постоянный,
-1,14,promotion,повышение,
-1,15,qualification,квалификация,
-1,16,recruits,пополнение,
-1,17,responsibility,ответственность,
-1,18,salary,зарплата,
-1,19,skill,умение,Good communication skills
-1,20,staff ,персонал,
-1,21,work,something tou do to earn money,
-2,22,accountant,бухгалтер,
-2,23,budgeting,составление бюджета,
-2,24,campaign,кампания,We work on a promotional campaign
-2,25,chain (of shops),сеть (магазинов),
-2,26,customer,покупатель,
-2,27,deadline,крайний срок,
-2,28,employee,работник,
-2,29,figures,диаграмма,
-2,30,goal,цель,
-2,31,personal development,саморазвитие,
-2,32,receptionist,секретарь,
-2,33,report,отчёт,
-2,34,supervising staff,руководящий персонал,
-2,35,team-building activities,деятельность дл поддержания командного духа,
-3,36,approval,одобрение,I don't need his approval 
-3,37,assign,поручать,To assign the task
-3,38,emphasize,"придавать значение, подчеркивать",To emphasize the importance
-3,39,follow up,последующее мероприятие,A follow-up meeting
-3,40,initiate,начинать,The program was initiated by the state government
-4,41,advertisement,реклама,
-4,42,candidate,кандидат,
-4,43,critical,"решающий, переломный",A critical decision
-4,44,equipment,оборудование,
-4,45,face to face,лицом к лицу,Face to face meeting
-5,46,awareness,осведомленность,Brand awareness
-5,47,launch,выпускать (о новом продукте),To launch new service 
-5,48,leaflet,листовка,A useful leaflet on how to fill in tax forms
-5,49,sample,образец,A free sample of chocolate
-6,50,department,отдел,
-6,51,market,рынок,
-6,52,promotional activities,рекламные мероприятия,
-6,53,social media,социальные сети,
-6,54,viral marketing,вирусный маркетинг,
-7,55,fee,плата,University fee
-7,56,for hire,напрокат,There were motorcycles for hire
-7,57,guarantee,гарантия,A guarantee would be nice
-7,58,liaise,поддерживать,Liaise with suppliers
-7,59,make an impact,оказывать влияние,This made a profound impact on me
-8,60,agreement,соглашение,
-8,61,communication skills,навыки общения,
-8,62,condition,условия,
-8,63,confidence,уверенность,
-8,64,credible,убедительный,
-8,65,exstra cost,дополнительные затраты,
-8,66,invoice,докладная,
-8,67,lend,одолжить,
-8,68,negotiation,переговоры,
-8,69,persuasive,убедительный,
-8,70,satisfaction,удовлетворение,Customer satisfaction increased by 11% last year
-8,71,strategy,стратегия,
-9,72,asset,"имущество, актив",The company has $40 billion in assets
-9,73,concept,"понятие, идея",The concept of free speech
-9,74,cost,цена,Cost of living
-9,75,debt,долг,pay off the debt
-9,76,liability,ответственность,Liability for the damage caused
-9,77,lucrative,прибыльный,A lucrative job
-9,78,profit,прибыль,A profit of $3 million
-9,79,retail,розничная торговля,The retail expirience
-9,80,tax,налог ,Tax on cigarettes
-9,81,trademark,торговая марка,Brand's trademark
-9,82,turnover,оборот капитала,Turnover amounted to 83 million last year.
-10,83,finance,финансы,
-10,84,fund ,капитал,
-10,85,funding,финансирование,
-10,86,government grant,государственный грант,
-10,87,loan,кредит,
-10,88,mortgage,ипотека,
-10,89,partnership,сотрудничество,
-10,90,personal savings,личные накопления,
-10,91,premises,недвижимость,
-10,92,private equity,частный капитал,
-10,93,raise money,зарабатывать деньги,
-10,94,start-up,стартап,
-10,95,stock market,фондовый рынок,
-11,96,commission,заказ,This was my first commission
-11,97,entity,организация,Each of the responders were paid by separate entities
-11,98,get down to,приступить к ,It's time to get down to bisiness
-11,99,get onto,связаться с,"Sam, can you can onto our friends, please?"
-11,100,head up,возглавить ,My company has asked me to head up our office in Moscow
-11,101,lease,контракт об аренде,sign a three year lease
-12,102,dress smartly,одеваться прилично,
-12,103,facilities,оборудование,
-12,104,handout,раздаточный материал,
-12,105,industry,индустрия,
-12,106,market research,исследование рынка,
-12,107,presentation,презентация,
-12,108,rehearsal,репетиция,
-12,109,suitable,подходящий,
-14,110,auditorium,"аудитория, зрительный зал",
-14,111,conference,конференция,
-14,112,delegate,"делегат, участник конференции",
-14,113,exibitor,экпонент,
-14,114,mutual,"совместный, общий",
-14,115,projector,проектор,
-14,116,to attend,участвовать,
-14,117,to broaden,расширять,
-14,118,to highlight,"подчеркивать, выделять",
-15,119,agenda,повестка дня,It's not on today's agenda
-15,120,complement,дополнение,Complement to the meal
-15,121,productive,продуктивно,The sessions are productive
-15,122,to chair,председатель,The chair is responsible for the success of a meeting
-15,123,trim,"урезат, уменьшать",To trim the costs
-16,124,company jet,самолет компании,
-16,125,non-retail business,оптовый бизнес,
-16,126,potential,потенциальный,
-16,127,promotion manager,менеджер по продвижению,
-16,128,to recommend,рекомендовать,
-16,129,representative,представитель,
-16,130,sales techniques,методы (приемы) продаж,
-16,131,suggest,предложить,
-17,132,engage with,связаться с,You can't engage with her
-17,133,insight,"проницительность, понимание",To provide an insight into the world
-17,134,next to nothing,почти ничего,Talent means next to nothing
-18,135,appropriately,соответсвенно,
-18,136,brainstorm,мозговой штурм,
-18,137,efficient,эффективный,
-18,138,establish,установить,
-18,139,foreseeable,"предвиденный, прогнозируемый",foreseeable future
-18,140,foretelling,предсказание,
-18,141,idle,нерабочий,
-19,142,absenteeism,прогулы,We cannot tolerate this kind of absenteeism amongst our junior staff
-19,143,cut down on ,сократить,He should cut down on work-related stress
-19,144,rush hour,час пик,I hate the subway at rush hour
-19,145,sick leave,больничный,Two guys are on sick leave
-19,146,staff turnover,текучка кадров,We get a lot of staff turnover
-20,147,contractor,подрядчик,
-20,148,flexibility,гибкость,
-20,149,offshoring,moving part of company to another country,
-20,150,outsourcing,employing side people to do part of the work ,
-20,151,savings,сбережения,
-20,152,to arise,возникать,
-20,153,to tailor,"подогнать, приспособить",
-21,154,car dealership,автосалон,He runs a successful car dealership
-21,155,deal with,иметь дело с ,To deal with the workers
-21,156,integrity,честность,It's important to have some kind of personal integrity
-21,157,outcome,"результат, исход",
-21,158,responsiveness,реакция ,Your levels of responsiveness have decreased recently
-21,159,teamwork,командная работа,Teamwork: That's what counts in this organisation
-22,160,empowerment,"полномочие, расширение возможностей",
-22,161,loyalty,лояльность,
-22,162,to repurchase,выкупить,
-22,163,revenue,доход,
-22,164,rival ,конкурент,
-22,165,supplier,постащик,
-23,166,line manager,начальник," I'm going to ask Ms.Fell to come here, because she's my line manager"
+﻿id_unit;id_word;Word;Translation;Examples of sentences(1);Examples of sentences(2);Examples of sentences(3);Сollocations;Learned
+1;1;certificate;сертификат, свидетельство;At the end of of the four-week trainig cource, you will recieve a certificate.;This certificate could be renewed once if necessary.;;;false
+1;2;commitment;обязательство;Commitment to education;;;;false
+1;3;corporate;корпоративный;Corporate culture;;;;false
+1;4;course;курс обучения;A ten-week course in computing;;;;false
+1;5;degree;ученая степень, диплом;She has a degree in physics;;;;false
+1;6;development;развитие;Developments in technology;;;personal development;false
+1;7;experience;опыт;To learn from the experience you get;;;gain experience;false
+1;8;incentive;стимул;Material incentives;;;;false
+1;9;job;particular type of work activity;;;;;false
+1;10;knowledge;знание;Knowledge of naval history;;;;false
+1;11;overtime;сверхурочная работа;Unpaid overtime;;;;false
+1;12;permanent;постоянный;;;;;false
+1;13;promotion;повышение;;;;;false
+1;14;qualification;квалификация;;;;;false
+1;15;recruits;пополнение;;;;;false
+1;16;responsibility;ответственность;;;;;false
+1;17;salary;зарплата;;;;;false
+1;18;skill;умение;Good communication skills;You will be trained in telephone skills, including how to provide quality customer service.;;communication skills;false
+1;19;staff ;персонал;;;;supervising staff;false
+2;20;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;false
+2;21;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;false
+2;22;campaign;кампания;We currently work on a promotional campaign.;;;to launch a campaign, to mount a campaign, to organize a campaign;false
+2;23;chain (of shops);сеть (магазинов);Mcdonalds is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;false
+2;24;customer;покупатель;The majority of his customers prefer this particular product.;She is one of our best customers.;We need to build customes relationship.;to attend customers;false
+2;25;deadline;крайний срок;The deadline is not far off.;;;to meet a deadline, deadline date ;false
+2;26;employee;работник;I'm pleased to announce that every employee will be given a bonus.;They hired a new employee.;;take on (2) employees;false
+2;27;figures;цифры;You need to to check figures in your last report.;You provide reliable figures.;;;false
+2;28;goal;цель;Our main goal is to earn money.;It is important to pursue the main goal in your life.;He achieved his goal to have a degree.;to reach the goal, to achieve the goal;false
+2;29;receptionist;секретарь;You already have a new receptionist.;I thought maybe she could be the new receptionist.;;;false
+2;30;report;отчёт;I read your reports about last year.;I'll send that efficiency report to the boss in next two days.;;to write a report;false
+2;31;team-building activities;деятельность дл поддержания командного духа;Our company need to arrange team-building activities for the staff.;Team-building activities impove relationships.;;;false
+3;32;approval;одобрение;I don't need his approval ;;;;false
+3;33;assign;поручать;To assign the task;;;;false
+3;34;emphasize;придавать значение, подчеркивать;To emphasize the importance;;;;false
+3;35;follow up;последующее мероприятие;A follow-up meeting;;;;false
+3;36;initiate;начинать;The program was initiated by the state government.;;;;false
+4;37;advertisement;реклама;The company has spent a lot of money on advertisement.;We place an advertisement in a new magazine.;;to place an advertisment, to publish  an advertisement, to run an advertisement;false
+4;38;candidate;кандидат;He is a good candidate fot this position.;;;;false
+4;39;critical;решающий, переломный;It was a critical decision to sign the contract.;Create a new advertisement is a critical element of the plan.;;;false
+4;40;equipment;оборудование;We will provide any required equipment for the conference.;These equipment were completely new.;;;false
+4;41;face to face;лицом к лицу;Today we will have a face to face meeting with representors. ;I have never sen him face to face.;;;false
+5;42;awareness;осведомленность;Brand awareness;;;;false
+5;43;launch;выпускать (о новом продукте);To launch new service ;;;;false
+5;44;leaflet;листовка;A useful leaflet on how to fill in tax forms;;;;false
+5;45;sample;образец;A free sample of chocolate;;;;false
+6;46;department;отдел;Our sales department create a really good plan for future year.;Research department find out that figures are not right.;;;false
+6;47;market;рынок;Market research is important ;Our instant coffee is the best choice in retail market.;;retail market, market reseach;false
+6;48;promotional activities;рекламные мероприятия;We need to conduct more promotional activities, because customers don't use our services.;Next Sunday there will be one more promotional activity: a special conference for willing.;;;false
+6;49;social media;социальные сети;Social media is good tool to maintain communication with existing customers.;We need to place advertisement in social media to attract attention;;;false
+6;50;viral marketing;вирусный маркетинг;They're a PR company that we hired to do viral marketing.;Viral marketing is an interesting tool to attract buyers.;;;false
+7;51;fee;плата;University fee;;;;false
+7;52;for hire;напрокат;There were motorcycles for hire;;;;false
+7;53;guarantee;гарантия;A guarantee would be nice;;;;false
+7;54;impact;;;;;make an impact;false
+7;55;liaise;поддерживать;Liaise with suppliers;;;;false
+8;56;agreement;соглашение;We don't have a proper agreement.;We reached an agreement with them to cooperate fully at all times.;;to reach an agreement, to conclude an agreement;false
+8;57;condition;условия;Current market conditions allow us to launch a new product.;We need to await for a better weather conditions to go for a walk.;;;false
+8;58;confidence;уверенность;He was very confident and wvybody respect him.;Negotiators can gain confidence in each other by exchanging information.;;to gain smb. confidence;false
+8;59;credible;убедительный;Her excuse was barely credible.;We've received credible information about the company's new shop.;;;false
+8;60;exstra cost;дополнительные затраты;By using better implementations in the future, this extra cost may be reduced.;No extra cost was involved.;;;false
+8;61;invoice (-ed);докладная, выставить счёт;I would be most grateful if you could send me an invoice.;She invoiced the company for her expenses.;;to send an invoice, to issue an invoice;false
+8;62;lend;одолжить;She lent the money to him.;The old woman lends money at the rate of three percent.;They can lend money in order to create empoyment.;to lend money;false
+8;63;negotiation;переговоры;The negotiation was successful.;The agreement followed months of negotiation.;She is skilled at negotiation.;;false
+8;64;persuasive;убедительный;He disagree with some very persuasive arguments.;His speech was persuasive enough to motivate us to work harder.;;;false
+8;65;satisfaction;удовлетворение;Customer satisfaction increased by 11% last year;;;;false
+8;66;strategy;стратегия;Our team came up with a reliable strategy for the nest 2 years.;I can see a risk in this strategy.;;campaign strategy, global strategy;false
+9;67;asset;имущество, актив;The company has $40 billion in assets;;;;false
+9;68;concept;понятие, идея;The concept of free speech;;;;false
+9;69;cost;цена;Cost of living;;;;false
+9;70;debt;долг;pay off the debt;;;;false
+9;71;liability;ответственность;Liability for the damage caused;;;;false
+9;72;lucrative;прибыльный;A lucrative job;;;;false
+9;73;profit;прибыль;A profit of $3 million;;;;false
+9;74;retail;розничная торговля;The retail expirience;;;;false
+9;75;tax;налог ;Tax on cigarettes;;;;false
+9;76;trademark;торговая марка;Brand's trademark;;;;false
+9;77;turnover;оборот капитала;Turnover amounted to 83 million last year.;;;;false
+10;78;finance;финансы;She is Chair of the Finance Committee.;Their sources of finance are drying up.;;;false
+10;79;fund ;капитал;The money went into a common fund.;We were too busy to raise funds for your clinic.;;emergency fund, campaign fund;false
+10;80;government grant;государственный грант;Government is a major source of grants and soft loans.;;;;false
+10;81;loan;кредит;You can take a loan from your family to start a business.;You must have property to guarantee the loan.;;to raise a loan, ;false
+10;82;mortgage;ипотека;How much interest do you pay on your mortgage?;We carry a very large mortgage.;;;false
+10;83;savings;накопления;We have personal savings for upcoming trip.;He deposits savings to buy a new computer.;;personal savings, to deposit savings, set aside savings;false
+10;84;partnership;сотрудничество;Mutual respect is necessary for any partnership to work.;He joined the partnership last year.;;contract of partnership;false
+10;85;raise;поднимать, зарабатывать;Which are the most usual ways to raise money?;I know some other ways of raising finance;;raise money;false
+10;86;collateral;залоговое обеспечение;He gave his paintings as collateral for a loan.;;;;false
+10;87;premises;недвижимость;Banks like to use assets such as premises and vehicles as collateral against loans.;;;;false
+10;88;private equity;частный капитал;But this accounts for only a minor part of the private equity industry.;It is one of the top 10 private equity firms in the world;;;false
+10;89;start-up;стартап;He has an idea to launch a startup.;His startup didn't make any money.;;to launch a startup;false
+10;90;stock market;фондовый рынок;You know how much the stock market is up?;We lost money in the stock market.;;stock market boom;false
+11;91;commission;заказ;This was my first commission;;;;false
+11;92;entity;организация;Each of the responders were paid by separate entities;;;;false
+11;93;get down to;приступить к ;It's time to get down to business.;;;;false
+11;94;get onto;связаться с;Sam, can you can onto our friends, please?;;;;false
+11;95;head up;возглавить ;My company has asked me to head up our office in Moscow.;;;;false
+11;96;lease;контракт об аренде;sign a three year lease;;;;false
+12;97;dress smartly;одеваться прилично;You should dress smartly going to job interview.;;;;false
+12;98;to greet;приветствовать;First, you neet audience ant thank them for coming.;;;;false
+12;99;facilities;оборудование, удобства;What facilities there are for new business in your country?;;;;false
+12;100;handout;раздаточный материал;Convert statistics into charts and put them into handout which people could read at their lecture.;The handouts had all the major points of his speech outlined on them.;;;false
+12;101;industry;индустрия, производство;The coal industry is running down.;Government often regulates industry.;;;false
+12;102;market research;исследование рынка;;;;;false
+12;103;presentation;презентация;Do a cource on presentation skills.;The first step in making a really effective presentation is to prepare.;;;false
+12;104;to rehearse;репетировать;Recording tourself is another tool to use when you rehearse.;I think we need to rehearse the first scene again.;;;false
+12;105;suitable;подходящий;Everybody can find a suitable job.;A suitable match for their daughter.;People who know many languages, are suitable to work in foreign countries.;;false
+14;106;auditorium;аудитория, зрительный зал;You need to prepare an auditorium for upcoming conference.;Auditorium should be big enough to fit 100 people.;;;false
+14;107;conference;конференция;The boss called us in for a conference.;There is a list of equupment we need for the conference.;;to hold a conference, to speak at a conference;false
+14;108;delegate;делегат, участник конференции;The number of delegated is 500.;There were a lot of delegates on this annual conference.;;;false
+14;109;exibitor;участник выставки;We need to find an appropriate place for stands for exibitors.;;;;false
+14;110;mutual;совместный, общий;I and my colleagues are working on a mutual project.;We are for mutual understanding.;;;false
+14;111;projector;проектор;One of the projectors is broke. Check it, please.;They requested one project for the conference.;;;false
+14;112;to attend;участвовать;I will attend a conference this year for the first time.;Staff shoul attend all the meetings our boss chaired.;;to attend a meeting;false
+14;113;distinguish;различать;I had recorded thes steps with a star, making it easier to distinguish them for notes;It is his Italian accent that distinguishes him.;;to distinguish between two things, be distinguish from ;false
+14;114;to broaden;расширять;This company need to broaden their product range. ;His business is broadenong more and more every year.;;;false
+14;115;to highlight;подчеркивать, выделять;On the conference I highlighted the most valuable thoughts in my notes.;Important names and dates in each chapter are highlighted.;;;false
+15;116;agenda;повестка дня;It's not on today's agenda;;;;false
+15;117;complement;дополнение;Complement to the meal;;;;false
+15;118;productive;продуктивно;The sessions are productive;;;;false
+15;119;to chair;председатель;The chair is responsible for the success of a meeting;;;;false
+15;120;trim;урезат, уменьшать;To trim the costs;;;;false
+16;121;company jet;самолет компании;Executives from this company prefer using the company jet.;Private company jets are convenient because you can do your work during the flight.;;;false
+16;122;non-retail business;оптовый бизнес;Some retailers may sell to business customers, and such sales are termed non-retail activity.;;;;false
+16;123;potential;потенциальный;We can find potential customers on social media.;It is important to visit special conferences to find potential customers;;;false
+16;124;promotion manager;менеджер по продвижению;The job of promotion manager is visiting existing and potental customers.;It is important for promotional manager to visit as many customers as he could.;;;false
+16;125;to recommend;рекомендовать;I strongly recommend this product to solve preoblems with your skin.;Reasershers recommend to reduce number of international travel in order to save money.;;;false
+16;126;representative;представитель;Today we met representatives of his company.;We should send the best representatives of our company to the conference.;;;false
+16;127;sales techniques;методы (приемы) продаж;There are several sales techniques used by salesmen.;If you want to sell a produsct, you need to have learn reliable sales tehniques.;;;false
+16;128;suggest;предложить;I would like to suggest that we should spend more time for meeting customers intead writing reports.;I strongly suggest that you need to find training courses;;to suggest an idea;false
+17;129;engage with;связаться с;You can't engage with her;;;;false
+17;130;insight;проницительность, понимание;To provide an insight into the world;;;;false
+17;131;next to nothing;почти ничего;Talent means next to nothing;;;;false
+18;132;appropriately;соответсвенно, подходяще;Once you have finished with the documents, recycle the paper appropriately.;However, I'm counting on you to respond appropriately.;;;false
+18;133;brainstorm;мозговой штурм;Get staff involved, perhaps by holding a brainstorming session.;I must have had a brainstorm that afternoon.;;to hold a brainstorming session;false
+18;134;efficient;эффективный;Environmentally friendly offices are more efficient places to work.;Our new air conditioner is more efficient than our old one.;;;false
+18;135;establish;установить;By redusing waste, a business can save money and establish itself as a socially responsible emloyer.;We need to establisg the cause of the ruin of the firm;; to establish a business, to establish connection;false
+18;136;foreseeable;предвиденный, прогнозируемый;Accepting that printers will be with us for the foreseeable future.;This product will bring us a lot of money in foreseeable future.;;foreseeable future;false
+18;137;foretelling;предсказание;Computer vendors were foretelling the death of the printer.;Market researches foretell the ruin of this company.;;;false
+18;138;idle;нерабочий, незанятый;Personal computer can stay idle foe a pre-determined time.;The equipment stood idle for a month.;;;false
+19;139;absenteeism;прогулы;We cannot tolerate this kind of absenteeism amongst our junior staff;;;;false
+19;140;cut down on ;сократить;He should cut down on work-related stress;;;;false
+19;141;rush hour;час пик;I hate the subway at rush hour;;;;false
+19;142;sick leave;больничный;Two guys are on sick leave;;;;false
+19;143;staff turnover;текучка кадров;We get a lot of staff turnover;;;;false
+20;144;redundant;избыточный, резервный;If you are a 100-user company you may need a redundant site and a lot of support.;Our boss made an employee redundant yesterday due to lack of budget.;;;false
+20;145;attorney;адвокат;I have to retain an attorney to save my reputation.;If you want to take it further, you should consult an attorney.;;to arrange an attorney, to obtain an attorney, retain an attorney;false
+20;146;salary;зарплата;He is on a salary of $4000 a month.;How much more do employees cost in addition to their salary?;;monthly salary,  a raise in salary, to earn / get / receive a salary;false
+20;147;contractor;подрядчик;Renovating the house involved hiring a contractor.;The contractor miscalculated the costs of rebuilding.;;prime contractor, building contractor;false
+20;148;flexibility (flexible);гибкость, гибкий;In order to be succesful at work you need to be flexible.;Under the present system, we do not have any flexibility.;;;false
+20;149;offshoring;moving part of company to another country;One out of 10 lost manufacturing jobs was due to offshoring.;;;;false
+20;150;outsourcing;employing side people to do part of the work ;Small-business owners tend to assume they can handle all functions rather than pay to outsource those functions.;The first layer of cost savings in outsourcing comes from payroll taxes.;;;false
+20;151;to arise;возникать;When we came up with a solution, new problems arised.;New company with the same product arose on the market.;;;false
+20;152;to tailor;подогнать, приспособить;We need to tailor to new rules on the market in order to succeed.;Treatment is tailored to the needs of each patient.;;;false
+21;153;car dealership;автосалон;He runs a successful car dealership;;;;false
+21;154;deal with;иметь дело с ;To deal with the workers;;;;false
+21;155;integrity;честность;It's important to have some kind of personal integrity;;;;false
+21;156;outcome;результат, исход;;;;;false
+21;157;responsiveness;реакция ;Your levels of responsiveness have decreased recently;;;;false
+21;158;teamwork;командная работа;Teamwork: That's what counts in this organisation;;;;false
+22;159;empowerment;полномочие, расширение возможностей;He got a promotion, so he has more empowernment now.;After getting a degree you have more empowernment to choose a better job.;;;false
+22;160;retain;удержать;This course is designed for anyone who wants to know how to retain customers.;She retains a attorney.;;;false
+22;161;loyalty;лояльность;Complaints of customers that handeled properly can be converted into loyalty.;They felt no loyalty to a losing team.;;;false
+22;162;to repurchase;выкупить;Dagni repurchased that factory and find an novel arcitecture of motor in here.;We can repurchase this little building to create a shopping moll.;;repurchase price, repurchase scheme;false
+22;163;revenue;доход;Our yearly revenue are about 5 million roubles.;The factory lost revenue because of the strike by the workers.;;government revenue, annual / yearly revenu;false
+22;164;rival ;конкурент;He had respect for his rivals.;Rival company couldn't make a better advertising than ours.;;rival team;false
+22;165;supplier;постащик;Our constant supplier went to our rivals. ;These vegetables are spoiled, we need to find a new supplier.;;qualified supplier, software supplier;false
+23;166;line manager;начальник; I'm going to ask Ms.Fell to come here, because she's my line manager;;;;false
+24;167;competent;компетентный;He is very competent in controversial questions.;The court is not competent to deal with this case.;;competent staff;false
+24;168;intercultural;межкультурный;State programmes also lack intercultural perspective.;It is important to be inteculturally competent.;;;false
+24;169;global;глобальный;The global warming is a crutial problem of today.;The global economy is a complex organism.;So where find suppliers: local or global?;global changes, global search;false
+24;170;international;интернациональный;RUDN is an international university.;We should be aware of international laws.;;international law, international agencies;false
