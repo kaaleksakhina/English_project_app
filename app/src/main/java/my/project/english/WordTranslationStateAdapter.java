@@ -36,13 +36,13 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
         List<String> l_translations = new ArrayList<>();
         List<String> l_examples = new ArrayList<>();
 
-        // word - translation
+        // word - translation - examples, collocations
         try {
             df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
             DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
             l_words = (List<String>)df_unit_1.col("Word");
             l_translations = (List<String>)df_unit_1.col("Translation");
-            l_examples = (List<String>)df_unit_1.col("Examples of sentences(1)");
+            l_examples = (List<String>)df_unit_1.col("First examples");
         } catch (IOException e) {
             e.printStackTrace();
         }

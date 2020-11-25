@@ -20,9 +20,7 @@ public class Word {
         return translation;
     }
 
-
     public String getExamples() {
         return examples;
     }
-
 }

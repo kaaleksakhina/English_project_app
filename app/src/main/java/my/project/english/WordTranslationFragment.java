@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class WordTranslationFragment extends Fragment {
-
     private static final String LOG_TAG = "AndroidExample";
 
     private Word word;
@@ -21,6 +20,7 @@ public class WordTranslationFragment extends Fragment {
     private TextView TextViewWord;
     private TextView TextViewTranslation;
     private TextView TextViewExample;
+
 
     public WordTranslationFragment() { }
 
@@ -81,9 +81,11 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewTranslation.setText(word.getTranslation());
         this.TextViewExample.setText(word.getExamples());
 
+
         this.TextViewWord.setTextSize(20);
         this.TextViewTranslation.setTextSize(18);
         this.TextViewExample.setTextSize(15);
+
 
         this.TextViewWord.setAllCaps(true);
 
@@ -102,6 +104,7 @@ public class WordTranslationFragment extends Fragment {
         String word = savedInstanceState.getString("word");
         String translation = savedInstanceState.getString("translation");
         String example = savedInstanceState.getString("example");
+
         return new Word(word, translation, example);
     }
 

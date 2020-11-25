@@ -1,9 +1,9 @@
-﻿id_unit;id_word;Word;Translation;Examples of sentences(1);Examples of sentences(2);Examples of sentences(3);Сollocations;Learned
-1;1;certificate;сертификат, свидетельство;At the end of of the four-week trainig cource, you will recieve a certificate.;This certificate could be renewed once if necessary.;;;false
+﻿id_unit;id_word;Word;Translation;First examples;Second examples;Third examples;Сollocations;Learned
+1;1;certificate;"сертификат, свидетельство";"At the end of of the four-week trainiтg cource, you will recieve a certificate.";"This certificate could be renewed once if necessary.";;;false
 1;2;commitment;обязательство;Commitment to education;;;;false
 1;3;corporate;корпоративный;Corporate culture;;;;false
 1;4;course;курс обучения;A ten-week course in computing;;;;false
-1;5;degree;ученая степень, диплом;She has a degree in physics;;;;false
+1;5;degree;"ученая степень, диплом";"She has a degree in physics";;;;false
 1;6;development;развитие;Developments in technology;;;personal development;false
 1;7;experience;опыт;To learn from the experience you get;;;gain experience;false
 1;8;incentive;стимул;Material incentives;;;;false
@@ -16,7 +16,7 @@
 1;15;recruits;пополнение;;;;;false
 1;16;responsibility;ответственность;;;;;false
 1;17;salary;зарплата;;;;;false
-1;18;skill;умение;Good communication skills;You will be trained in telephone skills, including how to provide quality customer service.;;communication skills;false
+1;18;skill;умение;"Good communication skills";"You will be trained in telephone skills, including how to provide quality customer service";;communication skills;false
 1;19;staff ;персонал;;;;supervising staff;false
 2;20;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;false
 2;21;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;false
