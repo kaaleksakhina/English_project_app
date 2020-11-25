@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WordTranslationFragment extends Fragment {
     private static final String LOG_TAG = "AndroidExample";
 
@@ -19,8 +22,9 @@ public class WordTranslationFragment extends Fragment {
 
     private TextView TextViewWord;
     private TextView TextViewTranslation;
-    private TextView TextViewExample;
-
+    private TextView TextViewExample1;
+    private TextView TextViewExample2;
+    private TextView TextViewExample3;
 
     public WordTranslationFragment() { }
 
@@ -39,7 +43,9 @@ public class WordTranslationFragment extends Fragment {
 
         this.TextViewWord = view.findViewById(R.id.word);
         this.TextViewTranslation = view.findViewById(R.id.translation);
-        this.TextViewExample = view.findViewById(R.id.examples);
+        this.TextViewExample1 = view.findViewById(R.id.example1);
+        this.TextViewExample2 = view.findViewById(R.id.example2);
+        this.TextViewExample3 = view.findViewById(R.id.example3);
 
         return view;
     }
@@ -79,13 +85,9 @@ public class WordTranslationFragment extends Fragment {
     private void showInGUI(Word word)  {
         this.TextViewWord.setText(word.getWord());
         this.TextViewTranslation.setText(word.getTranslation());
-        this.TextViewExample.setText(word.getExamples());
-
-
-        this.TextViewWord.setTextSize(20);
-        this.TextViewTranslation.setTextSize(18);
-        this.TextViewExample.setTextSize(15);
-
+        this.TextViewExample1.setText(word.getExamples().get(0));
+        this.TextViewExample2.setText(word.getExamples().get(1));
+        this.TextViewExample3.setText(word.getExamples().get(2));
 
         this.TextViewWord.setAllCaps(true);
 
@@ -95,7 +97,9 @@ public class WordTranslationFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putString("word", word.getWord());
         bundle.putString("translation", word.getTranslation());
-        bundle.putString("example", word.getExamples());
+        bundle.putString("example1", word.getExamples().get(0));
+        bundle.putString("example2", word.getExamples().get(1));
+        bundle.putString("example3", word.getExamples().get(2));
 
         return bundle;
     }
@@ -103,9 +107,15 @@ public class WordTranslationFragment extends Fragment {
     private Word bundleToWord(Bundle savedInstanceState) {
         String word = savedInstanceState.getString("word");
         String translation = savedInstanceState.getString("translation");
-        String example = savedInstanceState.getString("example");
-
-        return new Word(word, translation, example);
+        String example1 = savedInstanceState.getString("example");
+        String example2 = savedInstanceState.getString("example2");
+        String example3 = savedInstanceState.getString("example3");
+        String collocations = savedInstanceState.getString("collocations");
+        List <String> examples= new ArrayList<>();
+        examples.add(example1);
+        examples.add(example2);
+        examples.add(example3);
+        return new Word(word, translation, examples, collocations);
     }
 
 }

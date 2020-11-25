@@ -19,7 +19,7 @@ android:layout_height="match_parent">
     android:gravity="center_horizontal"
     android:text="Word"
     android:textStyle="bold"
-    android:textSize="35sp"
+    android:textSize="22sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@ android:layout_height="match_parent">
     android:layout_marginLeft="16dp"
     android:layout_marginTop="35dp"
     android:text="@string/tr"
-    android:textSize="20sp"
+    android:textSize="15sp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/word" />
 
@@ -60,17 +60,17 @@ android:layout_height="match_parent">
         android:layout_marginLeft="16dp"
         android:layout_marginTop="50dp"
         android:text="@string/ex"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/translation" />
 
     <TextView
-        android:id="@+id/examples"
+        android:id="@+id/example1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="10dp"
         android:text="(Examples)"
         android:textSize="20sp"
         android:layout_marginHorizontal="10dp"
@@ -79,16 +79,41 @@ android:layout_height="match_parent">
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/example2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/example1"
+        app:layout_constraintStart_toStartOf="@id/TextView2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/example3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/example2"
+        app:layout_constraintStart_toStartOf="@id/TextView2"
+        tools:ignore="MissingConstraints" />
+    <TextView
         android:id="@+id/TextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:text="@string/col"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examples" />
+        app:layout_constraintTop_toBottomOf="@+id/example3" />
 
     <TextView
         android:id="@+id/collocations"
@@ -96,8 +121,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="16dp"
-        android:text="(Collocations)"
+        android:layout_marginEnd="10dp"
         android:textSize="20sp"
         android:layout_marginHorizontal="10dp"
         app:layout_constraintTop_toBottomOf="@+id/TextView3"
