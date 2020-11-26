@@ -201,7 +201,7 @@ public class Practice extends AppCompatActivity {
                             Intent intent  = new Intent(Practice.this, Choice.class);
                             startActivity(intent);
                             finish();
-                        }catch (Exception e) {}
+                        }catch (Exception ignored) {}
                     }
                     else {
                         for (int option : Options) {
@@ -280,7 +280,7 @@ public class Practice extends AppCompatActivity {
                             Intent intent  = new Intent(Practice.this, Choice.class);
                             startActivity(intent);
                             finish();
-                        }catch (Exception e) {}
+                        }catch (Exception ignored) {}
                     }
                     else {
                         for (int option : Options) {
@@ -359,7 +359,7 @@ public class Practice extends AppCompatActivity {
                             Intent intent  = new Intent(Practice.this, Choice.class);
                             startActivity(intent);
                             finish();
-                        }catch (Exception e) {}
+                        }catch (Exception ignored) {}
                     }
                     else {
                         for (int option : Options) {
