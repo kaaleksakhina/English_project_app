@@ -87,7 +87,10 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewTranslation.setText(word.getTranslation());
         this.TextViewExample1.setText(word.getExamples().get(0));
         this.TextViewExample2.setText(word.getExamples().get(1));
-        this.TextViewExample3.setText(word.getExamples().get(2));
+        if (word.getExamples().get(2) != "") {
+            this.TextViewExample3.setText(word.getExamples().get(2));
+            this.TextViewExample3.setTextSize(14);
+        }
 
         this.TextViewWord.setAllCaps(true);
 

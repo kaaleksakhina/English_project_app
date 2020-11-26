@@ -1,5 +1,5 @@
 ﻿id_unit;id_word;Word;Translation;First examples;Second examples;Third examples;Сollocations;Learned
-1;1;certificate;сертификат, свидетельство;At the end of of the four-week trainig cource, you will recieve a certificate.;This certificate could be renewed once if necessary.;;;false
+1;1;certificate;сертификат, свидетельство;At the end of of the four-week training course, you will receive a certificate.;This certificate could be renewed once if necessary.;;;false
 1;2;commitment;обязательство;Commitment to education;;;;false
 1;3;corporate;корпоративный;Corporate culture;;;;false
 1;4;course;курс обучения;A ten-week course in computing;;;;false
@@ -21,8 +21,8 @@
 2;20;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;false
 2;21;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;false
 2;22;campaign;кампания;We currently work on a promotional campaign.;;;to launch a campaign, to mount a campaign, to organize a campaign;false
-2;23;chain (of shops);сеть (магазинов);Mcdonalds is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;false
-2;24;customer;покупатель;The majority of his customers prefer this particular product.;She is one of our best customers.;We need to build customes relationship.;to attend customers;false
+2;23;chain (of shops);сеть (магазинов);McDonald's is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;false
+2;24;customer;покупатель;The majority of his customers prefer this particular product.;She is one of our best customers.;We need to build customers relationship.;to attend customers;false
 2;25;deadline;крайний срок;The deadline is not far off.;;;to meet a deadline, deadline date ;false
 2;26;employee;работник;I'm pleased to announce that every employee will be given a bonus.;They hired a new employee.;;take on (2) employees;false
 2;27;figures;цифры;You need to to check figures in your last report.;You provide reliable figures.;;;false
@@ -45,7 +45,7 @@
 5;44;leaflet;листовка;A useful leaflet on how to fill in tax forms;;;;false
 5;45;sample;образец;A free sample of chocolate;;;;false
 6;46;department;отдел;Our sales department create a really good plan for future year.;Research department find out that figures are not right.;;;false
-6;47;market;рынок;Market research is important ;Our instant coffee is the best choice in retail market.;;retail market, market reseach;false
+6;47;market;рынок;Market research is important ;Our instant coffee is the best choice in retail market.;;retail market, market research;false
 6;48;promotional activities;рекламные мероприятия;We need to conduct more promotional activities, because customers don't use our services.;Next Sunday there will be one more promotional activity: a special conference for willing.;;;false
 6;49;social media;социальные сети;Social media is good tool to maintain communication with existing customers.;We need to place advertisement in social media to attract attention;;;false
 6;50;viral marketing;вирусный маркетинг;They're a PR company that we hired to do viral marketing.;Viral marketing is an interesting tool to attract buyers.;;;false
@@ -56,11 +56,11 @@
 7;55;liaise;поддерживать;Liaise with suppliers;;;;false
 8;56;agreement;соглашение;We don't have a proper agreement.;We reached an agreement with them to cooperate fully at all times.;;to reach an agreement, to conclude an agreement;false
 8;57;condition;условия;Current market conditions allow us to launch a new product.;We need to await for a better weather conditions to go for a walk.;;;false
-8;58;confidence;уверенность;He was very confident and wvybody respect him.;Negotiators can gain confidence in each other by exchanging information.;;to gain smb. confidence;false
+8;58;confidence;уверенность;He was very confident and everybody respect him.;Negotiators can gain confidence in each other by exchanging information.;;to gain smb. confidence;false
 8;59;credible;убедительный;Her excuse was barely credible.;We've received credible information about the company's new shop.;;;false
 8;60;exstra cost;дополнительные затраты;By using better implementations in the future, this extra cost may be reduced.;No extra cost was involved.;;;false
 8;61;invoice (-ed);докладная, выставить счёт;I would be most grateful if you could send me an invoice.;She invoiced the company for her expenses.;;to send an invoice, to issue an invoice;false
-8;62;lend;одолжить;She lent the money to him.;The old woman lends money at the rate of three percent.;They can lend money in order to create empoyment.;to lend money;false
+8;62;lend;одолжить;She lent the money to him.;The old woman lends money at the rate of three percent.;They can lend money in order to create employment.;to lend money;false
 8;63;negotiation;переговоры;The negotiation was successful.;The agreement followed months of negotiation.;She is skilled at negotiation.;;false
 8;64;persuasive;убедительный;He disagree with some very persuasive arguments.;His speech was persuasive enough to motivate us to work harder.;;;false
 8;65;satisfaction;удовлетворение;Customer satisfaction increased by 11% last year;;;;false

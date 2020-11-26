@@ -37,6 +37,7 @@ public class Practice extends AppCompatActivity {
 
     Dialog dialog2;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,20 +60,22 @@ public class Practice extends AppCompatActivity {
         final TextView option3 = (TextView) findViewById(Options[2]);
         final TextView option4 = (TextView) findViewById(Options[3]);
 
+        List <Integer> ids = new ArrayList<>(); // list of learned words
+
         final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
 
-        // Развернуть игру на весь экран
+        // Open full screen
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         /// Button Help - open dialog window
         dialog2 = new Dialog(this);
         dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog2.setContentView(R.layout.activity_help);// путь к макету диалогового окна
-        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
+        dialog2.setContentView(R.layout.activity_help);// way to dialog window layout
+        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // transparent background for dialog window
         dialog2.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
         ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
@@ -126,7 +129,7 @@ public class Practice extends AppCompatActivity {
                     Intent intent  = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }
@@ -144,10 +147,8 @@ public class Practice extends AppCompatActivity {
         option4.setText(Choices.get(3));
         Choices.remove(5);
 
-
         // tap on the option1
         option1.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
@@ -171,6 +172,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        ids.add(find_word(option1.getText().toString()));
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -194,11 +196,16 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        // exit
+                        make_true(ids);
+                        try {
+                            Intent intent  = new Intent(Practice.this, Choice.class);
+                            startActivity(intent);
+                            finish();
+                        }catch (Exception e) {}
                     }
                     else {
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
+                        for (int option : Options) {
+                            TextView op = (TextView) findViewById(option);
                             op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
                             op.setEnabled(true);
                         }
@@ -221,7 +228,6 @@ public class Practice extends AppCompatActivity {
 
         // tap on the option2
         option2.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
@@ -245,6 +251,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        ids.add(find_word(option2.getText().toString()));
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -268,11 +275,16 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        // exit
+                        make_true(ids);
+                        try {
+                            Intent intent  = new Intent(Practice.this, Choice.class);
+                            startActivity(intent);
+                            finish();
+                        }catch (Exception e) {}
                     }
                     else {
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
+                        for (int option : Options) {
+                            TextView op = (TextView) findViewById(option);
                             op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
                             op.setEnabled(true);
                         }
@@ -295,7 +307,6 @@ public class Practice extends AppCompatActivity {
 
         // tap on the option3
         option3.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
@@ -319,6 +330,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        ids.add(find_word(option3.getText().toString()));
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -342,11 +354,16 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        // exit
+                        make_true(ids);
+                        try {
+                            Intent intent  = new Intent(Practice.this, Choice.class);
+                            startActivity(intent);
+                            finish();
+                        }catch (Exception e) {}
                     }
                     else {
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
+                        for (int option : Options) {
+                            TextView op = (TextView) findViewById(option);
                             op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
                             op.setEnabled(true);
                         }
@@ -369,7 +386,6 @@ public class Practice extends AppCompatActivity {
 
         // tap on the option4
         option4.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
@@ -392,6 +408,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        ids.add(find_word(option4.getText().toString()));
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -415,11 +432,16 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        // exit
+                        make_true(ids);
+                        try {
+                            Intent intent  = new Intent(Practice.this, Choice.class);
+                            startActivity(intent);
+                            finish();
+                        }catch (Exception ignored) {}
                     }
                     else {
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
+                        for (int option : Options) {
+                            TextView op = (TextView) findViewById(option);
                             op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
                             op.setEnabled(true);
                         }
@@ -462,13 +484,15 @@ public class Practice extends AppCompatActivity {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
         DataFrame df;
         List<String> l_words = new ArrayList<>();
+        List<String> l_id_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
 
         try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
-            DataFrame df_unit_1 = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
-            l_words = (List<String>)df_unit_1.col("Word");
-            l_translations = (List<String>)df_unit_1.col("Translation");
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
+            l_words = (List<String>)df_unit.col("Word");
+            l_id_words = (List<String>)df_unit.col("id_word");
+            l_translations = (List<String>)df_unit.col("Translation");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -478,8 +502,8 @@ public class Practice extends AppCompatActivity {
         String word = l_words.get(rand[0]);
         String right_translation = l_translations.get(rand[0]);
 
-        for (int i = 0; i < rand.length; i++) {
-            Choices.add(l_translations.get(rand[i]));
+        for (Integer integer : rand) {
+            Choices.add(l_translations.get(integer));
         }
         Collections.shuffle(Choices);
 
@@ -512,6 +536,37 @@ public class Practice extends AppCompatActivity {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    public int find_word (String word) { // find id of the word
+        DataFrame df_1 = null;
+        List<String> l_words = new ArrayList<>();
+
+        try {
+            df_1 = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            l_words = (List<String>)df_1.col("Word");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return l_words.indexOf(word);
+    }
+
+    public void make_true (List <Integer> ids) { // mark learned words
+        DataFrame df_1 = null;
+        List<String> id_words = new ArrayList<>();
+        List<String> learned = new ArrayList<>();
+
+        try {
+            df_1 = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            learned= (List<String>)df_1.col("Learned");
+            id_words = (List<String>)df_1.col("id_word");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < ids.size(); i++) {
+            assert df_1 != null;
+            df_1.set(ids.get(i),"learned", true);
         }
     }
 
