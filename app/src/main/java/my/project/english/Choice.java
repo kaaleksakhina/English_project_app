@@ -60,7 +60,7 @@ public class Choice extends AppCompatActivity {
         //Button Help - open dialog window
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.activity_help);// путь к макету диалогового окна
+        dialog.setContentView(R.layout.dialog_window);// путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog.setCancelable(false); // окно нельзя закрыть кнопкой наза
 

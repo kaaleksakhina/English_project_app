@@ -18,12 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-
 public class Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
@@ -49,6 +43,9 @@ public class Units extends AppCompatActivity {
             dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
             dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+
+            TextView textView = dialog.findViewById(R.id.textdescription);
+            textView.setText(R.string.first_mes);
 
             // кнопка, закрывающая диалоговое окно
             TextView btnclose = (TextView) dialog.findViewById(R.id.btnclose);
@@ -107,7 +104,7 @@ public class Units extends AppCompatActivity {
         /// Button Help - open dialog window
         dialog2 = new Dialog(this);
         dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog2.setContentView(R.layout.activity_help);// путь к макету диалогового окна
+        dialog2.setContentView(R.layout.dialog_window);// путь к макету диалогового окна
         dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog2.setCancelable(false); // окно нельзя закрыть кнопкой назад
 

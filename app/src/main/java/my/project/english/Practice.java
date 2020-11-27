@@ -9,13 +9,12 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +34,7 @@ public class Practice extends AppCompatActivity {
     public int count = 0;
     public String right_answer;
 
-    Dialog dialog2;
+    Dialog dialog, dialog2;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -74,7 +73,7 @@ public class Practice extends AppCompatActivity {
         /// Button Help - open dialog window
         dialog2 = new Dialog(this);
         dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog2.setContentView(R.layout.activity_help);// way to dialog window layout
+        dialog2.setContentView(R.layout.dialog_window);// way to dialog window layout
         dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // transparent background for dialog window
         dialog2.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
@@ -102,6 +101,24 @@ public class Practice extends AppCompatActivity {
                 }catch (Exception e) {
 
                 }
+            }
+        });
+
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
+        dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+
+        TextView textView = dialog.findViewById(R.id.textdescription);
+        textView.setText(R.string.done_practice);
+
+        // Button Continue in Dialog window
+        Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss(); // close dialog window
             }
         });
 
@@ -197,11 +214,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         make_true(ids);
-                        try {
-                            Intent intent  = new Intent(Practice.this, Choice.class);
-                            startActivity(intent);
-                            finish();
-                        }catch (Exception ignored) {}
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -276,11 +289,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         make_true(ids);
-                        try {
-                            Intent intent  = new Intent(Practice.this, Choice.class);
-                            startActivity(intent);
-                            finish();
-                        }catch (Exception ignored) {}
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -355,11 +364,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         make_true(ids);
-                        try {
-                            Intent intent  = new Intent(Practice.this, Choice.class);
-                            startActivity(intent);
-                            finish();
-                        }catch (Exception ignored) {}
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -433,11 +438,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         make_true(ids);
-                        try {
-                            Intent intent  = new Intent(Practice.this, Choice.class);
-                            startActivity(intent);
-                            finish();
-                        }catch (Exception ignored) {}
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
