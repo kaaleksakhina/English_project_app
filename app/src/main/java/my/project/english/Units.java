@@ -22,7 +22,6 @@ public class Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     private ViewPager2 viewPager2Word;
-    private static final String CSV_FILE = "D:\\test.csv";
 
     Dialog dialog, dialog2;
 
@@ -46,23 +45,6 @@ public class Units extends AppCompatActivity {
 
             TextView textView = dialog.findViewById(R.id.textdescription);
             textView.setText(R.string.first_mes);
-
-            // кнопка, закрывающая диалоговое окно
-            TextView btnclose = (TextView) dialog.findViewById(R.id.btnclose);
-            btnclose.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //обрабатываем нажатие кнопки
-                    try {
-                        Intent intent = new Intent(Units.this, Choice.class);
-                        startActivity(intent);
-                        finish();
-                    } catch (Exception E) {
-
-                    }
-                    dialog.dismiss(); // закрыть диалоговое окно
-                }
-            });
 
             // Button Continue in Dialog window
             Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
@@ -123,13 +105,13 @@ public class Units extends AppCompatActivity {
                             try {
                                 dialog2.dismiss();
                             }
-                            catch (Exception E){
+                            catch (Exception ignored){
 
                             }
                             dialog2.dismiss(); // закрыть диалоговое окно
                         }
                     });
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }
@@ -144,7 +126,7 @@ public class Units extends AppCompatActivity {
                     Intent intent  = new Intent(Units.this, Choice_Units.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }
@@ -159,7 +141,7 @@ public class Units extends AppCompatActivity {
                     Intent intent  = new Intent(Units.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }

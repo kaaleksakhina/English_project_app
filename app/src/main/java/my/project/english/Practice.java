@@ -118,7 +118,13 @@ public class Practice extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss(); // close dialog window
+                try {
+                    Intent intent  = new Intent(Practice.this, Choice.class);
+                    startActivity(intent);
+                    finish();
+                }catch (Exception ignored) {
+
+                }
             }
         });
 
@@ -131,7 +137,7 @@ public class Practice extends AppCompatActivity {
                     Intent intent  = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }
@@ -162,7 +168,7 @@ public class Practice extends AppCompatActivity {
         option2.setText(Choices.get(1));
         option3.setText(Choices.get(2));
         option4.setText(Choices.get(3));
-        Choices.remove(5);
+        //Choices.remove(5);
 
         // tap on the option1
         option1.setOnTouchListener(new View.OnTouchListener() {
@@ -189,7 +195,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        ids.add(find_word(option1.getText().toString()));
+                        make_true(option1.getText().toString());
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -213,7 +219,6 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        make_true(ids);
                         dialog.show();
                     }
                     else {
@@ -264,7 +269,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        ids.add(find_word(option2.getText().toString()));
+                        make_true(option2.getText().toString());
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -288,7 +293,6 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        make_true(ids);
                         dialog.show();
                     }
                     else {
@@ -339,7 +343,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        ids.add(find_word(option3.getText().toString()));
+                        make_true(option3.getText().toString());
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -363,7 +367,6 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        make_true(ids);
                         dialog.show();
                     }
                     else {
@@ -413,7 +416,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        ids.add(find_word(option4.getText().toString()));
+                        make_true(option4.getText().toString());
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -437,7 +440,6 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        make_true(ids);
                         dialog.show();
                     }
                     else {
@@ -485,53 +487,63 @@ public class Practice extends AppCompatActivity {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
         DataFrame df;
         List<String> l_words = new ArrayList<>();
-        List<String> l_id_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
+        List<String> l_learned = new ArrayList<>();
+        boolean l = true;
+        String word = null, right_translation = null;
+        Integer[] rand = null;
 
         try {
             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
+            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
             l_words = (List<String>)df_unit.col("Word");
-            l_id_words = (List<String>)df_unit.col("id_word");
             l_translations = (List<String>)df_unit.col("Translation");
+            l_learned = (List<String>) df_unit.col("Learned");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Integer[] rand = getRand(l_words);
-
-        String word = l_words.get(rand[0]);
-        String right_translation = l_translations.get(rand[0]);
+        while (l) {
+            rand = getRand(l_translations);
+            if (l_learned.get(rand[0]).equals("false")) {
+                l = false;
+                word = l_words.get(rand[0]);
+                right_translation = l_translations.get(rand[0]);
+            } else {
+                rand = getRand(l_translations);
+            }
+        }
 
         for (Integer integer : rand) {
             Choices.add(l_translations.get(integer));
         }
         Collections.shuffle(Choices);
 
-        Choices.add( word);
+        Choices.add(word);
         Choices.add(right_translation);
         return Choices;
 
     }
 
     // list of 4 random numbers for words
-    public Integer[] getRand (List<String> l_words) {
+    public Integer[] getRand (List<String> l_translations) {
         Random random = new Random();
         Integer[] rand = new Integer[] {0,0,0,0};
 
         // 4 random id of words
         for (int i = 0; i < 4; i++) {
-            rand[i] = random.nextInt(l_words.size());
+            rand[i] = random.nextInt(l_translations.size());
         }
         for (int i = 0; i < 3; i++) {
             for (int j = i + 1; j < 4; j++) {
                 while (rand[i].equals(rand[j])) {
-                    rand[i] = random.nextInt(l_words.size());
+                    rand[i] = random.nextInt(l_translations.size());
                 }
             }
         }
         return rand;
     }
+
     public void wait_for() {
         try {
             TimeUnit.SECONDS.sleep(1);
@@ -540,7 +552,7 @@ public class Practice extends AppCompatActivity {
         }
     }
 
-    public int find_word (String word) { // find id of the word
+    public void make_true (String word) { // if the word is learned - change to true
         DataFrame df_1 = null;
         List<String> l_words = new ArrayList<>();
 
@@ -550,25 +562,8 @@ public class Practice extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return l_words.indexOf(word);
-    }
-
-    public void make_true (List <Integer> ids) { // mark learned words
-        DataFrame df_1 = null;
-        List<String> id_words = new ArrayList<>();
-        List<String> learned = new ArrayList<>();
-
-        try {
-            df_1 = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            learned= (List<String>)df_1.col("Learned");
-            id_words = (List<String>)df_1.col("id_word");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        for (int i = 0; i < ids.size(); i++) {
-            assert df_1 != null;
-            df_1.set(ids.get(i),"learned", true);
-        }
+        int ind = l_words.indexOf(word);
+        df_1.set(ind+1, 8, "true");
     }
 
 }
