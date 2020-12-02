@@ -37,13 +37,15 @@ public class Practice extends AppCompatActivity {
 
     Dialog dialog, dialog2;
 
+    DataFrame df, df_unit = null;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
         Random random = new Random();
-        DataFrame df, df_unit;
+
 
         final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
                 R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
@@ -60,8 +62,6 @@ public class Practice extends AppCompatActivity {
         final TextView option2 = (TextView) findViewById(Options[1]);
         final TextView option3 = (TextView) findViewById(Options[2]);
         final TextView option4 = (TextView) findViewById(Options[3]);
-
-        List <Integer> ids = new ArrayList<>(); // list of learned words
 
         final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
 
@@ -101,13 +101,13 @@ public class Practice extends AppCompatActivity {
                             try {
                                 dialog2.dismiss();
                             }
-                            catch (Exception E){
-
+                            catch (Exception ignored) {
+                                ignored.printStackTrace();
                             }
                             dialog2.dismiss(); // закрыть диалоговое окно
                         }
                     });
-                }catch (Exception e) {
+                }catch (Exception ignored) {
 
                 }
             }
@@ -167,7 +167,7 @@ public class Practice extends AppCompatActivity {
             }
         });
 
-        ArrayList<String> Choices = getChoices(unit);
+        ArrayList<String> Choices = getChoices();
         String word = Choices.get(4);
         right_answer = Choices.get(5);
 
@@ -229,6 +229,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         dialog.show();
+                        updateDF();
                     }
                     else {
                         for (int option : Options) {
@@ -237,7 +238,7 @@ public class Practice extends AppCompatActivity {
                             op.setEnabled(true);
                         }
 
-                        ArrayList<String> Choices = getChoices(unit);
+                        ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
                         word_final.setText(Choices.get(4));
@@ -303,6 +304,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         dialog.show();
+                        updateDF();
                     }
                     else {
                         for (int option : Options) {
@@ -311,7 +313,7 @@ public class Practice extends AppCompatActivity {
                             op.setEnabled(true);
                         }
 
-                        ArrayList<String> Choices = getChoices(unit);
+                        ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
                         word_final.setText(Choices.get(4));
@@ -377,6 +379,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         dialog.show();
+                        updateDF();
                     }
                     else {
                         for (int option : Options) {
@@ -385,7 +388,7 @@ public class Practice extends AppCompatActivity {
                             op.setEnabled(true);
                         }
 
-                        ArrayList<String> Choices = getChoices(unit);
+                        ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
                         word_final.setText(Choices.get(4));
@@ -450,6 +453,7 @@ public class Practice extends AppCompatActivity {
                     }
                     if (count == 10) {
                         dialog.show();
+                        updateDF();
                     }
                     else {
                         for (int option : Options) {
@@ -458,7 +462,7 @@ public class Practice extends AppCompatActivity {
                             op.setEnabled(true);
                         }
 
-                        ArrayList<String> Choices = getChoices(unit);
+                        ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
                         word_final.setText(Choices.get(4));
@@ -492,23 +496,19 @@ public class Practice extends AppCompatActivity {
     }
 
     // list of 4 translations and a word
-    public ArrayList<String> getChoices (int unit, DataFrame df_unit) {
+    public ArrayList<String> getChoices () {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
-        DataFrame df;
-        List<String> l_words = new ArrayList<>();
-        List<String> l_translations = new ArrayList<>();
-        List<Boolean> l_learned = new ArrayList<>();
         boolean l = true;
         String word = null, right_translation = null;
         Integer[] rand = null;
 
-        l_words = (List<String>)df_unit.col("Word");
-        l_translations = (List<String>)df_unit.col("Translation");
-        l_learned = (List<Boolean>) df_unit.col("Learned");
+        List<String> l_words = (List<String>)df_unit.col("Word");
+        List<String> l_translations = (List<String>)df_unit.col("Translation");
+        List<Boolean> l_learned = (List<Boolean>)df_unit.col("Learned");
 
         while (l) {
             rand = getRand(l_translations);
-            if (l_learned.get(rand[0]).equals("false")) {
+            if (l_learned.get(rand[0]).equals(false)) {
                 l = false;
                 word = l_words.get(rand[0]);
                 right_translation = l_translations.get(rand[0]);
@@ -555,18 +555,20 @@ public class Practice extends AppCompatActivity {
         }
     }
 
-    public void make_true (String word, DataFrame df_unit) { // if the word is learned - change to true
-        DataFrame df_1 = null;
-        List<String> l_words = new ArrayList<>();
+    public void make_true (String word) { // if the word is learned - change to true
+        List<String> l_words = (List<String>)df_unit.col("Word");
 
+        int ind = l_words.indexOf(word);
+        df_unit.set(ind, 8, "true");
+    }
+
+    public void updateDF(){
+        df.update(df_unit);
         try {
-            df_1 = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            l_words = (List<String>)df_1.col("Word");
+            df.writeCsv("csv_page_1");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        int ind = l_words.indexOf(word);
-        df_unit.set(ind+1, 8, true);
     }
 
 }
