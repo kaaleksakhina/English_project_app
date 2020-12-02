@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,6 +43,7 @@ public class Practice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
         Random random = new Random();
+        DataFrame df, df_unit;
 
         final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
                 R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
@@ -65,6 +67,13 @@ public class Practice extends AppCompatActivity {
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
+
+        try {
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // Open full screen
         Window w = getWindow();
@@ -483,25 +492,19 @@ public class Practice extends AppCompatActivity {
     }
 
     // list of 4 translations and a word
-    public ArrayList<String> getChoices (int unit) {
+    public ArrayList<String> getChoices (int unit, DataFrame df_unit) {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
         DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
-        List<String> l_learned = new ArrayList<>();
+        List<Boolean> l_learned = new ArrayList<>();
         boolean l = true;
         String word = null, right_translation = null;
         Integer[] rand = null;
 
-        try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
-            l_words = (List<String>)df_unit.col("Word");
-            l_translations = (List<String>)df_unit.col("Translation");
-            l_learned = (List<String>) df_unit.col("Learned");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        l_words = (List<String>)df_unit.col("Word");
+        l_translations = (List<String>)df_unit.col("Translation");
+        l_learned = (List<Boolean>) df_unit.col("Learned");
 
         while (l) {
             rand = getRand(l_translations);
@@ -552,7 +555,7 @@ public class Practice extends AppCompatActivity {
         }
     }
 
-    public void make_true (String word) { // if the word is learned - change to true
+    public void make_true (String word, DataFrame df_unit) { // if the word is learned - change to true
         DataFrame df_1 = null;
         List<String> l_words = new ArrayList<>();
 
@@ -563,7 +566,7 @@ public class Practice extends AppCompatActivity {
             e.printStackTrace();
         }
         int ind = l_words.indexOf(word);
-        df_1.set(ind+1, 8, "true");
+        df_unit.set(ind+1, 8, true);
     }
 
 }
