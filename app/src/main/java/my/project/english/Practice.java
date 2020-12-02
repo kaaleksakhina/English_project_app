@@ -33,7 +33,7 @@ public class Practice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     public int count = 0;
-    public String right_answer;
+    public String right_answer, word;
 
     Dialog dialog, dialog2;
 
@@ -168,7 +168,7 @@ public class Practice extends AppCompatActivity {
         });
 
         ArrayList<String> Choices = getChoices();
-        String word = Choices.get(4);
+        word = Choices.get(4);
         right_answer = Choices.get(5);
 
         // set the word and options on the places
@@ -204,7 +204,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        make_true(option1.getText().toString());
+                        make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -241,7 +241,8 @@ public class Practice extends AppCompatActivity {
                         ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
-                        word_final.setText(Choices.get(4));
+                        word = Choices.get(4);
+                        word_final.setText(word);
 
                         for (int i = 0; i < Options.length; i++) {
                             TextView op = (TextView) findViewById(Options[i]);
@@ -279,7 +280,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        make_true(option2.getText().toString());
+                        make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -316,7 +317,8 @@ public class Practice extends AppCompatActivity {
                         ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
-                        word_final.setText(Choices.get(4));
+                        word = Choices.get(4);
+                        word_final.setText(word);
 
                         for (int i = 0; i < Options.length; i++) {
                             TextView op = (TextView) findViewById(Options[i]);
@@ -354,7 +356,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        make_true(option3.getText().toString());
+                        make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -391,7 +393,8 @@ public class Practice extends AppCompatActivity {
                         ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
-                        word_final.setText(Choices.get(4));
+                        word = Choices.get(4);
+                        word_final.setText(word);
 
                         for (int i = 0; i < Options.length; i++) {
                             TextView op = (TextView) findViewById(Options[i]);
@@ -428,7 +431,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
-                        make_true(option4.getText().toString());
+                        make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
@@ -465,7 +468,8 @@ public class Practice extends AppCompatActivity {
                         ArrayList<String> Choices = getChoices();
 
                         right_answer = Choices.get(5);
-                        word_final.setText(Choices.get(4));
+                        word = Choices.get(4);
+                        word_final.setText(word);
 
                         for (int i = 0; i < Options.length; i++) {
                             TextView op = (TextView) findViewById(Options[i]);
