@@ -1,35 +1,13 @@
 ﻿id_unit;id_word;Word;Translation;First examples;Second examples;Third examples;Сollocations;Learned
-1;1;certificate;сертификат, свидетельство;At the end of of the four-week training course, you will receive a certificate.;This certificate could be renewed once if necessary.;;;false
-1;2;commitment;обязательство;Commitment to education;;;;false
-1;3;corporate;корпоративный;Corporate culture;;;;false
-1;4;course;курс обучения;A ten-week course in computing;;;;false
-1;5;degree;ученая степень, диплом;She has a degree in physics;;;;false
-1;6;development;развитие;Developments in technology;;;personal development;false
-1;7;experience;опыт;To learn from the experience you get;;;gain experience;false
-1;8;incentive;стимул;Material incentives;;;;false
-1;9;job;particular type of work activity;;;;;false
-1;10;knowledge;знание;Knowledge of naval history;;;;false
-1;11;overtime;сверхурочная работа;Unpaid overtime;;;;false
-1;12;permanent;постоянный;;;;;false
-1;13;promotion;повышение;;;;;false
-1;14;qualification;квалификация;;;;;false
-1;15;recruits;пополнение;;;;;false
-1;16;responsibility;ответственность;;;;;false
-1;17;salary;зарплата;;;;;false
-1;18;skill;умение;Good communication skills;You will be trained in telephone skills, including how to provide quality customer service.;;communication skills;false
-1;19;staff ;персонал;;;;supervising staff;false
-2;20;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;false
-2;21;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;false
-2;22;campaign;кампания;We currently work on a promotional campaign.;;;to launch a campaign, to mount a campaign, to organize a campaign;false
-2;23;chain (of shops);сеть (магазинов);McDonald's is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;false
-2;24;customer;покупатель;The majority of his customers prefer this particular product.;She is one of our best customers.;We need to build customers relationship.;to attend customers;false
-2;25;deadline;крайний срок;The deadline is not far off.;;;to meet a deadline, deadline date ;false
-2;26;employee;работник;I'm pleased to announce that every employee will be given a bonus.;They hired a new employee.;;take on (2) employees;false
-2;27;figures;цифры;You need to to check figures in your last report.;You provide reliable figures.;;;false
-2;28;goal;цель;Our main goal is to earn money.;It is important to pursue the main goal in your life.;He achieved his goal to have a degree.;to reach the goal, to achieve the goal;false
-2;29;receptionist;секретарь;You already have a new receptionist.;I thought maybe she could be the new receptionist.;;;false
-2;30;report;отчёт;I read your reports about last year.;I'll send that efficiency report to the boss in next two days.;;to write a report;false
-2;31;team-building activities;деятельность дл поддержания командного духа;Our company need to arrange team-building activities for the staff.;Team-building activities impove relationships.;;;false
+1;1;certificate;сертификат, свидетельство;At the end of of the four-week training course, you will receive a certificate.;This certificate could be renewed once if necessary.;;;0
+1;2;commitment;обязательство;Commitment to education;;;;0
+1;3;corporate;корпоративный;Corporate culture;;;;0
+1;4;course;курс обучения;A ten-week course in computing;;;;0
+1;5;degree;ученая степень, диплом;She has a degree in physics;;;;0
+2;20;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;0
+2;21;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;0
+2;22;campaign;кампания;We currently work on a promotional campaign.;;;to launch a campaign, to mount a campaign, to organize a campaign;0
+2;23;chain (of shops);сеть (магазинов);McDonald's is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;0
 3;32;approval;одобрение;I don't need his approval ;;;;false
 3;33;assign;поручать;To assign the task;;;;false
 3;34;emphasize;придавать значение, подчеркивать;To emphasize the importance;;;;false

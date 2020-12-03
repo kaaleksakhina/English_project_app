@@ -502,24 +502,17 @@ public class Practice extends AppCompatActivity {
     // list of 4 translations and a word
     public ArrayList<String> getChoices () {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
-        boolean l = true;
-        String word = null, right_translation = null;
         Integer[] rand = null;
 
-        List<String> l_words = (List<String>)df_unit.col("Word");
-        List<String> l_translations = (List<String>)df_unit.col("Translation");
-        List<Boolean> l_learned = (List<Boolean>)df_unit.col("Learned");
+        DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
+        List<String> l_words = (List<String>)df_need.col("Word");
+        List<String> l_translations = (List<String>)df_need.col("Translation");
+        List<Boolean> l_learned = (List<Boolean>)df_need.col("Learned");
 
-        while (l) {
-            rand = getRand(l_translations);
-            if (l_learned.get(rand[0]).equals(false)) {
-                l = false;
-                word = l_words.get(rand[0]);
-                right_translation = l_translations.get(rand[0]);
-            } else {
-                rand = getRand(l_translations);
-            }
-        }
+        rand = getRand(l_translations);
+
+        String word = l_words.get(rand[0]);
+        String right_translation = l_translations.get(rand[0]);
 
         for (Integer integer : rand) {
             Choices.add(l_translations.get(integer));
@@ -563,7 +556,7 @@ public class Practice extends AppCompatActivity {
         List<String> l_words = (List<String>)df_unit.col("Word");
 
         int ind = l_words.indexOf(word);
-        df_unit.set(ind, 8, "true");
+        df_unit.set(ind, 8, 1);
     }
 
     public void updateDF(){
