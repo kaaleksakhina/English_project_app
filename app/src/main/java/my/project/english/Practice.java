@@ -502,14 +502,13 @@ public class Practice extends AppCompatActivity {
     // list of 4 translations and a word
     public ArrayList<String> getChoices () {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
-        Integer[] rand = null;
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
         List<String> l_words = (List<String>)df_need.col("Word");
         List<String> l_translations = (List<String>)df_need.col("Translation");
         List<Boolean> l_learned = (List<Boolean>)df_need.col("Learned");
 
-        rand = getRand(l_translations);
+        Integer[] rand = getRand(l_translations);
 
         String word = l_words.get(rand[0]);
         String right_translation = l_translations.get(rand[0]);
