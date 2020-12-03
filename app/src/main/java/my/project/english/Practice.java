@@ -501,45 +501,47 @@ public class Practice extends AppCompatActivity {
 
     // list of 4 translations and a word
     public ArrayList<String> getChoices () {
+        Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
-        List<String> l_words = (List<String>)df_need.col("Word");
-        List<String> l_translations = (List<String>)df_need.col("Translation");
-        List<Boolean> l_learned = (List<Boolean>)df_need.col("Learned");
+        List<Integer> l_ids = (List<Integer>)df_need.col("id_word");
 
-        Integer[] rand = getRand(l_translations);
+        List<String> l_words = (List<String>)df.col("Word");
+        List<String> l_translations = (List<String>)df.col("Translation");
 
-        String word = l_words.get(rand[0]);
-        String right_translation = l_translations.get(rand[0]);
+        int rand_id = l_ids.get(random.nextInt(l_ids.size()));
+        String right_word = l_words.get(rand_id);
+        String right_translation = l_translations.get(rand_id);
+
+        Integer[] rand = getRand(l_translations, rand_id);
 
         for (Integer integer : rand) {
             Choices.add(l_translations.get(integer));
         }
         Collections.shuffle(Choices);
 
-        Choices.add(word);
+        Choices.add(right_word);
         Choices.add(right_translation);
         return Choices;
 
     }
 
     // list of 4 random numbers for words
-    public Integer[] getRand (List<String> l_translations) {
+    public Integer[] getRand (List<String> l_translations, int id) {
         Random random = new Random();
         Integer[] rand = new Integer[] {0,0,0,0};
+        int r = 0;
 
         // 4 random id of words
-        for (int i = 0; i < 4; i++) {
-            rand[i] = random.nextInt(l_translations.size());
-        }
         for (int i = 0; i < 3; i++) {
-            for (int j = i + 1; j < 4; j++) {
-                while (rand[i].equals(rand[j])) {
-                    rand[i] = random.nextInt(l_translations.size());
-                }
+            r = random.nextInt(l_translations.size());
+            while (r == id){
+                 r = random.nextInt(l_translations.size());
             }
+            rand[i] = r;
         }
+        rand[4] = id;
         return rand;
     }
 
@@ -555,7 +557,7 @@ public class Practice extends AppCompatActivity {
         List<String> l_words = (List<String>)df_unit.col("Word");
 
         int ind = l_words.indexOf(word);
-        df_unit.set(ind, 8, 1);
+        df_unit.set(ind, 8, 1L);
     }
 
     public void updateDF(){
