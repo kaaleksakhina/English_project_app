@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,6 +18,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.EOFException;
@@ -500,17 +503,18 @@ public class Practice extends AppCompatActivity {
     }
 
     // list of 4 translations and a word
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public ArrayList<String> getChoices () {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
-        List<Integer> l_ids = (List<Integer>)df_need.col("id_word");
+        List<Long> l_ids = (List<Long>)df_need.col("id_word");
 
         List<String> l_words = (List<String>)df.col("Word");
         List<String> l_translations = (List<String>)df.col("Translation");
 
-        int rand_id = l_ids.get(random.nextInt(l_ids.size()));
+        int rand_id = Math.toIntExact(l_ids.get(random.nextInt(l_ids.size())));
         String right_word = l_words.get(rand_id);
         String right_translation = l_translations.get(rand_id);
 
@@ -541,7 +545,7 @@ public class Practice extends AppCompatActivity {
             }
             rand[i] = r;
         }
-        rand[4] = id;
+        rand[3] = id;
         return rand;
     }
 
