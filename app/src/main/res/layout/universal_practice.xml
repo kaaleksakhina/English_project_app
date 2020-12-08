@@ -35,7 +35,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Word"
                 android:textStyle="bold"
-                android:textSize="25sp" />
+                android:textSize="27sp" />
 
             <LinearLayout
                 android:id="@+id/container3"
@@ -48,46 +48,50 @@
                 android:layout_marginHorizontal="30dp">
                     <TextView
                         android:id="@+id/option1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
-                        android:textSize="20sp"
+                        android:textSize="21sp"
                         android:layout_margin="10dp"
                         android:clickable="true"
+                        android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:padding="10dp"
                         android:focusable="true" />
                     <TextView
                         android:id="@+id/option2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
-                        android:textSize="20sp"
+                        android:textSize="21sp"
                         android:clickable="true"
                         android:padding="10dp"
                         android:layout_margin="10dp"
+                        android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
                     <TextView
                         android:id="@+id/option3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
                         android:clickable="true"
-                        android:textSize="20sp"
+                        android:textSize="21sp"
                         android:padding="10dp"
                         android:layout_margin="10dp"
+                        android:gravity="center"
                         android:layout_marginHorizontal="50dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
                     <TextView
                         android:id="@+id/option4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
                         android:clickable="true"
-                        android:textSize="20sp"
+                        android:textSize="21sp"
                         android:layout_margin="10dp"
+                        android:gravity="center"
                         android:padding="10dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />

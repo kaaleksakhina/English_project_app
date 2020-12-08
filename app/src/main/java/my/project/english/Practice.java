@@ -22,7 +22,6 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,20 +34,23 @@ import joinery.DataFrame;
 public class Practice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
-    public int count = 0;
+    public Integer count = 0;
+    public Integer count_right = 0;
+    public ArrayList<Integer> prog = new ArrayList<Integer>();
     public String right_answer, word;
 
     Dialog dialog, dialog2;
 
     DataFrame df, df_unit = null;
 
-    @SuppressLint("ClickableViewAccessibility")
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_practice);
         Random random = new Random();
-
+        for (int i = 0; i < 10; i++) prog.add(0);
 
         final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
                 R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
@@ -123,7 +125,12 @@ public class Practice extends AppCompatActivity {
         dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
         TextView textView = dialog.findViewById(R.id.textdescription);
+        TextView points = dialog.findViewById(R.id.points);
+        for (int i = 0; i < 10; i++) {
+            count_right += prog.get(i);
+        }
         textView.setText(R.string.done_practice);
+        points.setText(count_right.toString());
 
         // Button Continue in Dialog window
         Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
@@ -207,6 +214,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        prog.set(count - 1, 1);
                         make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
@@ -214,20 +222,28 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     else {
-                        if (count > 0) {
-                            count = count - 1;
-                        }
+                        count++;
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     if (count == 10) {
@@ -283,6 +299,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        prog.set(count - 1, 1);
                         make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
@@ -290,20 +307,28 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     else {
-                        if (count > 0) {
-                            count = count - 1;
-                        }
+                        count++;
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     if (count == 10) {
@@ -359,6 +384,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        prog.set(count - 1, 1);
                         make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
@@ -366,20 +392,28 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     else {
-                        if (count > 0) {
-                            count = count - 1;
-                        }
+                        count++;
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     if (count == 10) {
@@ -409,7 +443,6 @@ public class Practice extends AppCompatActivity {
                 return true;
             }
         });
-
         // tap on the option4
         option4.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -423,6 +456,7 @@ public class Practice extends AppCompatActivity {
                     }
                     else {
                         option4.setBackgroundResource(R.drawable.wrong_choice_red);
+
                         if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
                         if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
                         if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
@@ -434,6 +468,7 @@ public class Practice extends AppCompatActivity {
                         if (count < 10) {
                             count++;
                         }
+                        prog.set(count - 1, 1);
                         make_true(word);
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
@@ -441,20 +476,28 @@ public class Practice extends AppCompatActivity {
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     else {
-                        if (count > 0) {
-                            count = count - 1;
-                        }
+                        count++;
                         for (int i = 0; i < 10; i++) {
                             TextView tv = findViewById(progress[i]);
                             tv.setBackgroundResource(R.drawable.style_points);
                         }
                         for (int i = 0; i < count; i++) {
                             TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points_teal);
+                            if (prog.get(i) == 1) {
+                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            }
+                            else {
+                                tv.setBackgroundResource(R.drawable.style_points_red);
+                            }
                         }
                     }
                     if (count == 10) {
@@ -504,13 +547,12 @@ public class Practice extends AppCompatActivity {
 
     // list of 4 translations and a word
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public ArrayList<String> getChoices () {
+    public ArrayList<String> getChoices() {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
         List<Long> l_ids = (List<Long>)df_need.col("id_word");
-
         List<String> l_words = (List<String>)df.col("Word");
         List<String> l_translations = (List<String>)df.col("Translation");
 
