@@ -557,8 +557,8 @@ public class Practice extends AppCompatActivity {
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
         List<Long> l_ids = (List<Long>)df_need.col("id_word");
-        List<String> l_words = (List<String>)df_need.col("Word");
-        List<String> l_translations = (List<String>)df_need.col("Translation");
+        List<String> l_words = (List<String>)df.col("Word");
+        List<String> l_translations = (List<String>)df.col("Translation");
 
         int rand_id = Math.toIntExact(l_ids.get(random.nextInt(l_ids.size())));
         String right_word = l_words.get(rand_id);
