@@ -126,11 +126,7 @@ public class Practice extends AppCompatActivity {
 
         TextView textView = dialog.findViewById(R.id.textdescription);
         TextView points = dialog.findViewById(R.id.points);
-        for (int i = 0; i < 10; i++) {
-            count_right += prog.get(i);
-        }
         textView.setText(R.string.done_practice);
-        points.setText(count_right.toString());
 
         // Button Continue in Dialog window
         Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
@@ -213,6 +209,7 @@ public class Practice extends AppCompatActivity {
                     if (option1.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
+                            count_right++;
                         }
                         prog.set(count - 1, 1);
                         make_true(word);
@@ -247,8 +244,10 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        dialog.show();
+                        points.setText(count_right.toString());
                         updateDF();
+                        dialog.show();
+
                     }
                     else {
                         for (int option : Options) {
@@ -298,6 +297,7 @@ public class Practice extends AppCompatActivity {
                     if (option2.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
+                            count_right++;
                         }
                         prog.set(count - 1, 1);
                         make_true(word);
@@ -332,8 +332,9 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        dialog.show();
+                        points.setText(count_right.toString());
                         updateDF();
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -383,6 +384,7 @@ public class Practice extends AppCompatActivity {
                     if (option3.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
+                            count_right++;
                         }
                         prog.set(count - 1, 1);
                         make_true(word);
@@ -417,8 +419,9 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        dialog.show();
+                        points.setText(count_right.toString());
                         updateDF();
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -467,6 +470,7 @@ public class Practice extends AppCompatActivity {
                     if (option4.getText().toString().equals(right_answer)) {
                         if (count < 10) {
                             count++;
+                            count_right++;
                         }
                         prog.set(count - 1, 1);
                         make_true(word);
@@ -501,8 +505,9 @@ public class Practice extends AppCompatActivity {
                         }
                     }
                     if (count == 10) {
-                        dialog.show();
+                        points.setText(count_right.toString());
                         updateDF();
+                        dialog.show();
                     }
                     else {
                         for (int option : Options) {
@@ -527,7 +532,6 @@ public class Practice extends AppCompatActivity {
                 return true;
             }
         });
-
     }
 
     @Override
@@ -553,8 +557,8 @@ public class Practice extends AppCompatActivity {
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
         List<Long> l_ids = (List<Long>)df_need.col("id_word");
-        List<String> l_words = (List<String>)df.col("Word");
-        List<String> l_translations = (List<String>)df.col("Translation");
+        List<String> l_words = (List<String>)df_need.col("Word");
+        List<String> l_translations = (List<String>)df_need.col("Translation");
 
         int rand_id = Math.toIntExact(l_ids.get(random.nextInt(l_ids.size())));
         String right_word = l_words.get(rand_id);
@@ -600,14 +604,13 @@ public class Practice extends AppCompatActivity {
     }
 
     public void make_true (String word) { // if the word is learned - change to true
-        List<String> l_words = (List<String>)df_unit.col("Word");
-
-        int ind = l_words.indexOf(word);
+        List<String> l_words = (List<String>)df.col("Word");
+        Integer ind = l_words.indexOf(word);
         df_unit.set(ind, 8, 1L);
+        df.set(ind, 8, 1L);
     }
 
     public void updateDF(){
-        df.update(df_unit);
         try {
             df.writeCsv("csv_page_1");
         } catch (IOException e) {
