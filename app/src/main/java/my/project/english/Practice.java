@@ -39,7 +39,7 @@ public class Practice extends AppCompatActivity {
     public ArrayList<Integer> prog = new ArrayList<Integer>();
     public String right_answer, word;
 
-    Dialog dialog, dialog2;
+    Dialog dialog, dialog2, end;
 
     DataFrame df, df_unit = null;
 
@@ -140,6 +140,29 @@ public class Practice extends AppCompatActivity {
                 }catch (Exception ignored) {
 
                 }
+            }
+        });
+
+        end = new Dialog(this);
+        end.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        end.setContentView(R.layout.dialog_window);
+        end.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        end.setCancelable(false); // окно нельзя закрыть кнопкой назад
+        TextView textdescription = (TextView) end.findViewById(R.id.textdescription);
+        textdescription.setText(R.string.end_words);
+
+        TextView btnclose = (TextView) end.findViewById(R.id.btnclose);
+        btnclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //обрабатываем нажатие кнопки
+                try {
+                    Intent intent = new Intent(Practice.this, Choice.class);
+                    startActivity(intent);
+                    end.dismiss();
+                    finish();
+                }
+                catch (Exception E){ }
             }
         });
 
@@ -257,15 +280,17 @@ public class Practice extends AppCompatActivity {
                         }
 
                         ArrayList<String> Choices = getChoices();
+                        if (Choices.size() == 0) end.show();
+                        else {
+                            right_answer = Choices.get(5);
+                            word = Choices.get(4);
+                            word_final.setText(word);
 
-                        right_answer = Choices.get(5);
-                        word = Choices.get(4);
-                        word_final.setText(word);
-
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
-                            op.setText(Choices.get(i));
-                            op.setAnimation(a);
+                            for (int i = 0; i < Options.length; i++) {
+                                TextView op = (TextView) findViewById(Options[i]);
+                                op.setText(Choices.get(i));
+                                op.setAnimation(a);
+                            }
                         }
                     }
                 }
@@ -344,15 +369,17 @@ public class Practice extends AppCompatActivity {
                         }
 
                         ArrayList<String> Choices = getChoices();
+                        if (Choices.size() == 0) end.show();
+                        else {
+                            right_answer = Choices.get(5);
+                            word = Choices.get(4);
+                            word_final.setText(word);
 
-                        right_answer = Choices.get(5);
-                        word = Choices.get(4);
-                        word_final.setText(word);
-
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
-                            op.setText(Choices.get(i));
-                            op.setAnimation(a);
+                            for (int i = 0; i < Options.length; i++) {
+                                TextView op = (TextView) findViewById(Options[i]);
+                                op.setText(Choices.get(i));
+                                op.setAnimation(a);
+                            }
                         }
                     }
                 }
@@ -431,15 +458,17 @@ public class Practice extends AppCompatActivity {
                         }
 
                         ArrayList<String> Choices = getChoices();
+                        if (Choices.size() == 0) end.show();
+                        else {
+                            right_answer = Choices.get(5);
+                            word = Choices.get(4);
+                            word_final.setText(word);
 
-                        right_answer = Choices.get(5);
-                        word = Choices.get(4);
-                        word_final.setText(word);
-
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
-                            op.setText(Choices.get(i));
-                            op.setAnimation(a);
+                            for (int i = 0; i < Options.length; i++) {
+                                TextView op = (TextView) findViewById(Options[i]);
+                                op.setText(Choices.get(i));
+                                op.setAnimation(a);
+                            }
                         }
                     }
                 }
@@ -517,15 +546,17 @@ public class Practice extends AppCompatActivity {
                         }
 
                         ArrayList<String> Choices = getChoices();
+                        if (Choices.size() == 0) end.show();
+                        else {
+                            right_answer = Choices.get(5);
+                            word = Choices.get(4);
+                            word_final.setText(word);
 
-                        right_answer = Choices.get(5);
-                        word = Choices.get(4);
-                        word_final.setText(word);
-
-                        for (int i = 0; i < Options.length; i++) {
-                            TextView op = (TextView) findViewById(Options[i]);
-                            op.setText(Choices.get(i));
-                            op.setAnimation(a);
+                            for (int i = 0; i < Options.length; i++) {
+                                TextView op = (TextView) findViewById(Options[i]);
+                                op.setText(Choices.get(i));
+                                op.setAnimation(a);
+                            }
                         }
                     }
                 }
@@ -556,15 +587,19 @@ public class Practice extends AppCompatActivity {
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
         DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
+        if (df_need.length() == 0) return Choices;
+
         List<Long> l_ids = (List<Long>)df_need.col("id_word");
+        List<String> l_words_need = (List<String>)df_need.col("Word");
+
         List<String> l_words = (List<String>)df.col("Word");
         List<String> l_translations = (List<String>)df.col("Translation");
 
-        int rand_id = Math.toIntExact(l_ids.get(random.nextInt(l_ids.size())));
-        String right_word = l_words.get(rand_id);
-        String right_translation = l_translations.get(rand_id);
+        int rand_id = random.nextInt(l_ids.size());
+        String right_word = l_words_need.get(rand_id);
+        String right_translation = l_translations.get(l_words.indexOf(right_word));
 
-        Integer[] rand = getRand(l_translations, rand_id);
+        Integer[] rand = getRand(l_translations, l_words.indexOf(right_word));
 
         for (Integer integer : rand) {
             Choices.add(l_translations.get(integer));

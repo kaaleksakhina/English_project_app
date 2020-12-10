@@ -89,6 +89,8 @@ public class Units extends AppCompatActivity {
         dialog2.setContentView(R.layout.dialog_window);// путь к макету диалогового окна
         dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog2.setCancelable(false); // окно нельзя закрыть кнопкой назад
+        TextView textdescription = (TextView) dialog2.findViewById(R.id.textdescription);
+        textdescription.setText(R.string.help_description);
 
         ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
         buttonHelp.setOnClickListener(new View.OnClickListener() {

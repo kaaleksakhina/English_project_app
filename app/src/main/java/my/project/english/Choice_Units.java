@@ -65,6 +65,8 @@ public class Choice_Units extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_window);// путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
+        TextView textdescription = (TextView) dialog.findViewById(R.id.textdescription);
+        textdescription.setText(R.string.help_description);
 
         ImageView buttonHelp = (ImageView) findViewById(R.id.imageQuestionMark);
         buttonHelp.setOnClickListener(new View.OnClickListener() {
