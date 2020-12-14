@@ -34,8 +34,8 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
         DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
-        List<String> l_collocations = new ArrayList<>();
         List< List<String> > l_examples = new ArrayList<>();
+        List<String> l_collocations = new ArrayList<>();
 
         // word - translation - examples, collocations
         try {

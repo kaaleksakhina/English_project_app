@@ -25,6 +25,7 @@ public class WordTranslationFragment extends Fragment {
     private TextView TextViewExample1;
     private TextView TextViewExample2;
     private TextView TextViewExample3;
+    private TextView TextViewCollocations;
 
     public WordTranslationFragment() { }
 
@@ -46,6 +47,7 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewExample1 = view.findViewById(R.id.example1);
         this.TextViewExample2 = view.findViewById(R.id.example2);
         this.TextViewExample3 = view.findViewById(R.id.example3);
+        this.TextViewCollocations = view.findViewById(R.id.collocations);
 
         return view;
     }
@@ -87,11 +89,11 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewTranslation.setText(word.getTranslation());
         this.TextViewExample1.setText(word.getExamples().get(0));
         this.TextViewExample2.setText(word.getExamples().get(1));
-        if (word.getExamples().get(2) != "") {
+        if (!word.getExamples().get(2).equals("")) {
             this.TextViewExample3.setText(word.getExamples().get(2));
             this.TextViewExample3.setTextSize(14);
         }
-
+        this.TextViewCollocations.setText(word.getCollocations());
         this.TextViewWord.setAllCaps(true);
 
     }
@@ -103,14 +105,14 @@ public class WordTranslationFragment extends Fragment {
         bundle.putString("example1", word.getExamples().get(0));
         bundle.putString("example2", word.getExamples().get(1));
         bundle.putString("example3", word.getExamples().get(2));
-
+        bundle.putString("collocations", word.getCollocations());
         return bundle;
     }
 
     private Word bundleToWord(Bundle savedInstanceState) {
         String word = savedInstanceState.getString("word");
         String translation = savedInstanceState.getString("translation");
-        String example1 = savedInstanceState.getString("example");
+        String example1 = savedInstanceState.getString("example1");
         String example2 = savedInstanceState.getString("example2");
         String example3 = savedInstanceState.getString("example3");
         String collocations = savedInstanceState.getString("collocations");

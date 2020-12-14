@@ -1,59 +1,59 @@
 ﻿id_unit;id_word;Word;Translation;Examples of sentences(1);Examples of sentences(2);Examples of sentences(3);Сollocations;Learned
-1;0;certificate;сертификат, свидетельство;At the end of of the four-week training course, you will receive a certificate.;This certificate could be renewed once if necessary.;;;0
-1;1;commitment;обязательство;Commitment to education;;;;0
-1;2;corporate;корпоративный;Corporate culture;;;;0
-1;3;course;курс обучения;A ten-week course in computing;;;;0
-1;4;degree;ученая степень, диплом;She has a degree in physics;;;;0
-1;5;development;развитие;Developments in technology;;;personal development;0
-1;6;experience;опыт;To learn from the experience you get;;;gain experience;0
-1;7;incentive;стимул;Material incentives;;;;0
-1;8;job;particular type of work activity;;;;;0
-1;9;knowledge;знание;Knowledge of naval history;;;;0
-1;10;overtime;сверхурочная работа;Unpaid overtime;;;;0
-1;11;permanent;постоянный;;;;;0
-1;12;promotion;повышение;;;;;0
-1;13;qualification;квалификация;;;;;0
-1;14;recruits;пополнение;;;;;0
-1;15;responsibility;ответственность;;;;;0
-1;16;salary;зарплата;;;;;0
-1;17;skill;умение;Good communication skills;You will be trained in telephone skills, including how to provide quality customer service.;;communication skills;0
-1;18;staff ;персонал;;;;supervising staff;0
+1;0;certificate;сертификат, свидетельство;At the end of of the four-week training course, you will receive a certificate.;This certificate could be renewed once if necessary.;Without a high school certificate, you have no chance of going anywhere;university certificate;0
+1;1;commitment;обязательство;You're afraid of commitment.;I have a personal commitment.;Here, a commitment by local authorities is fundamentally important.;commitment to education;0
+1;2;corporate;корпоративный;She'll supervise the infrastructure handling her corporate ventures.;There would be no development or benefit for developing countries in the corporate global economy.;The extra money that you helped raise through private donations has sparked significant corporate interest.;corporate culture;0
+1;3;course;курс обучения;All staff underwent a mandatory conduct and discipline online course.;An intensive course on financial monitoring and review throughout the project cycle was also held.;She prepaid for the whole course.;a ten-week course in computing;0
+1;4;degree;ученая степень, диплом;She has a degree in physics;He graduated with a criminal law degree.;You still have your medical degree.;arts degree;0
+1;5;development;развитие;Research interests include development finance;Economic development must become sustainable.;Your discovery could be one of the most important milestones in human development.;personal development;0
+1;6;experience;опыт;To learn from the experience you get;Have you had any experience?;You've been sent up to training division because of your lengthy experience.;gain experience;0
+1;7;incentive;стимул;We must give him some sort of incentive.;Had no incentive to listen.;Well, you've got some fine incentives.;material incentives;0
+1;8;job;particular type of work activity;I got in this job to help people, not for the job.;That's their job, and they do that very well.;He's looking for a job.;a steady job;0
+1;9;knowledge;знание;He took the car without my knowledge.;He has an academic knowledge.;He says he has a thirst for knowledge.;knowledge of naval history;0
+1;10;overtime;сверхурочная работа; No overtime was paid to professional staff in the common system.;Night and overtime work is prohibited.;I'm always doing overtime.;unpaid overtime;0
+1;11;permanent;постоянный;They are hired permanent.;You're on permanent vacation.;Do you have a permanent address?;permanent access;0
+1;12;promotion;повышение;It was great till he took that promotion.;At the time, this job was a big promotion for me.;You really do want that promotion.;to get a promotion;0
+1;13;qualification;квалификация;Have you any special qualifications?;I have no qualifications.;I'm talking about his medical qualifications.;increase of qualification;0
+1;14;recruit;нанимать;You recruited me five years ago.;I recruited 5 students;We recruited you because you're a good worker.;to recruit only the best;0
+1;15;responsibility;ответственность;Of course this is my responsibility.;In that way, you are free of responsibility.;Mark definitely has more responsibility.;corporate responsibility;0
+1;16;salary;зарплата;I'm paying top salaries;They didn't even give her the salary.;How much is your salary?;a minimum salary;0
+1;17;skill;умение;I have good communication skills;You will be trained in telephone skills, including how to provide quality customer service.;It's a highly technical skill.;communication skills;0
+1;18;staff ;персонал;The whole staff respects you.;I have to check in with a member of my staff.;She has a bigger office staff than I have.;supervising staff;0
 2;19;accountant;бухгалтер;She has a job as an accountant.;My dad should make you chief accountant.;;chartered accountant;0
 2;20;budgeting;составление бюджета;Information for budgeting, planning and control purposes.;Implement program budgeting at the central and local levels.;I look after budgeting and planning any future investment;programme budgeting, budgeting period;0
-2;21;campaign;кампания;We currently work on a promotional campaign.;;;to launch a campaign, to mount a campaign, to organize a campaign;0
+2;21;campaign;кампания;We currently work on a promotional campaign.;The campaign failed because of public apathy.;;to launch a campaign, to mount a campaign, to organize a campaign;0
 2;22;chain (of shops);сеть (магазинов);Mcdonalds is a a fast food restaurant chain.;I work for a chain of shops, that takes place all over England.;;department-store chain, hotel chain;0
 2;23;customer;покупатель;The majority of his customers prefer this particular product.;She is one of our best customers.;We need to build customers relationship.;to attend customers;0
-2;24;deadline;крайний срок;The deadline is not far off.;;;to meet a deadline, deadline date ;0
+2;24;deadline;крайний срок;The deadline is not far off.;The deadline for applications is May 21st.;I missed the deadline but was granted an extension.;to meet a deadline, deadline date ;0
 2;25;employee;работник;I'm pleased to announce that every employee will be given a bonus.;They hired a new employee.;;take on (2) employees;0
 2;26;figures;цифры;You need to to check figures in your last report.;You provide reliable figures.;;;0
 2;27;goal;цель;Our main goal is to earn money.;It is important to pursue the main goal in your life.;He achieved his goal to have a degree.;to reach the goal, to achieve the goal;0
 2;28;receptionist;секретарь;You already have a new receptionist.;I thought maybe she could be the new receptionist.;;;0
 2;29;report;отчёт;I read your reports about last year.;I'll send that efficiency report to the boss in next two days.;;to write a report;0
 2;30;team-building activities;деятельность дл поддержания командного духа;Our company need to arrange team-building activities for the staff.;Team-building activities impove relationships.;;;0
-3;31;approval;одобрение;I don't need his approval ;;;;0
-3;32;assign;поручать;To assign the task;;;;0
-3;33;emphasize;придавать значение, подчеркивать;To emphasize the importance;;;;0
-3;34;follow up;последующее мероприятие;A follow-up meeting;;;;0
-3;35;initiate;начинать;The program was initiated by the state government.;;;;0
+3;31;approval;одобрение;I don't need his approval ;We'll keep our strategy with or without their approval.;I wouldn't like to do anything without his approval.;official approval;0
+3;32;assign;поручать;Why don't you just assign the project to someone else.;I've been assigned to work on this project.;The chief assigned this case to me.;to assign the task;0
+3;33;emphasize;придавать значение, подчеркивать;We must emphasize the strengths of the company, not its weaknesses.;I want to emphasize one thing.;I'd like to emphasize on her style.;to emphasize the importance;0
+3;34;follow-up;последующее мероприятие;The programme includes regularly scheduled follow-up career counselling for participants.;A follow-up interview was released on March.;The follow-up visit is an important step building our cooperation.;a follow-up meeting;0
+3;35;initiate;начинать;The program was initiated by the state government.;We must initiate intergovernmental negotiations.;I didn't initiate it.;to initiate an immediate course change;0
 4;36;advertisement;реклама;The company has spent a lot of money on advertisement.;We place an advertisement in a new magazine.;;to place an advertisement, to publish  an advertisement, to run an advertisement;0
-4;37;candidate;кандидат;He is a good candidate fot this position.;;;;0
+4;37;candidate;кандидат;He is a good candidate fot this position.;Neither candidate won the debate.;;;0
 4;38;critical;решающий, переломный;It was a critical decision to sign the contract.;Create a new advertisement is a critical element of the plan.;;;0
 4;39;equipment;оборудование;We will provide any required equipment for the conference.;These equipment were completely new.;;;0
 4;40;face to face;лицом к лицу;Today we will have a face to face meeting with representors. ;I have never seen him face to face.;;;0
-5;41;awareness;осведомленность;Brand awareness;;;;0
-5;42;launch;выпускать (о новом продукте);To launch new service ;;;;0
-5;43;leaflet;листовка;A useful leaflet on how to fill in tax forms;;;;0
-5;44;sample;образец;A free sample of chocolate;;;;0
+5;41;awareness;осведомленность;We increase public awareness.;I'm doing it to test your awareness of an opponent's location;There's such a keen awareness of the job.;brand awareness;0
+5;42;launch;выпускать (о новом продукте);They launch a product tomorrow.;;;to launch new service;0
+5;43;leaflet;листовка;A useful leaflet on how to fill in tax forms was published yesterday;This information is included in the future leaflet.;One thousand copies of the promotional leaflet were also published and widely distributed.;an informative leaflet;0
+5;44;sample;образец;I can show you samples of our work.;I've got some great samples; We took some fibre samples from his jacket.;a free sample of chocolate;0
 6;45;department;отдел;Our sales department create a really good plan for future year.;Research department find out that figures are not right.;;;0
 6;46;market;рынок;Market research is important ;Our instant coffee is the best choice in retail market.;;retail market, market research;0
 6;47;promotional activities;рекламные мероприятия;We need to conduct more promotional activities, because customers don't use our services.;Next Sunday there will be one more promotional activity: a special conference for willing.;;;0
 6;48;social media;социальные сети;Social media is good tool to maintain communication with existing customers.;We need to place advertisement in social media to attract attention;;;0
 6;49;viral marketing;вирусный маркетинг;They're a PR company that we hired to do viral marketing.;Viral marketing is an interesting tool to attract buyers.;;;0
-7;50;fee;плата;University fee;;;;0
-7;51;for hire;напрокат;There were motorcycles for hire;;;;0
-7;52;guarantee;гарантия;A guarantee would be nice;;;;0
-7;53;impact;;;;;make an impact;0
-7;54;liaise;поддерживать;Liaise with suppliers;;;;0
+7;50;fee;плата;It's a one-time fee, 50 bucks.;She owes us her usual fee.;You broke our agreement, the fee is raised.;university fee;0
+7;51;for hire;напрокат;There were motorcycles for hire;ls your boat for hire?;The business centre has a personal office space featuring laptops for hire;to be available for hire ;0
+7;52;guarantee;гарантия;A guarantee would be nice;I guarantee you next time will be different.;I propose a setup that gives us equal guarantees.;personal guarantee;0
+7;53;impact;влияние;These commitments we made have a huge impact children's lives.;You've had a negative impact.;She's gonna talk about the impact of this event and ask questions.;make an impact;0
+7;54;liaise;поддерживать контакт;You'll liaise with my office and no one else.;I suppose I should liaise with marketing department.;;to liaise with suppliers;0
 8;55;agreement;соглашение;We don't have a proper agreement.;We reached an agreement with them to cooperate fully at all times.;;to reach an agreement, to conclude an agreement;0
 8;56;condition;условия;Current market conditions allow us to launch a new product.;We need to await for a better weather conditions to go for a walk.;;;0
 8;57;confidence;уверенность;He was very confident and everybody respect him.;Negotiators can gain confidence in each other by exchanging information.;;to gain smb. confidence;0
@@ -65,17 +65,17 @@
 8;63;persuasive;убедительный;He disagree with some very persuasive arguments.;His speech was persuasive enough to motivate us to work harder.;;;0
 8;64;satisfaction;удовлетворение;Customer satisfaction increased by 11% last year;;;;0
 8;65;strategy;стратегия;Our team came up with a reliable strategy for the nest 2 years.;I can see a risk in this strategy.;;campaign strategy, global strategy;0
-9;66;asset;имущество, актив;The company has $40 billion in assets;;;;0
-9;67;concept;понятие, идея;The concept of free speech;;;;0
-9;68;cost;цена;Cost of living;;;;0
-9;69;debt;долг;pay off the debt;;;;0
-9;70;liability;ответственность;Liability for the damage caused;;;;0
-9;71;lucrative;прибыльный;A lucrative job;;;;0
-9;72;profit;прибыль;A profit of $3 million;;;;0
-9;73;retail;розничная торговля;The retail expirience;;;;0
-9;74;tax;налог ;Tax on cigarettes;;;;0
-9;75;trademark;торговая марка;Brand's trademark;;;;0
-9;76;turnover;оборот капитала;Turnover amounted to 83 million last year.;;;;0
+9;66;asset;имущество, актив;The company has $40 billion in assets;I have no regular occupation, and I've sold my assets.;I own all the assets.;confiscation of assets;0
+9;67;concept;понятие, идея;She had a little trouble grasping that concept.;Peace is a concept.;The two concepts are not mutually exclusive.;the concept of free speech;0
+9;68;cost;цена;The cost of services compared to the cost of goods depends on productivity.;What is the manufacturing cost?;I found out what the call costs.;cost of living;0
+9;69;debt;долг;I haven't paid all that debt.;I'll pay back my debt.;It's almost impossible to repay that debt.;to pay off the debt;0
+9;70;liability;ответственность;They're all about avoiding liability.;The city needs them to avoid liability issues.;Are you suggesting a limited liability corporation?;liability for the damage caused;0
+9;71;lucrative;прибыльный;It's pretty lucrative these days.;Which is why it's such a lucrative business.;;a lucrative job;0
+9;72;profit;прибыль;Our ideals are higher than profit.;Manufacturing today was cheap but brought little profit.;I make a small profit.;a profit of $3 million;0
+9;73;retail;розничная;That was cool because then I had retail outlets.;Retail price is $500;Most of the retail traders do not pay for the social welfare.;a retail expirience;0
+9;74;tax;налог ;The country's taxes must be fixed.;We'll still have to pay taxes on it;I just paid my income tax.;tax on cigarettes;0
+9;75;trademark;торговая марка;Copyright 2010, Favori is a registered trademark.;They're my trademark.; She asked about the trademark.;brand's trademark;0
+9;76;turnover;оборот капитала;Turnover amounted to 83 million last year.;Compared with last year turnover growth was 5%.;Enterprises without employees or turnover are less important in statistical contexts.;;0
 10;77;finance;финансы;She is Chair of the Finance Committee.;Their sources of finance are drying up.;;;0
 10;78;fund ;капитал;The money went into a common fund.;We were too busy to raise funds for your clinic.;;emergency fund, campaign fund;0
 10;79;government grant;государственный грант;Government is a major source of grants and soft loans.;;;;0
@@ -89,12 +89,12 @@
 10;87;private equity;частный капитал;But this accounts for only a minor part of the private equity industry.;It is one of the top 10 private equity firms in the world;;;0
 10;88;start-up;стартап;He has an idea to launch a startup.;His startup didn't make any money.;;to launch a startup;0
 10;89;stock market;фондовый рынок;You know how much the stock market is up?;We lost money in the stock market.;;stock market boom;0
-11;90;commission;заказ;This was my first commission;;;;0
-11;91;entity;организация;Each of the responders were paid by separate entities;;;;0
-11;92;get down to;приступить к ;It's time to get down to business.;;;;0
-11;93;get onto;связаться с;Sam, can you can onto our friends, please?;;;;0
-11;94;head up;возглавить ;My company has asked me to head up our office in Moscow.;;;;0
-11;95;lease;контракт об аренде;sign a three year lease;;;;0
+11;90;commission;заказ;This was my first commission;I have another commission for you.;We got a commission to design a building;to receive a commission;0
+11;91;entity;организация;Each of the responders were paid by separate entities;My friend also told me that his company was commissioned by an unnamed entity;;government entities;0
+11;92;get down to;приступить к ;It's time to get down to business.;Let us get down to this work.;;;0
+11;93;get onto;связаться с;Sam, can you can onto our friends, please?;Well, get onto him.;;;0
+11;94;head up;возглавить ;My company has asked me to head up our office in Moscow.;I'm moving to Moscow to head up my own practice.;They asked me to head up a new center.;to be asked to head up a team;0
+11;95;lease;контракт об аренде;We just signed a new lease.;The lease on his flat's been terminated.;You find a place, we'll sign a lease.;sign a three year lease;0
 12;96;dress smartly;одеваться прилично;You should dress smartly going to job interview.;;;;0
 12;97;to greet;приветствовать;First, you neet audience ant thank them for coming.;;;;0
 12;98;facilities;оборудование, удобства;What facilities there are for new business in your country?;;;;0
@@ -114,11 +114,11 @@
 14;112;distinguish;различать;I had recorded thes steps with a star, making it easier to distinguish them for notes;It is his Italian accent that distinguishes him.;;to distinguish between two things, be distinguish from ;0
 14;113;to broaden;расширять;This company need to broaden their product range. ;His business is broadenong more and more every year.;;;0
 14;114;to highlight;подчеркивать, выделять;On the conference I highlighted the most valuable thoughts in my notes.;Important names and dates in each chapter are highlighted.;;;0
-15;115;agenda;повестка дня;It's not on today's agenda;;;;0
-15;116;complement;дополнение;Complement to the meal;;;;0
-15;117;productive;продуктивно;The sessions are productive;;;;0
-15;118;to chair;председатель;The chair is responsible for the success of a meeting;;;;0
-15;119;trim;урезат, уменьшать;To trim the costs;;;;0
+15;115;agenda;повестка дня;It's not on today's agenda;I wonder if my request could be put forward on today's agenda.;What do you have on your agenda for tomorrow?;many important issues on the agenda;0
+15;116;complement;дополнять, дополнение;The colors complement each other.;It will most perfectly complement the pudding.;;complement to the meal;0
+15;117;productive;продуктивно;The sessions are productive;I see you've had a very productive day.;Senior year was very productive.;;0
+15;118;chair;председатель;The chair is responsible for the success of a meeting;I think the budget chair might have a difficult time allowing a higher salary to be approved.;;;0
+15;119;trim;урезать, уменьшать;Government has had to trim several vital services.;We have a lot of trimming to do, so we all have to work harder.;;to trim the costs;0
 16;120;company jet;самолет компании;Executives from this company prefer using the company jet.;Private company jets are convenient because you can do your work during the flight.;;;0
 16;121;non-retail business;оптовый бизнес;Some retailers may sell to business customers, and such sales are termed non-retail activity.;;;;0
 16;122;potential;потенциальный;We can find potential customers on social media.;It is important to visit special conferences to find potential customers;;;0
@@ -127,9 +127,9 @@
 16;125;representative;представитель;Today we met representatives of his company.;We should send the best representatives of our company to the conference.;;;0
 16;126;sales techniques;методы (приемы) продаж;There are several sales techniques used by salesmen.;If you want to sell a produsct, you need to have learn reliable sales tehniques.;;;0
 16;127;suggest;предложить;I would like to suggest that we should spend more time for meeting customers intead writing reports.;I strongly suggest that you need to find training courses;;to suggest an idea;0
-17;128;engage with;связаться с;You can't engage with her;;;;0
-17;129;insight;проницительность, понимание;To provide an insight into the world;;;;0
-17;130;next to nothing;почти ничего;Talent means next to nothing;;;;0
+17;128;engage with;связаться с;You can't engage with her;Don't engage with those people.;;;0
+17;129;insight;проницительность, понимание;I thought you might be able to provide some insight.;Thanks for the insight;;to provide an insight into the world;0
+17;130;next to nothing;почти ничего;Talent means next to nothing;We can get it for next to nothing.;;;0
 18;131;appropriately;соответсвенно, подходяще;Once you have finished with the documents, recycle the paper appropriately.;However, I'm counting on you to respond appropriately.;;;0
 18;132;brainstorm;мозговой штурм;Get staff involved, perhaps by holding a brainstorming session.;I must have had a brainstorm that afternoon.;;to hold a brainstorming session;0
 18;133;efficient;эффективный;Environmentally friendly offices are more efficient places to work.;Our new air conditioner is more efficient than our old one.;;;0
@@ -137,11 +137,11 @@
 18;135;foreseeable;предвиденный, прогнозируемый;Accepting that printers will be with us for the foreseeable future.;This product will bring us a lot of money in foreseeable future.;;foreseeable future;0
 18;136;foretelling;предсказание;Computer vendors were foretelling the death of the printer.;Market researches foretell the ruin of this company.;;;0
 18;137;idle;нерабочий, незанятый;Personal computer can stay idle foe a pre-determined time.;The equipment stood idle for a month.;;;0
-19;138;absenteeism;прогулы;We cannot tolerate this kind of absenteeism amongst our junior staff;;;;0
-19;139;cut down on ;сократить;He should cut down on work-related stress;;;;0
-19;140;rush hour;час пик;I hate the subway at rush hour;;;;0
-19;141;sick leave;больничный;Two guys are on sick leave;;;;0
-19;142;staff turnover;текучка кадров;We get a lot of staff turnover;;;;0
+19;138;absenteeism;прогулы;We cannot tolerate this kind of absenteeism amongst our junior staff;Two persons were dismissed for tax offences and absenteeism.;;;0
+19;139;cut down on ;сократить;He should cut down on work-related stress;The only way to save our living space is to cut down on the number of private vehicles.;;;0
+19;140;rush hour;час пик;I hate the subway at rush hour;This rush hour traffic is not as bad as I thought.;;;0
+19;141;sick leave;больничный;Two guys are on sick leave;I ll give you two weeks of sick leave.;;;0
+19;142;staff turnover;текучка кадров;We get a lot of staff turnover;The second step was to determine the projected rate of staff turnover;;;0
 20;143;redundant;избыточный, резервный;If you are a 100-user company you may need a redundant site and a lot of support.;Our boss made an employee redundant yesterday due to lack of budget.;;;0
 20;144;attorney;адвокат;I have to retain an attorney to save my reputation.;If you want to take it further, you should consult an attorney.;;to arrange an attorney, to obtain an attorney, retain an attorney;0
 20;145;salary;зарплата;He is on a salary of $4000 a month.;How much more do employees cost in addition to their salary?;;monthly salary,  a raise in salary, to earn / get / receive a salary;0
@@ -151,12 +151,12 @@
 20;149;outsourcing;employing side people to do part of the work ;Small-business owners tend to assume they can handle all functions rather than pay to outsource those functions.;The first layer of cost savings in outsourcing comes from payroll taxes.;;;0
 20;150;to arise;возникать;When we came up with a solution, new problems arised.;New company with the same product arose on the market.;;;0
 20;151;to tailor;подогнать, приспособить;We need to tailor to new rules on the market in order to succeed.;Treatment is tailored to the needs of each patient.;;;0
-21;152;car dealership;автосалон;He runs a successful car dealership;;;;0
-21;153;deal with;иметь дело с ;To deal with the workers;;;;0
-21;154;integrity;честность;It's important to have some kind of personal integrity;;;;0
-21;155;outcome;результат, исход;;;;;0
-21;156;responsiveness;реакция ;Your levels of responsiveness have decreased recently;;;;0
-21;157;teamwork;командная работа;Teamwork: That's what counts in this organisation;;;;0
+21;152;car dealership;автосалон;He runs a successful car dealership;I got salesman of the month at my car dealership.;;;0
+21;153;deal with;иметь дело с ;And that makes me the only investor who can deal with this problem.;I can't deal with all these other people's lives.;;to deal with the workers;0
+21;154;integrity;честность;It's important to have some kind of personal integrity;There is nothing I value more than integrity.;I didn't come here to question your integrity.;;0
+21;155;outcome;результат, исход;They will not affect the outcome.;The outcome of this match is still open.;;;0
+21;156;responsiveness;реакция ;Your levels of responsiveness have decreased recently;He's showing signs of responsiveness.;;;0
+21;157;teamwork;командная работа;Teamwork: That's what counts in this organisation;We need teamwork to improve your English.;;;0
 22;158;empowerment;полномочие, расширение возможностей;He got a promotion, so he has more empowernment now.;After getting a degree you have more empowernment to choose a better job.;;;0
 22;159;retain;удержать;This course is designed for anyone who wants to know how to retain customers.;She retains a attorney.;;;0
 22;160;loyalty;лояльность;Complaints of customers that handeled properly can be converted into loyalty.;They felt no loyalty to a losing team.;;;0
@@ -164,7 +164,7 @@
 22;162;revenue;доход;Our yearly revenue are about 5 million roubles.;The factory lost revenue because of the strike by the workers.;;government revenue, annual / yearly revenu;0
 22;163;rival ;конкурент;He had respect for his rivals.;Rival company couldn't make a better advertising than ours.;;rival team;0
 22;164;supplier;постащик;Our constant supplier went to our rivals. ;These vegetables are spoiled, we need to find a new supplier.;;qualified supplier, software supplier;0
-23;165;line manager;начальник; I'm going to ask Ms.Fell to come here, because she's my line manager;;;;0
+23;165;line manager;начальник; I'm going to ask Ms.Fell to come here, because she's my line manager;He is my line manager.;;;0
 24;166;competent;компетентный;He is very competent in controversial questions.;The court is not competent to deal with this case.;;competent staff;0
 24;167;intercultural;межкультурный;State programmes also lack intercultural perspective.;It is important to be inteculturally competent.;;;0
 24;168;global;глобальный;The global warming is a crutial problem of today.;The global economy is a complex organism.;So where find suppliers: local or global?;global changes, global search;0
