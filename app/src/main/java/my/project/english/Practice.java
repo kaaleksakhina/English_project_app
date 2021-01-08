@@ -25,9 +25,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import joinery.DataFrame;
 
@@ -52,8 +55,8 @@ public class Practice extends AppCompatActivity {
         Random random = new Random();
         for (int i = 0; i < 10; i++) prog.add(0);
 
-        final int[] progress = { R.id.point1,  R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
-                R.id.point7,  R.id.point8,  R.id.point9,  R.id.point10};
+        final int[] progress = {R.id.point1, R.id.point2, R.id.point3, R.id.point4, R.id.point5, R.id.point6,
+                R.id.point7, R.id.point8, R.id.point9, R.id.point10};
 
         final int Options[] = {
                 R.id.option1,
@@ -67,6 +70,8 @@ public class Practice extends AppCompatActivity {
         final TextView option2 = (TextView) findViewById(Options[1]);
         final TextView option3 = (TextView) findViewById(Options[2]);
         final TextView option4 = (TextView) findViewById(Options[3]);
+
+        HashSet<TextView> tVOptions = (HashSet<TextView>) Stream.of(option1, option2, option3, option4).collect(Collectors.toSet());
 
         final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
 
@@ -98,21 +103,20 @@ public class Practice extends AppCompatActivity {
                 try {
                     dialog2.show();
                     // Button closing dialog window
-                    TextView btnclose = (TextView)dialog2.findViewById(R.id.btnclose);
+                    TextView btnclose = (TextView) dialog2.findViewById(R.id.btnclose);
                     btnclose.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             //обрабатываем нажатие кнопки
                             try {
                                 dialog2.dismiss();
-                            }
-                            catch (Exception ignored) {
+                            } catch (Exception ignored) {
                                 ignored.printStackTrace();
                             }
                             dialog2.dismiss(); // закрыть диалоговое окно
                         }
                     });
-                }catch (Exception ignored) {
+                } catch (Exception ignored) {
 
                 }
             }
@@ -134,10 +138,10 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent  = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception ignored) {
+                } catch (Exception ignored) {
 
                 }
             }
@@ -161,8 +165,8 @@ public class Practice extends AppCompatActivity {
                     startActivity(intent);
                     end.dismiss();
                     finish();
+                } catch (Exception E) {
                 }
-                catch (Exception E){ }
             }
         });
 
@@ -172,25 +176,25 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception ignored) {
+                } catch (Exception ignored) {
 
                 }
             }
         });
 
         // main button BEC
-        ImageView btnBEC = (ImageView)findViewById(R.id.imageBEC);
+        ImageView btnBEC = (ImageView) findViewById(R.id.imageBEC);
         btnBEC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice.this, Choice.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception ignored) {
+                } catch (Exception ignored) {
 
                 }
             }
@@ -208,361 +212,93 @@ public class Practice extends AppCompatActivity {
         option4.setText(Choices.get(3));
         //Choices.remove(5);
 
-        // tap on the option1
-        option1.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    option2.setEnabled(false);
-                    option3.setEnabled(false);
-                    option4.setEnabled(false);
-                    if (option1.getText().toString().equals(right_answer)) {
-                        option1.setBackgroundResource(R.drawable.right_choice_green);
-                    }
-                    else {
-                        option1.setBackgroundResource(R.drawable.wrong_choice_red);
+        for (TextView currentOption : tVOptions) {
+            HashSet<TextView> tVOptionsCopy = (HashSet<TextView>) tVOptions.clone();
+            tVOptionsCopy.remove(currentOption);
 
-                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
-                    }
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    wait_for();
-                    if (option1.getText().toString().equals(right_answer)) {
-                        if (count < 10) {
+            currentOption.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent event) {
+                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        for (TextView otherOption : tVOptionsCopy) {
+                            otherOption.setEnabled(false);
+                        }
+                        if (currentOption.getText().toString().equals(right_answer)) {
+                            currentOption.setBackgroundResource(R.drawable.right_choice_green);
+                        } else {
+                            currentOption.setBackgroundResource(R.drawable.wrong_choice_red);
+                            for (TextView otherOption : tVOptionsCopy) {
+                                if (otherOption.getText().toString().equals(right_answer))
+                                    otherOption.setBackgroundResource(R.drawable.the_real_answer);
+                            }
+                        }
+                    } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                        wait_for();
+                        if (currentOption.getText().toString().equals(right_answer)) {
+                            if (count < 10) {
+                                count++;
+                                count_right++;
+                            }
+                            prog.set(count - 1, 1);
+                            make_true(word);
+                            for (int i = 0; i < 10; i++) {
+                                TextView tv = findViewById(progress[i]);
+                                tv.setBackgroundResource(R.drawable.style_points);
+                            }
+                            for (int i = 0; i < count; i++) {
+                                TextView tv = findViewById(progress[i]);
+                                if (prog.get(i) == 1) {
+                                    tv.setBackgroundResource(R.drawable.style_points_teal);
+                                } else {
+                                    tv.setBackgroundResource(R.drawable.style_points_red);
+                                }
+                            }
+                        } else {
                             count++;
-                            count_right++;
-                        }
-                        prog.set(count - 1, 1);
-                        make_true(word);
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
+                            for (int i = 0; i < 10; i++) {
+                                TextView tv = findViewById(progress[i]);
+                                tv.setBackgroundResource(R.drawable.style_points);
                             }
+                            for (int i = 0; i < count; i++) {
+                                TextView tv = findViewById(progress[i]);
+                                if (prog.get(i) == 1) {
+                                    tv.setBackgroundResource(R.drawable.style_points_teal);
+                                } else {
+                                    tv.setBackgroundResource(R.drawable.style_points_red);
+                                }
+                            }
+                        }
+                        if (count == 10) {
+                            points.setText(count_right.toString());
+                            updateDF();
+                            dialog.show();
+
+                        } else {
+                            for (int option : Options) {
+                                TextView op = (TextView) findViewById(option);
+                                op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
+                                op.setEnabled(true);
+                            }
+
+                            ArrayList<String> Choices = getChoices();
+                            if (Choices.size() == 0) end.show();
                             else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    else {
-                        count++;
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    if (count == 10) {
-                        points.setText(count_right.toString());
-                        updateDF();
-                        dialog.show();
+                                right_answer = Choices.get(5);
+                                word = Choices.get(4);
+                                word_final.setText(word);
 
-                    }
-                    else {
-                        for (int option : Options) {
-                            TextView op = (TextView) findViewById(option);
-                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-                            op.setEnabled(true);
-                        }
-
-                        ArrayList<String> Choices = getChoices();
-                        if (Choices.size() == 0) end.show();
-                        else {
-                            right_answer = Choices.get(5);
-                            word = Choices.get(4);
-                            word_final.setText(word);
-
-                            for (int i = 0; i < Options.length; i++) {
-                                TextView op = (TextView) findViewById(Options[i]);
-                                op.setText(Choices.get(i));
-                                op.setAnimation(a);
+                                for (int i = 0; i < Options.length; i++) {
+                                    TextView op = (TextView) findViewById(Options[i]);
+                                    op.setText(Choices.get(i));
+                                    op.setAnimation(a);
+                                }
                             }
                         }
                     }
+                    return true;
                 }
-                return true;
-            }
-        });
-
-        // tap on the option2
-        option2.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    option1.setEnabled(false);
-                    option3.setEnabled(false);
-                    option4.setEnabled(false);
-                    if (option2.getText().toString().equals(right_answer)) {
-                        option2.setBackgroundResource(R.drawable.right_choice_green);
-                    }
-                    else {
-                        option2.setBackgroundResource(R.drawable.wrong_choice_red);
-
-                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
-                    }
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    wait_for();
-                    if (option2.getText().toString().equals(right_answer)) {
-                        if (count < 10) {
-                            count++;
-                            count_right++;
-                        }
-                        prog.set(count - 1, 1);
-                        make_true(word);
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    else {
-                        count++;
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    if (count == 10) {
-                        points.setText(count_right.toString());
-                        updateDF();
-                        dialog.show();
-                    }
-                    else {
-                        for (int option : Options) {
-                            TextView op = (TextView) findViewById(option);
-                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-                            op.setEnabled(true);
-                        }
-
-                        ArrayList<String> Choices = getChoices();
-                        if (Choices.size() == 0) end.show();
-                        else {
-                            right_answer = Choices.get(5);
-                            word = Choices.get(4);
-                            word_final.setText(word);
-
-                            for (int i = 0; i < Options.length; i++) {
-                                TextView op = (TextView) findViewById(Options[i]);
-                                op.setText(Choices.get(i));
-                                op.setAnimation(a);
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-        });
-
-        // tap on the option3
-        option3.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    option1.setEnabled(false);
-                    option2.setEnabled(false);
-                    option4.setEnabled(false);
-                    if (option3.getText().toString().equals(right_answer)) {
-                        option3.setBackgroundResource(R.drawable.right_choice_green);
-                    }
-                    else {
-                        option3.setBackgroundResource(R.drawable.wrong_choice_red);
-
-                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option4.getText().toString().equals(right_answer)) option4.setBackgroundResource(R.drawable.the_real_answer);
-                    }
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    wait_for();
-                    if (option3.getText().toString().equals(right_answer)) {
-                        if (count < 10) {
-                            count++;
-                            count_right++;
-                        }
-                        prog.set(count - 1, 1);
-                        make_true(word);
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    else {
-                        count++;
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    if (count == 10) {
-                        points.setText(count_right.toString());
-                        updateDF();
-                        dialog.show();
-                    }
-                    else {
-                        for (int option : Options) {
-                            TextView op = (TextView) findViewById(option);
-                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-                            op.setEnabled(true);
-                        }
-
-                        ArrayList<String> Choices = getChoices();
-                        if (Choices.size() == 0) end.show();
-                        else {
-                            right_answer = Choices.get(5);
-                            word = Choices.get(4);
-                            word_final.setText(word);
-
-                            for (int i = 0; i < Options.length; i++) {
-                                TextView op = (TextView) findViewById(Options[i]);
-                                op.setText(Choices.get(i));
-                                op.setAnimation(a);
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-        });
-        // tap on the option4
-        option4.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    option1.setEnabled(false);
-                    option2.setEnabled(false);
-                    option3.setEnabled(false);
-                    if (option4.getText().toString().equals(right_answer)) {
-                        option4.setBackgroundResource(R.drawable.right_choice_green);
-                    }
-                    else {
-                        option4.setBackgroundResource(R.drawable.wrong_choice_red);
-
-                        if (option1.getText().toString().equals(right_answer)) option1.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option2.getText().toString().equals(right_answer)) option2.setBackgroundResource(R.drawable.the_real_answer);
-                        if (option3.getText().toString().equals(right_answer)) option3.setBackgroundResource(R.drawable.the_real_answer);
-                    }
-                }
-                else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    wait_for();
-                    if (option4.getText().toString().equals(right_answer)) {
-                        if (count < 10) {
-                            count++;
-                            count_right++;
-                        }
-                        prog.set(count - 1, 1);
-                        make_true(word);
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    else {
-                        count++;
-                        for (int i = 0; i < 10; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            tv.setBackgroundResource(R.drawable.style_points);
-                        }
-                        for (int i = 0; i < count; i++) {
-                            TextView tv = findViewById(progress[i]);
-                            if (prog.get(i) == 1) {
-                                tv.setBackgroundResource(R.drawable.style_points_teal);
-                            }
-                            else {
-                                tv.setBackgroundResource(R.drawable.style_points_red);
-                            }
-                        }
-                    }
-                    if (count == 10) {
-                        points.setText(count_right.toString());
-                        updateDF();
-                        dialog.show();
-                    }
-                    else {
-                        for (int option : Options) {
-                            TextView op = (TextView) findViewById(option);
-                            op.setBackgroundResource(R.drawable.button_stroke_black95_press_white);
-                            op.setEnabled(true);
-                        }
-
-                        ArrayList<String> Choices = getChoices();
-                        if (Choices.size() == 0) end.show();
-                        else {
-                            right_answer = Choices.get(5);
-                            word = Choices.get(4);
-                            word_final.setText(word);
-
-                            for (int i = 0; i < Options.length; i++) {
-                                TextView op = (TextView) findViewById(Options[i]);
-                                op.setText(Choices.get(i));
-                                op.setAnimation(a);
-                            }
-                        }
-                    }
-                }
-                return true;
-            }
-        });
+            });
+        }
     }
 
     @Override
