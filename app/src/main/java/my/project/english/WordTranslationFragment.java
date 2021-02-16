@@ -89,10 +89,7 @@ public class WordTranslationFragment extends Fragment {
         this.TextViewTranslation.setText(word.getTranslation());
         this.TextViewExample1.setText(word.getExamples().get(0));
         this.TextViewExample2.setText(word.getExamples().get(1));
-        if (!word.getExamples().get(2).equals("")) {
-            this.TextViewExample3.setText(word.getExamples().get(2));
-            this.TextViewExample3.setTextSize(14);
-        }
+        this.TextViewExample2.setText(word.getExamples().get(2));
         this.TextViewCollocations.setText(word.getCollocations());
         this.TextViewWord.setAllCaps(true);
 
@@ -116,7 +113,7 @@ public class WordTranslationFragment extends Fragment {
         String example2 = savedInstanceState.getString("example2");
         String example3 = savedInstanceState.getString("example3");
         String collocations = savedInstanceState.getString("collocations");
-        List <String> examples= new ArrayList<>();
+        List <String> examples = new ArrayList<>();
         examples.add(example1);
         examples.add(example2);
         examples.add(example3);
