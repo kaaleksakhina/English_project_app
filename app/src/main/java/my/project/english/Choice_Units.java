@@ -51,7 +51,7 @@ public class Choice_Units extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                        } catch (Exception e) {
+                        } catch (Exception ignored) {
 
                         }
                     });
