@@ -30,12 +30,18 @@ public class Units extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_dictionary);
         int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
+        SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
+        final boolean click = save.getBoolean("Click", false);
 
         // Развернуть игру на весь экран
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        if (unitNumber == 1) {
+        if (unitNumber == 1 && click == false) {
+            SharedPreferences.Editor editor = save.edit();
+            editor.putBoolean("Click", true);
+            editor.apply();
+
             //открыть диалоговое окно в начале
             dialog = new Dialog(this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -69,12 +75,12 @@ public class Units extends AppCompatActivity {
 
                 if (unit == 1 && unitNumber == 1){
                     SharedPreferences.Editor editor = save.edit();
-                    editor.putInt("Unit",2);
+                    editor.putInt("Unit", 2);
                     editor.apply();
                 }
                 else if (unit != 1 && unitNumber == unit && unit < 24){
                     SharedPreferences.Editor editor = save.edit();
-                    editor.putInt("Unit",unit + 1);
+                    editor.putInt("Unit", unit + 1);
                     editor.apply();
                 }
                 Intent intent = new Intent(Units.this, Choice_Units.class);

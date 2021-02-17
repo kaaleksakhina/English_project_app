@@ -27,4 +27,6 @@ public class Word {
     public List <String> getExamples() {
         return examples;
     }
+
+    public String getCollocations() {return collocations;}
 }

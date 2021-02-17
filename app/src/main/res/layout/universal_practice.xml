@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:text="Word"
                 android:textStyle="bold"
                 android:textSize="27sp" />
@@ -53,7 +53,7 @@
                         android:layout_height="wrap_content"
                         android:text="Option"
                         android:textSize="21sp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7sp"
                         android:clickable="true"
                         android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
@@ -67,7 +67,7 @@
                         android:textSize="21sp"
                         android:clickable="true"
                         android:padding="10dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7sp"
                         android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
@@ -79,7 +79,7 @@
                         android:clickable="true"
                         android:textSize="21sp"
                         android:padding="10dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7sp"
                         android:gravity="center"
                         android:layout_marginHorizontal="50dp"
                         android:background="@drawable/button_stroke_black95_press_white"
@@ -91,7 +91,7 @@
                         android:text="Option"
                         android:clickable="true"
                         android:textSize="21sp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7sp"
                         android:gravity="center"
                         android:padding="10dp"
                         android:background="@drawable/button_stroke_black95_press_white"
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:orientation="horizontal"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20sp"
                 android:padding="10dp">
 
                 <TextView
