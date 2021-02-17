@@ -21,8 +21,6 @@ import androidx.viewpager2.widget.ViewPager2;
 public class Units extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
-    private ViewPager2 viewPager2Word;
-
     Dialog dialog, dialog2;
 
     @Override
@@ -37,7 +35,7 @@ public class Units extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        if (unitNumber == 1 && click == false) {
+        if (unitNumber == 1 && !click) {
             SharedPreferences.Editor editor = save.edit();
             editor.putBoolean("Click", true);
             editor.apply();
@@ -60,9 +58,7 @@ public class Units extends AppCompatActivity {
                     dialog.dismiss(); // close dialog window
                 }
             });
-
             dialog.show();
-
         }
 
         // Button End
@@ -156,10 +152,10 @@ public class Units extends AppCompatActivity {
         });
 
         // Displaying word - translation
-        this.viewPager2Word = findViewById(R.id.viewPager2_word);
+        ViewPager2 viewPager2Word = findViewById(R.id.viewPager2_word);
 
         WordTranslationStateAdapter adapter = new WordTranslationStateAdapter(this, getAssets(), unitNumber);
-        this.viewPager2Word.setAdapter(adapter);
+        viewPager2Word.setAdapter(adapter);
 
     }
 
