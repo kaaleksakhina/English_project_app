@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="40dp"
                 android:text="Word"
                 android:textStyle="bold"
                 android:textSize="27sp" />
@@ -43,9 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_gravity="center"
-
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginHorizontal="30dp">
                     <TextView
                         android:id="@+id/option1"
@@ -55,7 +53,7 @@
                         android:textSize="21sp"
                         android:layout_margin="7sp"
                         android:clickable="true"
-                        android:gravity="center"
+                        android:gravity="fill_horizontal"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:padding="10dp"
                         android:focusable="true" />
@@ -68,7 +66,7 @@
                         android:clickable="true"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:gravity="center"
+                        android:gravity="fill_horizontal"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
                     <TextView
@@ -80,7 +78,7 @@
                         android:textSize="21sp"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:gravity="center"
+                        android:gravity="fill_horizontal"
                         android:layout_marginHorizontal="50dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
@@ -92,7 +90,7 @@
                         android:clickable="true"
                         android:textSize="21sp"
                         android:layout_margin="7sp"
-                        android:gravity="center"
+                        android:gravity="fill_horizontal"
                         android:padding="10dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
@@ -101,16 +99,17 @@
             <LinearLayout
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
                 android:orientation="horizontal"
-                android:layout_marginTop="20sp"
+                android:layout_marginTop="10sp"
                 android:padding="10dp">
 
                 <TextView
                     android:id="@+id/point1"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
+                    android:layout_gravity="bottom"
                     android:layout_weight="1"
                     android:background="@drawable/style_points" />
 
@@ -118,6 +117,7 @@
                     android:id="@+id/point2"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
+                    android:layout_gravity="bottom"
                     android:layout_weight="1"
                     android:background="@drawable/style_points" />
 
@@ -125,6 +125,7 @@
                     android:id="@+id/point3"
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
+                    android:layout_gravity="bottom"
                     android:layout_weight="1"
                     android:background="@drawable/style_points" />
 
@@ -133,6 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -140,6 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -147,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -154,6 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -161,6 +166,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -168,6 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
                 <TextView
@@ -175,6 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="10dp"
                     android:layout_weight="1"
+                    android:layout_gravity="bottom"
                     android:background="@drawable/style_points" />
 
             </LinearLayout>

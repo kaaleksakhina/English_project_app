@@ -5,6 +5,7 @@
     <string name="first_mes">Welcome to the dictionary!&#10; Here you can start learning new words. One page is for one word with its translation and example of usage. Swipe left to go to a new word.</string>
     <string name="stop">I have learned everything!</string>
     <string name="done_practice">Congratulations! You have learned</string>
+    <string name="done_practice2">words</string>
     <string name="end_words">There are no words left! Go learn some more in Units</string>
 
     <string name="unit">Unit :</string>

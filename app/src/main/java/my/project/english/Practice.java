@@ -79,7 +79,7 @@ public class Practice extends AppCompatActivity {
         final int unit = save.getInt("Unit", 1);
 
         try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
             df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,13 +124,17 @@ public class Practice extends AppCompatActivity {
 
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+        dialog.setContentView(R.layout.window_end_practice);// путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
         dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
         TextView textView = dialog.findViewById(R.id.textdescription);
+        TextView textView2 = dialog.findViewById(R.id.textdescription2);
         TextView points = dialog.findViewById(R.id.points);
+
         textView.setText(R.string.done_practice);
+        textView2.setText(R.string.done_practice2);
+        textView2.setTextSize(14);
 
         // Button Continue in Dialog window
         Button btn_continue = (Button) dialog.findViewById(R.id.button_continue);
@@ -165,7 +169,7 @@ public class Practice extends AppCompatActivity {
                     startActivity(intent);
                     end.dismiss();
                     finish();
-                } catch (Exception E) {
+                } catch (Exception ignored) {
                 }
             }
         });
@@ -210,7 +214,6 @@ public class Practice extends AppCompatActivity {
         option2.setText(Choices.get(1));
         option3.setText(Choices.get(2));
         option4.setText(Choices.get(3));
-        //Choices.remove(5);
 
         for (TextView currentOption : tVOptions) {
             HashSet<TextView> tVOptionsCopy = (HashSet<TextView>) tVOptions.clone();

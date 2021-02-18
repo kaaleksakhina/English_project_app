@@ -43,7 +43,7 @@ public class Units extends AppCompatActivity {
             //открыть диалоговое окно в начале
             dialog = new Dialog(this);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.setContentView(R.layout.previewdialog);// путь к макету диалогового окна
+            dialog.setContentView(R.layout.window_end_practice);// путь к макету диалогового окна
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // прозрачный фон диалогового окна
             dialog.setCancelable(false); // окно нельзя закрыть кнопкой назад
 
