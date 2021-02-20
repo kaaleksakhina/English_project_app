@@ -325,29 +325,27 @@ public class Practice_eng_rus extends AppCompatActivity {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
-        DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
-        if (df_need.length() == 0) return Choices;
+        DataFrame df_unlearned = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
+        if (df_unlearned.length() == 0) return Choices;
 
-        List<String> l_part_need = (List<String>)df_need.col("part_of_speech");
-        List<Long> l_ids = (List<Long>)df_need.col("id_word");
-        List<String> l_words_need = (List<String>)df_need.col("Word");
-        List<String> l_translation_need = (List<String>)df_need.col("Translation");
+        int l_ids_size = ((List<Long>)df_unlearned.col("id_word")).size();
+        List<String> l_words_unlearned = (List<String>)df_unlearned.col("Word");
 
+        List<String> l_words = (List<String>)df.col("Word");
+        List<String> l_translations = (List<String>)df.col("Translation");
 
-        int rand_id = random.nextInt(l_ids.size());
-        String right_word = l_words_need.get(rand_id);
-        String right_translation = l_translation_need.get(l_words_need.indexOf(right_word));
-        String part_of_speech = l_part_need.get(rand_id);
+        int rand_id = random.nextInt(l_ids_size);
+        String right_word = l_words_unlearned.get(rand_id);
+        String right_translation = l_translations.get(l_words.indexOf(right_word));
+        String part_of_speech = (String) df_unlearned.get(l_words.indexOf(right_word), 2);
 
-        DataFrame actual_words = df_need.select((DataFrame.Predicate<Object>) values -> String.class.cast(values.get(0)).equals(part_of_speech));
+        DataFrame actual_df = df_unlearned.select((DataFrame.Predicate<Object>) values -> String.class.cast(values.get(2)).equals(part_of_speech));
+        List<String> actual_translations = (List<String>)actual_df.col("Translation");
 
-        List<String> l_words = (List<String>)actual_words.col("Word");
-        List<String> l_translations = (List<String>)actual_words.col("Translation");
+        Integer[] rand = getRand(actual_translations.size(), actual_translations.indexOf(right_translation));
 
-        Integer[] rand = getRand(l_translations, l_words.indexOf(right_word));
-
-        for (Integer integer : rand) {
-            Choices.add(l_translations.get(integer));
+        for (Integer i : rand) {
+            Choices.add(actual_translations.get(i));
         }
         Collections.shuffle(Choices);
 
@@ -358,16 +356,23 @@ public class Practice_eng_rus extends AppCompatActivity {
     }
 
     // list of 4 random numbers for words
-    public Integer[] getRand (List<String> l_translations, int id) {
+    public Integer[] getRand (int translations, int id) {
         Random random = new Random();
         Integer[] rand = new Integer[] {0,0,0,0};
         int r = 0;
 
         // 4 random id of words
         for (int i = 0; i < 3; i++) {
-            r = random.nextInt(l_translations.size());
+            r = random.nextInt(translations);
             while (r == id){
-                 r = random.nextInt(l_translations.size());
+                 r = random.nextInt(translations);
+            }
+            if (0 < i) {
+                for (int j = i - 1; j >= 0; j--) {
+                    if (rand[j] == r && rand[j] != 0) {
+                        r = random.nextInt(translations);
+                    }
+                }
             }
             rand[i] = r;
         }

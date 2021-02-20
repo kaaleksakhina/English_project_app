@@ -325,18 +325,18 @@ public class Practice_eng_eng extends AppCompatActivity {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
-        DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
-        if (df_need.length() == 0) return Choices;
+        DataFrame df_unlearned = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
+        if (df_unlearned.length() == 0) return Choices;
 
-        List<Long> l_ids = (List<Long>)df_need.col("id_word");
-        List<String> l_words_need = (List<String>)df_need.col("Word");
+        List<Long> l_ids = (List<Long>)df_unlearned.col("id_word");
+        List<String> l_words_need = (List<String>)df_unlearned.col("Word");
 
         List<String> l_words = (List<String>)df.col("Word");
-        List<String> l_translations = (List<String>)df.col("Translation");
+        List<String> l_translations = (List<String>)df.col("Definition");
 
         int rand_id = random.nextInt(l_ids.size());
         String right_word = l_words_need.get(rand_id);
-        String right_translation = l_translations.get(l_words.indexOf(right_word));
+        String right_definition = l_translations.get(l_words.indexOf(right_word));
 
         Integer[] rand = getRand(l_translations, l_words.indexOf(right_word));
 
@@ -346,7 +346,7 @@ public class Practice_eng_eng extends AppCompatActivity {
         Collections.shuffle(Choices);
 
         Choices.add(right_word);
-        Choices.add(right_translation);
+        Choices.add(right_definition);
         return Choices;
 
     }
