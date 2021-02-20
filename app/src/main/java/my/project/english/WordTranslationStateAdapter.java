@@ -39,8 +39,8 @@ public class WordTranslationStateAdapter extends FragmentStateAdapter {
 
         // word - translation - examples, collocations
         try {
-            df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
-            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) == unit);
+            df = DataFrame.readCsv(assets.open("csv_page_1.csv"), ";");
+            DataFrame df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(1)) == unit);
             l_words = (List<String>)df_unit.col("Word");
             l_translations = (List<String>)df_unit.col("Translation");
             l_examples.add(df_unit.col("Examples of sentences(1)"));

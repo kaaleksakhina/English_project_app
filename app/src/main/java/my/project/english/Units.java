@@ -142,7 +142,7 @@ public class Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Units.this, Choice.class);
+                    Intent intent  = new Intent(Units.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception ignored) {

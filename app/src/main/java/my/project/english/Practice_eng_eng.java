@@ -34,7 +34,7 @@ import java.util.stream.Stream;
 
 import joinery.DataFrame;
 
-public class Practice extends AppCompatActivity {
+public class Practice_eng_eng extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     public Integer count = 0;
@@ -73,14 +73,14 @@ public class Practice extends AppCompatActivity {
 
         HashSet<TextView> tVOptions = (HashSet<TextView>) Stream.of(option1, option2, option3, option4).collect(Collectors.toSet());
 
-        final Animation a = AnimationUtils.loadAnimation(Practice.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Practice_eng_eng.this, R.anim.alpha);
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
 
         try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
-            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
+            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(1)) <= unit);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,7 +142,7 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice_eng_eng.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -165,7 +165,7 @@ public class Practice extends AppCompatActivity {
             public void onClick(View view) {
                 //обрабатываем нажатие кнопки
                 try {
-                    Intent intent = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice_eng_eng.this, Choice_dic_prac.class);
                     startActivity(intent);
                     end.dismiss();
                     finish();
@@ -180,7 +180,7 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice_eng_eng.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -195,7 +195,7 @@ public class Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Practice.this, Choice.class);
+                    Intent intent = new Intent(Practice_eng_eng.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -325,7 +325,7 @@ public class Practice extends AppCompatActivity {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
-        DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(8)) == 0);
+        DataFrame df_need = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
         if (df_need.length() == 0) return Choices;
 
         List<Long> l_ids = (List<Long>)df_need.col("id_word");
@@ -380,8 +380,8 @@ public class Practice extends AppCompatActivity {
     public void make_true (String word) { // if the word is learned - change to true
         List<String> l_words = (List<String>)df.col("Word");
         Integer ind = l_words.indexOf(word);
-        df_unit.set(ind, 8, 1L);
-        df.set(ind, 8, 1L);
+        df_unit.set(ind, 10, 1L);
+        df.set(ind, 10, 1L);
     }
 
     public void updateDF(){

@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Choice extends AppCompatActivity {
+public class Choice_Practice extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     Dialog dialog;
@@ -22,38 +23,37 @@ public class Choice extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exersises);
+        setContentView(R.layout.universal_choice);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // button to learning
-        TextView textView1 = (TextView)findViewById(R.id.textView1);
-        textView1.setOnClickListener(new View.OnClickListener() {
+        Button ch1 = (Button)findViewById(R.id.ch1);
+        Button ch2 = (Button)findViewById(R.id.ch2);
+        ch1.setText(R.string.practice_1);
+        ch2.setText(R.string.practice_2);
+
+        // button to dictionary
+        ch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice.this, Choice_Units.class);
+                    Intent intent = new Intent(Choice_Practice.this, Practice_eng_rus.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
-
-                }
+                } catch (Exception ignored) {}
             }
         });
 
         //button to practice
-        TextView textView2 = (TextView)findViewById(R.id.textView2);
-        textView2.setOnClickListener(new View.OnClickListener() {
+        ch2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice.this, Practice.class);
+                    Intent intent = new Intent(Choice_Practice.this, Practice_eng_eng.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception e) {
-
-                }
+                } catch (Exception ignored) {}
             }
         });
 
@@ -81,15 +81,11 @@ public class Choice extends AppCompatActivity {
                             try {
                                 dialog.dismiss();
                             }
-                            catch (Exception E){
-
-                            }
+                            catch (Exception ignored){}
                             dialog.dismiss(); // закрыть диалоговое окно
                         }
                     });
-                }catch (Exception e) {
-
-                }
+                }catch (Exception ignored) {}
             }
         });
 
@@ -99,15 +95,13 @@ public class Choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice.this, MainActivity.class);
+                    Intent intent  = new Intent(Choice_Practice.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e) {
-
-                }
+                }catch (Exception ignored) {}
             }
         });
-        
+
     }
 
     @Override

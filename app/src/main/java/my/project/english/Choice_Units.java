@@ -24,7 +24,7 @@ public class Choice_Units extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.exercises_2page);
+        setContentView(R.layout.list_of_units);
         Dialog dialog;
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
@@ -101,7 +101,7 @@ public class Choice_Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice_Units.this, Choice.class);
+                    Intent intent  = new Intent(Choice_Units.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -116,7 +116,7 @@ public class Choice_Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice_Units.this, Choice.class);
+                    Intent intent  = new Intent(Choice_Units.this, Choice_dic_prac.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {

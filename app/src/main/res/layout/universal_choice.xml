@@ -25,7 +25,7 @@
                 android:orientation="vertical"
                 android:padding="15dp">
                 <Button
-                    android:id="@+id/textView1"
+                    android:id="@+id/ch1"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:text="@string/ex_1"
@@ -41,7 +41,7 @@
                     android:textColorHighlight="@color/white"/>
 
                 <Button
-                    android:id="@+id/textView2"
+                    android:id="@+id/ch2"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:text="@string/ex_2"
