@@ -80,7 +80,7 @@ public class Practice_eng_rus extends AppCompatActivity {
 
         try {
             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(1)) <= unit);
+            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -337,9 +337,9 @@ public class Practice_eng_rus extends AppCompatActivity {
         int rand_id = random.nextInt(l_ids_size);
         String right_word = l_words_unlearned.get(rand_id);
         String right_translation = l_translations.get(l_words.indexOf(right_word));
-        String part_of_speech = (String) df_unlearned.get(l_words.indexOf(right_word), 2);
+        String part_of_speech = (String) df.get(l_words.indexOf(right_word), 2);
 
-        DataFrame actual_df = df_unlearned.select((DataFrame.Predicate<Object>) values -> String.class.cast(values.get(2)).equals(part_of_speech));
+        DataFrame actual_df = df.select((DataFrame.Predicate<Object>) values -> String.class.cast(values.get(2)).equals(part_of_speech));
         List<String> actual_translations = (List<String>)actual_df.col("Translation");
 
         Integer[] rand = getRand(actual_translations.size(), actual_translations.indexOf(right_translation));
@@ -369,7 +369,7 @@ public class Practice_eng_rus extends AppCompatActivity {
             }
             if (0 < i) {
                 for (int j = i - 1; j >= 0; j--) {
-                    if (rand[j] == r && rand[j] != 0) {
+                    while (rand[j] == r && rand[j] != 0) {
                         r = random.nextInt(translations);
                     }
                 }

@@ -80,7 +80,7 @@ public class Practice_eng_eng extends AppCompatActivity {
 
         try {
             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
-            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(1)) <= unit);
+            df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {
             e.printStackTrace();
         }
