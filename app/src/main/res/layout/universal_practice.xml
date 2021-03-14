@@ -25,35 +25,53 @@
             android:layout_height="match_parent"
             android:background="@color/white"
             android:orientation="vertical"
-            android:padding="5dp"
-            android:layout_margin="10dp">
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="40dp"
-                android:text="Word"
-                android:textStyle="bold"
-                android:textSize="27sp" />
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Word:  "
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Word"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/container3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="60dp"
-                android:layout_marginHorizontal="30dp">
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center"
+                android:gravity="center">
                     <TextView
                         android:id="@+id/option1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
-                        android:textSize="21sp"
+                        android:textSize="16sp"
                         android:layout_margin="7sp"
                         android:clickable="true"
-                        android:gravity="fill_horizontal"
+                        android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:padding="10dp"
                         android:focusable="true" />
@@ -62,11 +80,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Option"
-                        android:textSize="21sp"
+                        android:textSize="16sp"
                         android:clickable="true"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:gravity="fill_horizontal"
+                        android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
                     <TextView
@@ -75,10 +93,10 @@
                         android:layout_height="wrap_content"
                         android:text="Option"
                         android:clickable="true"
-                        android:textSize="21sp"
+                        android:textSize="16sp"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:gravity="fill_horizontal"
+                        android:gravity="center"
                         android:layout_marginHorizontal="50dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
@@ -88,9 +106,9 @@
                         android:layout_height="wrap_content"
                         android:text="Option"
                         android:clickable="true"
-                        android:textSize="21sp"
+                        android:textSize="16sp"
                         android:layout_margin="7sp"
-                        android:gravity="fill_horizontal"
+                        android:gravity="center"
                         android:padding="10dp"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />

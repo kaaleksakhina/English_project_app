@@ -142,7 +142,7 @@ public class Practice_eng_eng extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Intent intent = new Intent(Practice_eng_eng.this, Choice_dic_prac.class);
+                    Intent intent = new Intent(Practice_eng_eng.this, Choice_Practice.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
