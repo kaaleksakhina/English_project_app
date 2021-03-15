@@ -79,7 +79,7 @@ public class Units extends AppCompatActivity {
                     editor.putInt("Unit", unit + 1);
                     editor.apply();
                 }
-                Intent intent = new Intent(Units.this, Choice_Units.class);
+                Intent intent = new Intent(Units.this, ChoiceUnits.class);
                 startActivity(intent);
                 finish();
             }
@@ -127,7 +127,7 @@ public class Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Units.this, Choice_Units.class);
+                    Intent intent  = new Intent(Units.this, ChoiceUnits.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception ignored) {
@@ -142,7 +142,7 @@ public class Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Units.this, Choice_dic_prac.class);
+                    Intent intent  = new Intent(Units.this, ChoiceMain.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception ignored) {

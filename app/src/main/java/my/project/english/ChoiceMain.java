@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Choice_Practice extends AppCompatActivity {
+public class ChoiceMain extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     Dialog dialog;
@@ -30,18 +30,20 @@ public class Choice_Practice extends AppCompatActivity {
 
         Button ch1 = (Button)findViewById(R.id.ch1);
         Button ch2 = (Button)findViewById(R.id.ch2);
-        ch1.setText(R.string.practice_1);
-        ch2.setText(R.string.practice_2);
+        ch1.setText(R.string.ex_1);
+        ch2.setText(R.string.ex_2);
 
         // button to dictionary
         ch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice_Practice.this, Practice_eng_rus.class);
+                    Intent intent = new Intent(ChoiceMain.this, ChoiceDictionary.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception ignored) {}
+                } catch (Exception e) {
+
+                }
             }
         });
 
@@ -50,10 +52,12 @@ public class Choice_Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Choice_Practice.this, Practice_eng_eng.class);
+                    Intent intent = new Intent(ChoiceMain.this, ChoicePractice.class);
                     startActivity(intent);
                     finish();
-                } catch (Exception ignored) {}
+                } catch (Exception e) {
+
+                }
             }
         });
 
@@ -81,11 +85,15 @@ public class Choice_Practice extends AppCompatActivity {
                             try {
                                 dialog.dismiss();
                             }
-                            catch (Exception ignored){}
+                            catch (Exception E){
+
+                            }
                             dialog.dismiss(); // закрыть диалоговое окно
                         }
                     });
-                }catch (Exception ignored) {}
+                }catch (Exception e) {
+
+                }
             }
         });
 
@@ -95,28 +103,15 @@ public class Choice_Practice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice_Practice.this, MainActivity.class);
+                    Intent intent  = new Intent(ChoiceMain.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception ignored) {}
-            }
-        });
-
-        // main button BEC
-        ImageView btnBEC = (ImageView) findViewById(R.id.imageBEC);
-        btnBEC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(Choice_Practice.this, Choice_dic_prac.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception ignored) {
+                }catch (Exception e) {
 
                 }
             }
         });
-
+        
     }
 
     @Override

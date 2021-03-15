@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(MainActivity.this, Choice_dic_prac.class);
+                    Intent intent  = new Intent(MainActivity.this, ChoiceMain.class);
                     startActivity(intent); finish();
                 }catch (Exception e) {
 

@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Choice_Units extends AppCompatActivity {
+public class ChoiceUnits extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
 
@@ -46,7 +46,7 @@ public class Choice_Units extends AppCompatActivity {
                     child.setOnClickListener(v -> {
                         try {
                             if (finalUnitNumber <= unit) {
-                                Intent intent = new Intent(Choice_Units.this, Units.class);
+                                Intent intent = new Intent(ChoiceUnits.this, Units.class);
                                 intent.putExtra("unitNumber", finalUnitNumber);
                                 startActivity(intent);
                                 finish();
@@ -101,7 +101,7 @@ public class Choice_Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice_Units.this, Choice_dic_prac.class);
+                    Intent intent  = new Intent(ChoiceUnits.this, ChoiceDictionary.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
@@ -116,7 +116,7 @@ public class Choice_Units extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(Choice_Units.this, Choice_dic_prac.class);
+                    Intent intent  = new Intent(ChoiceUnits.this, ChoiceMain.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {
