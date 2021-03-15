@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
     <LinearLayout
         android:id="@+id/container1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:background="@drawable/fon_for_other">>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/words"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        android:background="@drawable/fon_for_other">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="100dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/words"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container4"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/style_toolbar"
+        android:orientation="horizontal"
+        android:paddingVertical="7dp"
+        android:paddingHorizontal="10dp">
+
+        <ImageView
+            android:id="@+id/imageArrowBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_orange"
+            android:clickable="true"
+            app:srcCompat="@drawable/arrow_back"
+            android:focusable="true" />
+
+        <ImageView android:id="@+id/imageBEC"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_orange"
+            android:clickable="true"
+            android:src="@drawable/label_btn"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/imageQuestionMark"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_stroke_black95_solid_white_press_orange"
+            android:clickable="true"
+            app:srcCompat="@drawable/question_mark"
+            android:focusable="true" />
     </LinearLayout>
-
-
-</FrameLayout>
+</LinearLayout>
