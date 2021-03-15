@@ -102,6 +102,21 @@ public class Choice_Practice extends AppCompatActivity {
             }
         });
 
+        // main button BEC
+        ImageView btnBEC = (ImageView) findViewById(R.id.imageBEC);
+        btnBEC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Choice_Practice.this, Choice_dic_prac.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+
     }
 
     @Override
