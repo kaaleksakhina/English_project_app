@@ -1,6 +1,7 @@
 package my.project.english;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictionaryAdapter.WordViewHolder>{
-    private int numberItems;
-    private static int viewHolderCount;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-    public LearnedDictionaryAdapter (int numberOfItems) {
-        numberItems = numberOfItems;
-        viewHolderCount = 0;
+import joinery.DataFrame;
+
+public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictionaryAdapter.WordViewHolder>{
+    private final AssetManager assets;
+    List<String> word;
+
+    public LearnedDictionaryAdapter ( AssetManager assets, int unit) {
+        this.assets = assets;
+        this.word = this.intDatas(unit);
     }
     @NonNull
     @Override
@@ -28,9 +35,8 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
         View view = inflater.inflate(layoutIdForListItem, parent, false);
 
         WordViewHolder viewHolder = new WordViewHolder(view);
-        viewHolder.viewHolderIndex.setText("ViewHolder index: " + viewHolderCount);
+        viewHolder.viewHolderIndex.setText(word.get(2));
 
-        viewHolderCount++;
         return viewHolder;
     }
 
@@ -41,7 +47,30 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
 
     @Override
     public int getItemCount() {
-        return numberItems;
+        return this.word.size();
+    }
+
+    private List<String> intDatas(int unit)  {
+        DataFrame df;
+        List<String> l_words = new ArrayList<>();
+        List<String> l_translations = new ArrayList<>();
+
+        // word - translation - examples, collocations
+        try {
+            df = DataFrame.readCsv(assets.open("csv_page_1.csv"), ";");
+            DataFrame df_need = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 1);
+            l_words = (List<String>)df_need.col("Word");
+            l_translations = (List<String>)df_need.col("Translation");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < l_words.size(); i++) {
+            list.add(l_words.get(i));
+        }
+        return list;
     }
 
     class WordViewHolder extends RecyclerView.ViewHolder {

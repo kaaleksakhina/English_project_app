@@ -27,6 +27,7 @@ public class Units extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal_dictionary);
+
         int unitNumber = (int) getIntent().getSerializableExtra("unitNumber");
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final boolean click = save.getBoolean("Click", false);
