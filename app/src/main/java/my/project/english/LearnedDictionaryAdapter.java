@@ -18,7 +18,7 @@ import joinery.DataFrame;
 
 public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictionaryAdapter.WordViewHolder>{
     private final AssetManager assets;
-    List<String> word;
+    List<Word> word;
 
     public LearnedDictionaryAdapter ( AssetManager assets, int unit) {
         this.assets = assets;
@@ -35,14 +35,13 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
         View view = inflater.inflate(layoutIdForListItem, parent, false);
 
         WordViewHolder viewHolder = new WordViewHolder(view);
-        viewHolder.viewHolderIndex.setText(word.get(2));
+        viewHolder.viewHolderIndex.setText(word.get(1).getWord());
 
         return viewHolder;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull WordViewHolder holder, int position) {
-        holder.bind(position);
+    public void onBindViewHolder(@NonNull WordViewHolder holder, int id) {
+        holder.bind(id);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
         return this.word.size();
     }
 
-    private List<String> intDatas(int unit)  {
+    private List<Word> intDatas(int unit)  {
         DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
@@ -66,10 +65,9 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
             e.printStackTrace();
         }
 
-        List<String> list = new ArrayList<String>();
-        for (int i = 0; i < l_words.size(); i++) {
-            list.add(l_words.get(i));
-        }
+        List<Word> list = new ArrayList<Word>();
+        for (int i = 0; i < l_words.size(); i++)
+            list.add(new Word(l_words.get(i), l_translations.get(i)));
         return list;
     }
 
@@ -82,11 +80,11 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
             super(itemView);
 
             listItemWordView = itemView.findViewById(R.id.word_item);
-            viewHolderIndex = itemView.findViewById(R.id.view_holder_number);
+            viewHolderIndex = itemView.findViewById(R.id.translation_item);
         }
 
-        void bind(int word) {
-            listItemWordView.setText(String.valueOf(word));
+        void bind(int id) {
+            listItemWordView.setText(word.get(id).getWord());
         }
     }
 }

@@ -40,8 +40,7 @@ public class LearnedDictionary extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         wordsList.setLayoutManager(layoutManager);
-
-        wordsList.setHasFixedSize(true);
+        wordsList.setHasFixedSize(false);
 
         wordsAdapter = new LearnedDictionaryAdapter(getAssets(), unit);
         wordsList.setAdapter(wordsAdapter);

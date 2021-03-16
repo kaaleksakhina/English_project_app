@@ -14,7 +14,7 @@
      android:textSize="42sp"/>
 
     <TextView
-        android:id="@+id/view_holder_number"
+        android:id="@+id/translation_item"
         style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

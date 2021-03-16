@@ -325,7 +325,7 @@ public class Practice_eng_rus extends AppCompatActivity {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
-        DataFrame df_unlearned = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) < 2);
+        DataFrame df_unlearned = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
         if (df_unlearned.length() == 0) return Choices;
 
         int l_ids_size = ((List<Long>)df_unlearned.col("id_word")).size();
@@ -391,14 +391,9 @@ public class Practice_eng_rus extends AppCompatActivity {
     public void make_true (String word) { // if the word is learned - change to true
         List<String> l_words = (List<String>)df.col("Word");
         Integer ind = l_words.indexOf(word);
-        if (df_unit.get(ind, 10) == "0") {
-            df_unit.set(ind, 10, 1L);
-            df.set(ind, 10, 1L);
-        }
-        else{
-            df_unit.set(ind, 10, 2L);
-            df.set(ind, 10, 2L);
-        }
+        df_unit.set(ind, 10, 1L);
+        df.set(ind, 10, 1L);
+
     }
 
     public void updateDF(){
