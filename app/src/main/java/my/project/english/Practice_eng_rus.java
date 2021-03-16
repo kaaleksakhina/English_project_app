@@ -404,4 +404,3 @@ public class Practice_eng_rus extends AppCompatActivity {
     }
 
 }
-
