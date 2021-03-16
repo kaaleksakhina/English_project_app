@@ -382,7 +382,6 @@ public class Practice_eng_eng extends AppCompatActivity {
         Integer ind = l_words.indexOf(word);
         df_unit.set(ind, 10, 1L);
         df.set(ind, 10, 1L);
-
     }
 
     public void updateDF(){

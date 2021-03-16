@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:background="@drawable/style_stroke">
 
  <TextView
      android:id="@+id/word_item"
@@ -11,7 +11,8 @@
      android:layout_height="wrap_content"
      android:layout_gravity="center_vertical|start"
      android:fontFamily="monospace"
-     android:textSize="42sp"/>
+     android:text="слово"
+     android:textSize="17sp"/>
 
     <TextView
         android:id="@+id/translation_item"
@@ -20,5 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:fontFamily="monospace"
-        android:textColor="@color/black60"/>
+        android:textSize="15sp"
+        android:text="перевод"
+        android:layout_marginTop="17sp"
+        android:layout_marginBottom="10sp"
+        android:textColor="@color/black95"/>
 </FrameLayout>
