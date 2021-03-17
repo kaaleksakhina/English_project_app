@@ -284,7 +284,10 @@ public class Practice_eng_eng extends AppCompatActivity {
                             }
 
                             ArrayList<String> Choices = getChoices();
-                            if (Choices.size() == 0) end.show();
+                            if (Choices.size() == 0) {
+                                updateDF();
+                                end.show();
+                            }
                             else {
                                 right_answer = Choices.get(5);
                                 word = Choices.get(4);

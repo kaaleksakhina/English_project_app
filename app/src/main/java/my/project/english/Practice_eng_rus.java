@@ -284,7 +284,10 @@ public class Practice_eng_rus extends AppCompatActivity {
                             }
 
                             ArrayList<String> Choices = getChoices();
-                            if (Choices.size() == 0) end.show();
+                            if (Choices.size() == 0) {
+                                updateDF();
+                                end.show();
+                            }
                             else {
                                 right_answer = Choices.get(5);
                                 word = Choices.get(4);
@@ -397,7 +400,7 @@ public class Practice_eng_rus extends AppCompatActivity {
 
     public void updateDF(){
         try {
-            df.writeCsv("csv_page_1");
+            df.writeCsv("csv_page_1.csv");
         } catch (IOException e) {
             e.printStackTrace();
         }
