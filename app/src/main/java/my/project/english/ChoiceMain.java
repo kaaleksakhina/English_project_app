@@ -38,7 +38,7 @@ public class ChoiceMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(ChoiceMain.this, ChoiceUnits.class);
+                    Intent intent = new Intent(ChoiceMain.this, ChoiceDictionary.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {

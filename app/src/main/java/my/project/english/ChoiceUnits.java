@@ -101,7 +101,7 @@ public class ChoiceUnits extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent  = new Intent(ChoiceUnits.this, ChoiceMain.class);
+                    Intent intent  = new Intent(ChoiceUnits.this, ChoiceDictionary.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e) {

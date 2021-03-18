@@ -1,6 +1,8 @@
 package my.project.english;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,12 +18,19 @@ import java.util.List;
 
 import joinery.DataFrame;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictionaryAdapter.WordViewHolder>{
     private final AssetManager assets;
     List<Word> words;
+    SharedPreferences prefs;
+    public int[] array_learned;
+    DataFrame df;
 
-    public LearnedDictionaryAdapter ( AssetManager assets, int unit) {
+    public LearnedDictionaryAdapter (AssetManager assets, int unit, SharedPreferences prefs) {
         this.assets = assets;
+        this.prefs = prefs;
+        array_learned = loadArrayLearned();
         this.words = this.intDatas(unit);
     }
     @NonNull
@@ -51,13 +60,14 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
     }
 
     private List<Word> intDatas(int unit)  {
-        DataFrame df;
         List<String> l_words = new ArrayList<>();
         List<String> l_translations = new ArrayList<>();
+
 
         // word - translation
         try {
             df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
+            updateDFUnit(array_learned);
             DataFrame df_need = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 1);
             l_words = (List<String>)df_need.col("Word");
             l_translations = (List<String>)df_need.col("Translation");
@@ -83,5 +93,20 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
             wordItem = itemView.findViewById(R.id.word_item);
             translationItem = itemView.findViewById(R.id.translation_item);
         }
+    }
+
+    public void updateDFUnit(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                df.set(i, 10, 1L);
+            }
+        }
+    }
+
+    public int[] loadArrayLearned() {
+        int[] array = new int[170];
+        for(int i = 0; i < array.length; i++)
+            array[i] = prefs.getInt(String.valueOf(i), 0);
+        return array;
     }
 }

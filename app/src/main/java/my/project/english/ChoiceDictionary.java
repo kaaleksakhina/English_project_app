@@ -45,7 +45,7 @@ public class ChoiceDictionary extends AppCompatActivity {
             }
         });
 
-        //button to practice
+        //button to learned
         ch2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

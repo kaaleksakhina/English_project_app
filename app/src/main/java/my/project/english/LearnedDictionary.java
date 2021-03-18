@@ -1,6 +1,7 @@
 package my.project.english;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -32,6 +33,7 @@ public class LearnedDictionary extends AppCompatActivity {
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
+        SharedPreferences prefs = getSharedPreferences("wordsIdLearned", MODE_PRIVATE);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -42,7 +44,7 @@ public class LearnedDictionary extends AppCompatActivity {
         wordsList.setLayoutManager(layoutManager);
         wordsList.setHasFixedSize(false);
 
-        wordsAdapter = new LearnedDictionaryAdapter(getAssets(), unit);
+        wordsAdapter = new LearnedDictionaryAdapter(getAssets(), unit, prefs);
         wordsList.setAdapter(wordsAdapter);
 
         //Button Help - open dialog window

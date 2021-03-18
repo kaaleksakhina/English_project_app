@@ -41,6 +41,7 @@ public class Practice_eng_eng extends AppCompatActivity {
     public Integer count_right = 0;
     public ArrayList<Integer> prog = new ArrayList<Integer>();
     public String right_answer, word;
+    public int[] array_learned;
 
     Dialog dialog, dialog2, end;
 
@@ -77,9 +78,11 @@ public class Practice_eng_eng extends AppCompatActivity {
 
         SharedPreferences save = getSharedPreferences("Save", MODE_PRIVATE);
         final int unit = save.getInt("Unit", 1);
+        array_learned = loadArrayLearned();
 
         try {
             df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            updateDFUnit(array_learned);
             df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {
             e.printStackTrace();
@@ -273,7 +276,7 @@ public class Practice_eng_eng extends AppCompatActivity {
                         }
                         if (count == 10) {
                             points.setText(count_right.toString());
-                            updateDF();
+                            updateDF(array_learned);
                             dialog.show();
 
                         } else {
@@ -285,7 +288,7 @@ public class Practice_eng_eng extends AppCompatActivity {
 
                             ArrayList<String> Choices = getChoices();
                             if (Choices.size() == 0) {
-                                updateDF();
+                                updateDF(array_learned);
                                 end.show();
                             }
                             else {
@@ -385,14 +388,34 @@ public class Practice_eng_eng extends AppCompatActivity {
         Integer ind = l_words.indexOf(word);
         df_unit.set(ind, 10, 1L);
         df.set(ind, 10, 1L);
+        array_learned[ind] = 1;
     }
 
-    public void updateDF(){
-        try {
-            df.writeCsv("csv_page_1");
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void updateDFUnit(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                df.set(i, 10, 1L);
+            }
         }
+    }
+    public void updateDF(int[] array){
+        saveArrayLearned(array);
+    }
+
+    public int[] loadArrayLearned() {
+        int[] array = new int[170];
+        SharedPreferences prefs = getSharedPreferences("wordsIdLearned", MODE_PRIVATE);
+        for(int i = 0; i < array.length; i++)
+            array[i] = prefs.getInt(String.valueOf(i), 0);
+        return array;
+    }
+
+    public void saveArrayLearned(int[] array) {
+        SharedPreferences prefs = getSharedPreferences("wordsIdLearned", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        for(int i = 0; i < array.length; i++)
+            editor.putInt(String.valueOf(i), array[i]);
+        editor.commit();
     }
 
 }
