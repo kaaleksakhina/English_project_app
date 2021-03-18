@@ -44,7 +44,7 @@ public class LearnedDictionary extends AppCompatActivity {
         wordsList.setLayoutManager(layoutManager);
         wordsList.setHasFixedSize(false);
 
-        wordsAdapter = new LearnedDictionaryAdapter(getAssets(), unit, prefs);
+        wordsAdapter = new LearnedDictionaryAdapter(getAssets(), unit, getApplicationContext());
         wordsList.setAdapter(wordsAdapter);
 
         //Button Help - open dialog window

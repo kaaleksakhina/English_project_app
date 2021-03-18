@@ -23,13 +23,13 @@ import static android.content.Context.MODE_PRIVATE;
 public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictionaryAdapter.WordViewHolder>{
     private final AssetManager assets;
     List<Word> words;
-    SharedPreferences prefs;
+    Context context;
     public int[] array_learned;
     DataFrame df;
 
-    public LearnedDictionaryAdapter (AssetManager assets, int unit, SharedPreferences prefs) {
+    public LearnedDictionaryAdapter (AssetManager assets, int unit, Context context) {
         this.assets = assets;
-        this.prefs = prefs;
+        this.context = context;
         array_learned = loadArrayLearned();
         this.words = this.intDatas(unit);
     }
@@ -105,6 +105,7 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
 
     public int[] loadArrayLearned() {
         int[] array = new int[170];
+        SharedPreferences prefs = context.getSharedPreferences("wordsIdLearned", MODE_PRIVATE);
         for(int i = 0; i < array.length; i++)
             array[i] = prefs.getInt(String.valueOf(i), 0);
         return array;
