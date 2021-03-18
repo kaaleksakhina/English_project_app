@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:fontFamily="casual"
+                    android:fontFamily="serif"
                     android:text="Word:  "
                     android:textSize="25sp"
                      />
@@ -52,7 +52,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="Word"
-                    android:fontFamily="sans-serif-thin"
+                    android:fontFamily="serif"
                     android:textSize="27sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -74,7 +74,7 @@
                         android:layout_margin="7sp"
                         android:clickable="true"
                         android:gravity="center"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="serif"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:padding="10dp"
                         android:focusable="true" />
@@ -87,7 +87,7 @@
                         android:clickable="true"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="serif"
                         android:gravity="center"
                         android:background="@drawable/button_stroke_black95_press_white"
                         android:focusable="true" />
@@ -100,7 +100,7 @@
                         android:textSize="16sp"
                         android:padding="10dp"
                         android:layout_margin="7sp"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="serif"
                         android:gravity="center"
                         android:layout_marginHorizontal="50dp"
                         android:background="@drawable/button_stroke_black95_press_white"
@@ -113,7 +113,7 @@
                         android:clickable="true"
                         android:textSize="16sp"
                         android:layout_margin="7sp"
-                        android:fontFamily="sans-serif-thin"
+                        android:fontFamily="serif"
                         android:gravity="center"
                         android:padding="10dp"
                         android:background="@drawable/button_stroke_black95_press_white"
