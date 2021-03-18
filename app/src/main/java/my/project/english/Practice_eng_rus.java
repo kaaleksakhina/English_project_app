@@ -84,7 +84,7 @@ public class Practice_eng_rus extends AppCompatActivity {
         array_learned = loadArrayLearned();
 
         try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
             updateDFUnit(array_learned);
             df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {
@@ -334,7 +334,21 @@ public class Practice_eng_rus extends AppCompatActivity {
         Random random = new Random();
         ArrayList<String> Choices = new ArrayList<>(); // список переводов
 
-        DataFrame df_unlearned = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
+        DataFrame df_u = df_unit.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 0);
+
+        DataFrame df_unlearned = df_u.select(new DataFrame.Predicate<Object>() {
+            @Override
+            public Boolean apply(List<Object> value) {
+                if (value.get(11) instanceof Integer) {
+                    return Integer.class.cast(value.get(11)).intValue() < 10;
+                } else if (value.get(11) instanceof Long) {
+                    return Long.class.cast(value.get(11)).intValue() < 10;
+                }
+                return null;
+            }
+        });
+
+
         if (df_unlearned.length() == 0) return Choices;
 
         int l_ids_size = ((List<Long>)df_unlearned.col("id_word")).size();
@@ -400,15 +414,22 @@ public class Practice_eng_rus extends AppCompatActivity {
     public void make_true (String word) { // if the word is learned - change to true
         List<String> l_words = (List<String>)df.col("Word");
         Integer ind = l_words.indexOf(word);
+
         df_unit.set(ind, 10, 1L);
-        df.set(ind, 10, 1L);
-        array_learned[ind] = 1;
+
+        if (df_unit.get(ind, 11) instanceof Integer) {
+            df_unit.set(ind, 11, (int)df_unit.get(ind, 11) + 1);
+        }
+        else if (df_unit.get(ind, 11) instanceof Long) {
+            df_unit.set(ind, 11, (long)df_unit.get(ind, 11) + 1L);
+        }
+        array_learned[ind] += 1;
     }
 
     public void updateDFUnit(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            if (array[i] == 1) {
-                df.set(i, 10, 1L);
+            if (array[i] > 0) {
+                df.set(i, 11, array[i]);
             }
         }
     }
@@ -429,6 +450,6 @@ public class Practice_eng_rus extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         for(int i = 0; i < array.length; i++)
             editor.putInt(String.valueOf(i), array[i]);
-        editor.commit();
+        editor.apply();
     }
 }

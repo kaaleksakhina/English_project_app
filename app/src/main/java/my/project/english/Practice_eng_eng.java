@@ -81,7 +81,7 @@ public class Practice_eng_eng extends AppCompatActivity {
         array_learned = loadArrayLearned();
 
         try {
-            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"));
+            df = DataFrame.readCsv(getAssets().open("csv_page_1.csv"), ";");
             updateDFUnit(array_learned);
             df_unit = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(0)) <= unit);
         } catch (IOException e) {

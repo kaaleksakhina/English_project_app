@@ -66,7 +66,7 @@ public class LearnedDictionaryAdapter extends RecyclerView.Adapter<LearnedDictio
 
         // word - translation
         try {
-            df = DataFrame.readCsv(assets.open("csv_page_1.csv"));
+            df = DataFrame.readCsv(assets.open("csv_page_1.csv"), ";");
             updateDFUnit(array_learned);
             DataFrame df_need = df.select((DataFrame.Predicate<Object>) values -> Long.class.cast(values.get(10)) == 1);
             l_words = (List<String>)df_need.col("Word");
